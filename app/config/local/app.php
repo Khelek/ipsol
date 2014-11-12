@@ -2,6 +2,7 @@
 
 return array(
 
+
 	/*
 	|--------------------------------------------------------------------------
 	| Application Debug Mode
@@ -14,5 +15,8 @@ return array(
 	*/
 
 	'debug' => true,
+    'providers' => array(
+        'Way\Generators\GeneratorsServiceProvider'
+    )
 
 );
