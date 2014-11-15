@@ -18,13 +18,13 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'sqlite',
 
 	'connections' => array(
 
         'sqlite' => array(
 			'driver'   => 'sqlite',
-			'database' => __DIR__.'/../database/development.sqlite',
+			'database' => __DIR__.'/../../database/development.sqlite',
 			'prefix'   => '',
 		),
 
