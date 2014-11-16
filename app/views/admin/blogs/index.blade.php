@@ -5,9 +5,9 @@
 {{{ $title }}} :: @parent
 @stop
 
-@section('keywords')Blogs administration @stop
+@section('keywords')Posts administration @stop
 @section('author')Laravel 4 Bootstrap Starter SIte @stop
-@section('description')Blogs administration index @stop
+@section('description')Posts administration index @stop
 
 {{-- Content --}}
 @section('content')
@@ -16,7 +16,7 @@
 			{{{ $title }}}
 
 			<div class="pull-right">
-				<a href="{{{ URL::to('admin/blogs/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
+				<a href="{{{ route('admin.blogs.create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
 			</div>
 		</h3>
 	</div>
@@ -31,6 +31,22 @@
 			</tr>
 		</thead>
 		<tbody>
+        @foreach ($posts as $post)
+            <tr>
+                <td> {{{ $post->title }}} </td>
+                <td> comm </td>
+                <td> {{{ $post->created_at }}} </td>
+                <td>
+                    <a href="{{{ route('admin.blogs.edit', $post->id) }}}"
+		                   class="btn btn-xs btn-info"> Edit </a>
+                    <a href="{{{ route('admin.blogs.destroy', $post->id) }}}"
+		                   class="btn btn-xs btn-danger"
+		                   data-method="delete"
+                       data-confirm="Are you sure?"> Delete </a>
+                </td>
+
+            </tr>
+        @endforeach
 		</tbody>
 	</table>
 @stop
@@ -40,19 +56,7 @@
 	<script type="text/javascript">
 		var oTable;
 		$(document).ready(function() {
-			oTable = $('#blogs').dataTable( {
-				"sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
-				"sPaginationType": "bootstrap",
-				"oLanguage": {
-					"sLengthMenu": "_MENU_ records per page"
-				},
-				"bProcessing": true,
-		        "bServerSide": true,
-		        "sAjaxSource": "{{ URL::to('admin/blogs/data') }}",
-		        "fnDrawCallback": function ( oSettings ) {
-	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
-	     		}
-			});
+			oTable = $('#blogs').DataTable();
 		});
 	</script>
 @stop

@@ -14,7 +14,7 @@
 ClassLoader::addDirectories(array(
 
 	app_path().'/commands',
-	app_path().'/controllers',
+	app_path().'/controllers/',
 	app_path().'/models',
 	app_path().'/database/seeds',
 
@@ -48,7 +48,25 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 
 App::error(function(Exception $exception, $code)
 {
-	Log::error($exception);
+    $pathInfo = Request::getPathInfo();
+    $message = $exception->getMessage() ?: 'Exception';
+    Log::error("$code - $message @ $pathInfo\r\n$exception");
+
+    if (Config::get('app.debug')) {
+    	return;
+    }
+
+    switch ($code)
+    {
+        case 403:
+            return Response::view('error/403', array(), 403);
+
+        case 500:
+            return Response::view('error/500', array(), 500);
+
+        default:
+            return Response::view('error/404', array(), $code);
+    }
 });
 
 /*
@@ -66,6 +84,7 @@ App::down(function()
 {
 	return Response::make("Be right back!", 503);
 });
+
 
 /*
 |--------------------------------------------------------------------------

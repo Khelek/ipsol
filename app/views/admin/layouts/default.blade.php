@@ -33,7 +33,7 @@
 
 	<!-- CSS -->
     <link rel="stylesheet" href="{{asset('bower/bootstrap/dist/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('bower/bootstrap/dist/css/bootstrap-theme.min.css')}}">
+    <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css">
 
 	<style>
 	body {
@@ -79,7 +79,7 @@
     					<li class="divider-vertical"></li>
     					<li class="dropdown">
     							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-    								<span class="glyphicon glyphicon-user"></span> {{{ Auth::user()->username }}}	<span class="caret"></span>
+    								<span class="glyphicon glyphicon-user"></span> {{-- Auth::user()->username --}}	<span class="caret"></span>
     							</a>
     							<ul class="dropdown-menu">
     								<li><a href="{{{ URL::to('user/settings') }}}"><span class="glyphicon glyphicon-wrench"></span> Settings</a></li>
@@ -93,9 +93,6 @@
 		</div>
 		<!-- ./ navbar -->
 
-		<!-- Notifications -->
-		@include('notifications')
-		<!-- ./ notifications -->
 
 		<!-- Content -->
 		@yield('content')
@@ -111,7 +108,13 @@
 	<!-- ./ container -->
 
 	<!-- Javascripts -->
+    <script src="{{asset('bower/jquery/dist/jquery.min.js')}}"></script>
     <script src="{{asset('bower/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/ckeditor/ckeditor.js')}}"></script>
+    <script src="{{asset('assets/js/application.js')}}"></script>
+    <script src="{{asset('assets/js/laravel.js')}}"></script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 
     @yield('scripts')
 

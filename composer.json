@@ -11,6 +11,7 @@
     "summerstreet/woodling": "~0.1.6"
   },
 	"require": {
+    "php": ">=5.4.0",
 		"laravel/framework": "4.2.*",
     "zizaco/confide": "~4.0@dev",
     "zizaco/entrust": "1.2.*@dev",
@@ -22,6 +23,7 @@
 		"anahkiasen/former": "~3.5",
     "robclancy/presenter": "1.3.*",
 		"barryvdh/laravel-debugbar": "~1.8",
+    "ckeditor/ckeditor": "4.*",
     "nesbot/Carbon": "*"
 	},
 	"autoload": {
@@ -40,7 +42,11 @@
 			"php artisan optimize"
 		],
 		"post-update-cmd": [
-			"php artisan clear-compiled",
+      "if [ -d \"public/js/ckeditor/\" ] \nthen \nrm -R public/js/ckeditor/ \nfi ",
+      "if [ -d \"vendor/ckeditor/ckeditor/\" ] \nthen \nmv vendor/ckeditor/ckeditor/ public/js/  \nfi",
+      "if [ -d \"vendor/ckeditor/\" ] \nthen \nrm -R vendor/ckeditor/ \nfi",
+
+      "php artisan clear-compiled",
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
