@@ -122,6 +122,15 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+        'KennedyTedesco\Validation\ValidationServiceProvider',
+        'Cviebrock\ImageValidator\ImageValidatorServiceProvider',
+        'Lavary\Menu\ServiceProvider',
+        'Former\FormerServiceProvider',
+        'Robbo\Presenter\PresenterServiceProvider',
+        'Barryvdh\Debugbar\ServiceProvider',
+        'Zizaco\Confide\ServiceProvider',
+        'Zizaco\Entrust\EntrustServiceProvider',
+
 	),
 
 	/*
@@ -188,6 +197,13 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+
+        'Menu'              => 'Lavary\Menu\Facade',
+        'Former'            => 'Former\Facades\Former',
+        'Debugbar'          => 'Barryvdh\Debugbar\Facade',
+        'Confide'           => 'Zizaco\Confide\Facade',
+        'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
+
 
 	),
 

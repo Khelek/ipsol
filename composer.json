@@ -5,10 +5,24 @@
 	"license": "MIT",
 	"type": "project",
   "require-dev": {
-    "way/generators": "~2.0"
+    "dollar/generators": "dev-master",
+    "phpunit/phpunit": "~4.0",
+    "mockery/mockery": "~0.9",
+    "summerstreet/woodling": "~0.1.6"
   },
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+    "zizaco/confide": "~4.0@dev",
+    "zizaco/entrust": "1.2.*@dev",
+    "bllim/datatables": "~1.3",
+    "kennedytedesco/validation": "dev-master",
+    "cviebrock/image-validator": "1.0.*",
+    "lavary/laravel-menu": "dev-master",
+    "laravelbook/ardent": "2.*",
+		"anahkiasen/former": "~3.5",
+    "robclancy/presenter": "1.3.*",
+		"barryvdh/laravel-debugbar": "~1.8",
+    "nesbot/Carbon": "*"
 	},
 	"autoload": {
 		"classmap": [
