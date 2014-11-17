@@ -24,7 +24,8 @@
     "robclancy/presenter": "1.3.*",
 		"barryvdh/laravel-debugbar": "~1.8",
     "ckeditor/ckeditor": "4.*",
-    "nesbot/Carbon": "*"
+    "nesbot/Carbon": "*",
+    "rtconner/laravel-tagging": "0.4.*"
 	},
 	"autoload": {
 		"classmap": [

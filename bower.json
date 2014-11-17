@@ -2,6 +2,9 @@
   "name": "php-site",
   "dependencies": {
     "bootstrap": "~3.3.1",
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "select2": "~3.3.2",
+    "select2-bootstrap-css": "1.2.4",
+    "bootstrap-tokenfield": "~0.12.1"
   }
 }

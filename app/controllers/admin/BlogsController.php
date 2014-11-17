@@ -52,13 +52,15 @@ class BlogsController extends AdminController {
 	public function edit($id)
 	{
         $title = Lang::get('admin/blogs/title.blog_update');
-		$post = $this->post->find($id);
+		$post = $this->post->with('rubrics')->find($id);
+        $rubrics = \Rubric::all();
+        //dd($post->rubrics->lists('id'));
 		if (is_null($post))
 		{
 			return Redirect::route('admin.blogs.index');
 		}
 
-        return View::make('admin/blogs/edit', compact('post', 'title'));
+        return View::make('admin/blogs/edit', compact('post', 'title', 'rubrics'));
 	}
 
 
@@ -67,10 +69,14 @@ class BlogsController extends AdminController {
         $post = $this->post->find($id);
         //$this->post->fill($input);
         //$this->post->slug = Str::slug(Input::get('title'));
+        //->select($post->rubrics->lists('id'))
 
         if ($post->update(Input::all()))
         {
-            return Redirect::route('admin.blogs.edit', $this->post->id)->with('success', Lang::get('admin/blogs/messages.create.success'));
+            $post->rubrics()->sync(Input::get('rubrics'));
+            if (Input::get('tags')) $post->retag(explode(",", Input::get('tags')));
+
+            return Redirect::route('admin.blogs.edit', $post->id)->with('success', Lang::get('admin/blogs/messages.create.success'));
         } else {
             return Redirect::back()->withInput()->withErrors($this->post->errors());
         }

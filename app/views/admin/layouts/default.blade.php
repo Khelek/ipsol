@@ -31,8 +31,13 @@
 	<!--  Mobile Viewport Fix -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+	<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}">
+
 	<!-- CSS -->
     <link rel="stylesheet" href="{{asset('bower/bootstrap/dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('bower/bootstrap-tokenfield/dist/css/bootstrap-tokenfield.min.css/')}}">
+    <link rel="stylesheet" href="{{asset('bower/select2/select2.css')}}">
+    <link rel="stylesheet" href="{{asset('bower/select2/select2-bootstrap.css')}}">
     <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css">
 
 	<style>
@@ -93,6 +98,23 @@
 		</div>
 		<!-- ./ navbar -->
 
+    @if (trim($__env->yieldContent('back-url')))
+		    <div class="page-header">
+            <div class="row">
+                <div class="col-md-10">
+			              <h3>
+				                {{ $title }}
+		       	        </h3>
+                </div>
+			          <div class="col-md-2">
+                    <a href="@yield('back-url')" class="btn btn-default btn-small btn-inverse close_popup" style="margin-top: 20px"> 
+                        <span class="glyphicon glyphicon-circle-arrow-left"></span>
+                        Back</a>
+                </div>
+            </div>
+		    </div>
+    @endif
+
 
 		<!-- Content -->
 		@yield('content')
@@ -110,6 +132,12 @@
 	<!-- Javascripts -->
     <script src="{{asset('bower/jquery/dist/jquery.min.js')}}"></script>
     <script src="{{asset('bower/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+
+    <script src="{{asset('bower/select2/select2.min.js')}}"></script>
+    <script src="{{asset('bower/select2/select2_locale_ru.js')}}"></script>
+
+    <script src="{{asset('bower/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js')}}"></script>
+
     <script src="{{asset('js/ckeditor/ckeditor.js')}}"></script>
     <script src="{{asset('assets/js/application.js')}}"></script>
     <script src="{{asset('assets/js/laravel.js')}}"></script>

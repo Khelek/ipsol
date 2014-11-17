@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\URL;
 
 class Post extends \LaravelBook\Ardent\Ardent {
 
+    use Conner\Tagging\TaggableTrait;
+
     public static $relationsData = array(
-        'tags'     => array(self::BELONGS_TO_MANY, 'Tag'),
         'rubrics'  => array(self::BELONGS_TO_MANY, 'Rubric')
     );
 
