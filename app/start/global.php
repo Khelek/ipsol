@@ -56,7 +56,7 @@ App::error(function(Exception $exception, $code)
     	return;
     }
 
-    switch ($code)
+    /*switch ($code)
     {
         case 403:
             return Response::view('error/403', array(), 403);
@@ -66,7 +66,7 @@ App::error(function(Exception $exception, $code)
 
         default:
             return Response::view('error/404', array(), $code);
-    }
+            }*/
 });
 
 /*
