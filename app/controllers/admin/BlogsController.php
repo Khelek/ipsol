@@ -24,19 +24,25 @@ class BlogsController extends AdminController {
 	{
         $title = Lang::get('admin/blogs/title.create_a_new_blog');
 
-        return View::make('admin/blogs/create', compact('title'));
+        $rubrics = \Rubric::all();
+        $post = $this->post;
+        return View::make('admin/blogs/create', compact('title', 'rubrics', 'post'));
 	}
 
 	public function store()
 	{
-        $this->post->fill(Input::all());
+        $post = $this->post;
+        $post->fill(Input::all());
         //$this->post->slug = Str::slug(Input::get('title'));
 
-        if ($this->post->save())
+        if ($post->save())
         {
-            return Redirect::route('admin.blogs.edit', $this->post->id)->with('success', lang::get('admin/blogs/messages.create.success'));
+            $post->rubrics()->sync(Input::get('rubrics'));
+            if (Input::get('tags')) $post->retag(explode(",", Input::get('tags')));
+
+            return Redirect::route('admin.blogs.edit', $post->id)->with('success', lang::get('admin/blogs/messages.create.success'));
         } else {
-            return Redirect::back()->withInput()->withErrors($this->post->errors());
+            return Redirect::back()->withInput()->withErrors($post->errors());
         }
 	}
 
