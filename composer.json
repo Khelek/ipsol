@@ -12,6 +12,7 @@
   },
 	"require": {
     "php": ">=5.4.0",
+    "ext-gd": "*",
 		"laravel/framework": "4.2.*",
     "zizaco/confide": "~4.0@dev",
     "zizaco/entrust": "1.2.*@dev",
