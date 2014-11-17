@@ -130,6 +130,7 @@ return array(
         'Barryvdh\Debugbar\ServiceProvider',
         'Zizaco\Confide\ServiceProvider',
         'Zizaco\Entrust\EntrustServiceProvider',
+        'Bkwld\Reporter\ReporterServiceProvider',
 
 	),
 
@@ -203,6 +204,7 @@ return array(
         'Debugbar'          => 'Barryvdh\Debugbar\Facade',
         'Confide'           => 'Zizaco\Confide\Facade',
         'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
+        'Timer'             => 'Bkwld\Reporter\Facades\Timer',
 
 
 	),

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "57b823f1494ba1f874bf07cbf2a66438",
+    "hash": "2b8d5825ada418032e1dd5af3a59d80a",
     "packages": [
         {
             "name": "anahkiasen/former",
@@ -157,6 +157,43 @@
                 "webprofiler"
             ],
             "time": "2014-11-14 07:51:09"
+        },
+        {
+            "name": "bkwld/reporter",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BKWLD/reporter.git",
+                "reference": "fc82290b380be80d0d1f52c356b5cc2e10b158c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BKWLD/reporter/zipball/fc82290b380be80d0d1f52c356b5cc2e10b158c2",
+                "reference": "fc82290b380be80d0d1f52c356b5cc2e10b158c2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "<4.3,>=4.0",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Bkwld\\Reporter": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Reinhard",
+                    "email": "info@bkwld.com"
+                }
+            ],
+            "description": "Generate styled logs of Laravel 4 requests that include application timing, memory usage, input data, and sql queries",
+            "time": "2014-10-10 18:10:50"
         },
         {
             "name": "bllim/datatables",
@@ -3467,7 +3504,8 @@
     },
     "prefer-stable": false,
     "platform": {
-        "php": ">=5.4.0"
+        "php": ">=5.4.0",
+        "ext-gd": "*"
     },
     "platform-dev": []
 }
