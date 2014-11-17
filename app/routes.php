@@ -15,3 +15,9 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+
+Route::group(array('prefix' => 'admin', 'namespace' => 'Admin'), function()
+{
+    Route::resource('blogs', 'BlogsController');
+});
