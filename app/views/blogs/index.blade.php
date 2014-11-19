@@ -65,10 +65,13 @@
 
 	    </div>
 	    <div class="sidebar">
-	    	<input type=search class="input input_search" placeholder="Поиск">
+	    	<div class="input_search_block">
+				<input type="text" placeholder="Поиск"class="input input_search">
+				<button class="input_search_button"></button>
+			</div>
     		<p>Выбор рубрики:</p>
-    		<a href="">Наименование рубрики</a>
-    		<a href="">Наименование рубрики</a>
+    		<a href="">dfg</a>
+    		<a href="">lnsdfs</a>
     		<a href="">Наименование рубрики</a>
     		<a href="">Наименование рубрики</a>
     		<a href="">Наименование рубрики</a>

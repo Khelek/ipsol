@@ -1,13 +1,13 @@
 .article {
 	font-size: 16px;
-	width: 1130px;
+	width: 1030px;
 }
 .ban .input {
 	display: block;
 	margin-bottom: 20px;
+	background-color: #fff;
 }
-.ban .form
-{
+.ban .form {
 	margin-top: 26px;
 	float: right;
 }

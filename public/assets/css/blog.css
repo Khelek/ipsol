@@ -53,14 +53,21 @@
 }
 .sidebar a {
 	color: #1d7ac0;
-	display: inline-block;
+	display: block;
 	margin-top: 10px;
 }
-
+.sidebar .input_search_block {
+	width: 250px;
+}
+.sidebar .input_search {
+	width: 205px;
+}
+.sidebar .input_email {
+	width: 250px;
+}
 .sidebar .button {
 	margin-top: 20px;
 }
-
 .ellipsis {
 	padding: 0px 10px;
 	color: #969696;
