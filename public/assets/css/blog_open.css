@@ -18,6 +18,12 @@
 .col4+.col4{
 	margin-left: 126px;
 }
-.another_article {
+.another_article, .comments {
 	margin-top: 120px;
+	font-size: 16px;
+}
+.another_article a {
+	color: #1d7ac0;
+	display: block;
+	margin: 10px 0px;
 }

@@ -15,7 +15,7 @@ class BlogsController extends BaseController {
         $title = Lang::get('admin/blogs/title.blog_management');
 
         $rubrics = \Rubric::all();
-        $posts = $this->post->paginate(1);
+        $posts = $this->post->paginate(10);
         return View::make('blogs/index', compact('posts', 'title', 'rubrics', 'paginator'));
     }
 

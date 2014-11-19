@@ -33,6 +33,9 @@ pre {
 a {
 	color: #232323;
 }
+.title {
+	margin-bottom: 40px;
+}
 .content {
 	width: 1240px;
 	margin: 0 auto;
@@ -40,6 +43,7 @@ a {
 .col2{
 	width: 620px;
 }
+/*<---- Шапка begin ----->*/
 .header {
 	height: 100px;
 	margin-top: 25px;
@@ -87,6 +91,8 @@ a {
 	top: 5px;
 	margin: 0px 9px 0px 30px;
 }
+/*<---- Шапка end ----->*/
+/*<---- Баннер begin ----->*/
 .ban {
 	width: 100%;
 	min-width: 1024px;
@@ -137,6 +143,8 @@ a {
 	border-width: 0 0 150px 150px;
 	border-color: transparent transparent #ffcf3f transparent;
 }
+/*<---- Баннер end ----->*/
+/*<---- Кнопки, поля ввода begin ----->*/
 .button {
 	cursor: pointer;
 	border: 0px;
@@ -185,11 +193,13 @@ a {
 	width: 330px;
 	float: left;
 }
+
 ::-webkit-input-placeholder {color:#535353;}
 ::-moz-placeholder          {color:#535353;}/* Firefox 19+ */
 :-moz-placeholder           {color:#535353;}/* Firefox 18- */
 :-ms-input-placeholder      {color:#535353;}
 
+/*<---- Кнопки, поля ввода end ----->*/
 .clear-fix:after {
     content: '';
     display: block;
@@ -198,6 +208,7 @@ a {
     visibility: hidden;
 }
 
+/*<---- Подвал begin ----->*/
 .seo {
 	font-size: 10px;
 	color: #505050;
@@ -231,6 +242,7 @@ a {
 .contact_text a {
 	margin-right: 20px;
 }
+/*<----Иконки социальный сетей begin---->*/
 .social p {
 	float: right;
 	margin-right: 10px;
@@ -256,6 +268,7 @@ a {
 .icon_twitter {
 	background-position: -212px 0px;
 }
+/*<----Иконки социальный сетей end---->*/
 .copyright {
 	margin-top: 40px;
 }
@@ -264,9 +277,10 @@ a {
 	margin-bottom: 15px;
 	font-size: 12px;
 }
-/**/
+/*<---- Подвал end ----->*/
+/* <--- Пагинация begin --->*/
 .pagination {
-	width: 420px;
+	width: 520px;
 	margin: 0 auto;
 	color: #808080;
 }
@@ -279,6 +293,7 @@ a {
 	padding: 0px 10px;
 	color: #969696;
 }
+/* <--- Пагинация end --->*/
 @font-face {
 	font-family: 'FranklinGothic';
 	src: url('../fonts/FranklinGothicMediumCondRegular.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
