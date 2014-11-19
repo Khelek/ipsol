@@ -4,6 +4,7 @@ html {
 	color: #3d3d3d;
 	font-family: 'Istok Web', sans-serif;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	font-smooth: always;
 }
 html, body, p {
@@ -19,6 +20,9 @@ h1, h2 {
 	font-weight: 400;
 	margin: 0px;
 	padding: 0px;
+}
+pre {
+	font-family: 'Istok Web', sans-serif;
 }
 .date {
 	color: #969696;
@@ -134,6 +138,7 @@ a {
 	border-color: transparent transparent #ffcf3f transparent;
 }
 .button {
+	cursor: pointer;
 	border: 0px;
 	color: #fff;
 	font-size: 23px;
@@ -145,20 +150,42 @@ a {
 	background-color: #5a38ab;
 }
 .input {
-	width: 252px;
-	height: 36px;
+	width: 366px;
 	color: #535353;
 	padding: 10px 15px; 
 	font-size: 12px;
-	border: 1px solid #d2d2d2;
 	box-sizing: border-box;
 	-webkit-appearance: none;
 }
-.input_search {
+.input_select {
+	background-image: url("../images/arrow.png");
+	background-repeat: no-repeat;
+	background-position: 335px 16px;
+}
+.input_search_block, .input {
+	border: 1px solid #d2d2d2;
+	height: 36px;
+}
+.input_search_button {
+	z-index: 2;
+	border: 0px;
+	float: right;
+	background-color: #fff;
+	width: 36px;
+	height: 36px;
 	background-image: url("../images/magnifier.png");
 	background-repeat: no-repeat;
-	background-position: 220px 6px;
+	background-position: 0px 6px;
 }
+.input_search {
+	border: 0px;
+	width: 330px;
+	float: left;
+}
+::-webkit-input-placeholder {color:#535353;}
+::-moz-placeholder          {color:#535353;}/* Firefox 19+ */
+:-moz-placeholder           {color:#535353;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#535353;}
 
 .clear-fix:after {
     content: '';

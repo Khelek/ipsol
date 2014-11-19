@@ -20,8 +20,11 @@
 			<div class="col2 clear-fix">
 				<div class="triangle"></div>
 				<form action="" class="form">
-					<input type="text" placeholder="Поиск"class="input input_search">
-					<select type="text" placeholder="Выбор рубрики" class="input select">
+					<div class="input_search_block">
+						<input type="text" placeholder="Поиск"class="input input_search">
+						<button class="input_search_button"></button>
+					</div>
+					<select type="text" placeholder="Выбор рубрики" class="input input_select">
 						<option value="">выбрать пункт 1</option>
 						<option value="">выбрать пункт 2</option>
 						<option value="">выбрать пункт 3</option>
