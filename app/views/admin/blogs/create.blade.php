@@ -11,7 +11,7 @@
 
 @section('content')
     {{ Former::framework('TwitterBootstrap3') }}
-    {{ Former::horizontal_open()->method('POST')->route('admin.blogs.store') }}
+    {{ Former::open_for_files()->method('POST')->route('admin.blogs.store') }}
 
     @include('admin.blogs.form')
 

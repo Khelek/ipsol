@@ -131,6 +131,9 @@ return array(
         'Zizaco\Confide\ServiceProvider',
         'Zizaco\Entrust\EntrustServiceProvider',
         'Bkwld\Reporter\ReporterServiceProvider',
+        'Codesleeve\LaravelStapler\LaravelStaplerServiceProvider',
+        'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+        'Ivanlemeshev\LaravelCyrillicSlug\SlugServiceProvider',
 
 	),
 
@@ -205,7 +208,7 @@ return array(
         'Confide'           => 'Zizaco\Confide\Facade',
         'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
         'Timer'             => 'Bkwld\Reporter\Facades\Timer',
-
+        'Slug' => 'Ivanlemeshev\LaravelCyrillicSlug\Facades\Slug',
 
 	),
 

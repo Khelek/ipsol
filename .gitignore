@@ -1,5 +1,9 @@
 /vendor
+/public/system
 composer.phar
+*~
+\#*\#
+.\#*
 .env.*.php
 .env.php
 .DS_Store

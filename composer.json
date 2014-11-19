@@ -28,7 +28,10 @@
     "ckeditor/ckeditor": "4.*",
     "nesbot/Carbon": "*",
     "rtconner/laravel-tagging": "0.4.*",
-    "bkwld/reporter": "~2.0"
+    "bkwld/reporter": "~2.0",
+    "codesleeve/laravel-stapler": "1.0.*",
+    "cviebrock/eloquent-sluggable": "~2.0",
+    "ivanlemeshev/laravel-cyrillic-slug": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

@@ -1,0 +1,81 @@
+
+.main {
+	width: 930px;
+	float: left;
+	margin-top: 70px;
+}
+.article {
+	margin-bottom: 36px;
+}
+.article>img {
+	width: 214px;
+	float: left;
+}
+.article_container {
+	float: left;
+	width: 630px;
+	margin-left: 52px;
+	color: #969696;
+}
+.description {
+	margin: 15px 0px 5px 0px;
+	line-height: 16px;
+	color: #505050;
+} 
+.article_header {
+	color: #1d7ac0;
+	font-size: 37px;
+	font-family: 'FranklinGothicBook', sans-serif;
+	text-decoration: none;
+	border-bottom: 1px #1d7ac0 solid;
+}
+.article .article_header {
+	position: relative;
+	top: -7px;
+}
+.line {
+	width: 1px;
+	height: 100%;
+    position: absolute;
+    margin-left: 945px;
+    margin-top:30px;
+    max-height:100%;
+    background-color: #d2d2d2;
+}
+.sidebar {
+	width: 255px;
+	float: right;
+	height: 100%;
+	margin-top: 100px;
+}
+.sidebar p {
+	margin: 45px 0px 10px 0px;
+}
+.sidebar a {
+	color: #1d7ac0;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.sidebar .button {
+	margin-top: 20px;
+}
+
+.ellipsis {
+	padding: 0px 10px;
+	color: #969696;
+}
+.tag {
+	color: #969696;
+	text-decoration: none;
+}
+.pagination {
+	width: 420px;
+	margin: 0 auto;
+	color: #808080;
+}
+.pagination .button {
+	margin: 0px 4px;
+	padding: 17px 0px;
+	width: 60px; 
+}

@@ -1,0 +1,33 @@
+.b-share-icon_vkontakte {
+	background-position: 0px 0px !important;
+}
+.b-share-icon_facebook {
+	background-position: -35px 0px !important;
+}
+.b-share-icon_twitter {
+	background-position: -70px 0px !important;
+}
+.b-share-icon_odnoklassniki {
+	background-position: -177px 0px !important;
+}
+.b-share-icon_gplus {
+	background-position: -106px 0px !important;
+}
+.b-share-icon_moimir {
+	background-position: -141px 0px !important;
+}
+.b-share-icon {
+	margin-top: 10px;
+	background-color: #fff !important; 
+	background-image: url("../images/social.png") !important;
+	background-repeat: no-repeat !important;
+	width: 29px !important;
+	height: 29px !important;
+}
+.yashare-auto-init .b-share {
+	margin: 0px !important;
+	padding: 0px !important;
+}
+.b-share .b-share__link {
+	padding: 5px 5px 5px 0px !important; 
+}

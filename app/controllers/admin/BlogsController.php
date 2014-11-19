@@ -32,12 +32,14 @@ class BlogsController extends AdminController {
 	public function store()
 	{
         $post = $this->post;
+
+        if (Input::get('slug') === "") Input::replace(['slug' => \Slug::make(Input::get('title'))]);
+
         $post->fill(Input::all());
-        //$this->post->slug = Str::slug(Input::get('title'));
 
         if ($post->save())
         {
-            $post->rubrics()->sync(Input::get('rubrics'));
+            if (Input::get('rubrics')) $post->rubrics()->sync(Input::get('rubrics'));
             if (Input::get('tags')) $post->retag(explode(",", Input::get('tags')));
 
             return Redirect::route('admin.blogs.edit', $post->id)->with('success', lang::get('admin/blogs/messages.create.success'));
@@ -48,10 +50,7 @@ class BlogsController extends AdminController {
 
 	public function show($id)
 	{
-        $title = Lang::get('admin/blogs/title.blog_show');
-		$post = $this->post->findOrFail($id);
-
-		return View::make('admin/blogs/show', compact('post'));
+        return Redirect::route('admin.blogs.edit', $id);
 	}
 
 
@@ -60,7 +59,7 @@ class BlogsController extends AdminController {
         $title = Lang::get('admin/blogs/title.blog_update');
 		$post = $this->post->with('rubrics')->find($id);
         $rubrics = \Rubric::all();
-        //dd($post->rubrics->lists('id'));
+
 		if (is_null($post))
 		{
 			return Redirect::route('admin.blogs.index');
@@ -73,18 +72,17 @@ class BlogsController extends AdminController {
 	public function update($id)
 	{
         $post = $this->post->find($id);
-        //$this->post->fill($input);
-        //$this->post->slug = Str::slug(Input::get('title'));
-        //->select($post->rubrics->lists('id'))
+
+        if (Input::get('slug') === "") Input::replace(['slug' => \Slug::make(Input::get('title'))]);
 
         if ($post->update(Input::all()))
         {
-            $post->rubrics()->sync(Input::get('rubrics'));
+            if (Input::get('rubrics')) $post->rubrics()->sync(Input::get('rubrics'));
             if (Input::get('tags')) $post->retag(explode(",", Input::get('tags')));
 
             return Redirect::route('admin.blogs.edit', $post->id)->with('success', Lang::get('admin/blogs/messages.create.success'));
         } else {
-            return Redirect::back()->withInput()->withErrors($this->post->errors());
+            return Redirect::back()->withInput()->withErrors($post->errors());
         }
 	}
 

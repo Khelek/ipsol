@@ -14,7 +14,7 @@
     {{ Former::populate($post) }}
     {{-- TODO мб вынести куда-то --}}
     {{ Former::populateField('tags', implode(",", $post->tagNames())) }}
-    {{ Former::horizontal_open()->method('PUT')->route('admin.blogs.update', $post->id) }}
+    {{ Former::open_for_files()->method('PUT')->route('admin.blogs.update', $post->id) }}
 
     @include('admin.blogs.form')
 
