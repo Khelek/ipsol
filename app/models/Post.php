@@ -3,10 +3,12 @@
 use Illuminate\Support\Facades\URL;
 use Codesleeve\Stapler\ORM\StaplerableInterface;
 use Codesleeve\Stapler\ORM\EloquentTrait;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Post extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
     use EloquentTrait; // for Stapler
     use Conner\Tagging\TaggableTrait;
+    use SearchableTrait;
 
     public static $relationsData = array(
         'rubrics'  => array(self::BELONGS_TO_MANY, 'Rubric')
@@ -14,6 +16,12 @@ class Post extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
 
     protected $fillable = ['preview', 'content', 'title', 'slug', 'meta-title',
                            'meta-description', 'meta-keywords'];
+    protected $searchable = [
+        'columns' => [
+            'content' => 2,
+            'title' => 1
+        ]
+    ];
 
     public static $rules = [
         'content' => 'required',

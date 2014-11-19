@@ -15,7 +15,15 @@ class BlogsController extends BaseController {
         $title = Lang::get('admin/blogs/title.blog_management');
 
         $rubrics = \Rubric::all();
-        $posts = $this->post->paginate(10);
+        $posts = $this->post;
+
+        if(Input::get('search')) $posts = $posts->search(Input::get('search'));
+        if(Input::get('tag')) $posts = $posts->withAnyTag(Input::get('tag'));
+        if(Input::get('rubric')) $posts = $posts->whereHas('rubrics', function($q) {
+            $q->where('name', Input::get('rubric'));
+        });
+
+        $posts = $posts->paginate(10);
         return View::make('blogs/index', compact('posts', 'title', 'rubrics', 'paginator'));
     }
 
