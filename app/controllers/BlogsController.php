@@ -14,9 +14,9 @@ class BlogsController extends BaseController {
     {
         $title = Lang::get('admin/blogs/title.blog_management');
 
-        $posts = $this->post->all();
-
-        return View::make('blogs/index', compact('posts', 'title'));
+        $rubrics = \Rubric::all();
+        $posts = $this->post->paginate(1);
+        return View::make('blogs/index', compact('posts', 'title', 'rubrics', 'paginator'));
     }
 
     public function show($slug)

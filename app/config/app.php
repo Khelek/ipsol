@@ -208,7 +208,8 @@ return array(
         'Confide'           => 'Zizaco\Confide\Facade',
         'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
         'Timer'             => 'Bkwld\Reporter\Facades\Timer',
-        'Slug' => 'Ivanlemeshev\LaravelCyrillicSlug\Facades\Slug',
+        'Slug'              => 'Ivanlemeshev\LaravelCyrillicSlug\Facades\Slug',
+        'Carbon'            => 'Carbon\Carbon',
 
 	),
 

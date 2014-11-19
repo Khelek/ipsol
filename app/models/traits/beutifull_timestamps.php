@@ -14,7 +14,8 @@ trait BeutifullTimestamps {
             $date = $this->created_at;
         }
 
-        return String::date($date);
+        //dd(Carbon::parse($date)->format('d/m/Y'));
+        return $date->format('d/m/Y');
     }
 
 
