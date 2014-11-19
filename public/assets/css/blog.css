@@ -3,6 +3,7 @@
 	width: 930px;
 	float: left;
 	margin-top: 70px;
+	position: relative;
 }
 .article {
 	margin-bottom: 36px;
@@ -68,21 +69,7 @@
 .sidebar .button {
 	margin-top: 20px;
 }
-.ellipsis {
-	padding: 0px 10px;
-	color: #969696;
-}
 .tag {
 	color: #969696;
 	text-decoration: none;
-}
-.pagination {
-	width: 420px;
-	margin: 0 auto;
-	color: #808080;
-}
-.pagination .button {
-	margin: 0px 4px;
-	padding: 17px 0px;
-	width: 60px; 
 }

@@ -42,7 +42,6 @@
 	    		</div>
 	    	</div>
       @endforeach
-
 	    </div>
 	    <div class="sidebar">
 	    	<div class="input_search_block">

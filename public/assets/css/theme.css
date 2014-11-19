@@ -145,7 +145,10 @@ a {
 	padding: 17px 23px;
 	background-color: #d2d2d2;
 }
-
+.button>a {
+	color: #fff;
+	text-decoration: none;
+}
 .button_active {
 	background-color: #5a38ab;
 }
@@ -194,6 +197,7 @@ a {
     height: 0px;
     visibility: hidden;
 }
+
 .seo {
 	font-size: 10px;
 	color: #505050;
@@ -260,7 +264,21 @@ a {
 	margin-bottom: 15px;
 	font-size: 12px;
 }
-
+/**/
+.pagination {
+	width: 420px;
+	margin: 0 auto;
+	color: #808080;
+}
+.pagination .button {
+	margin: 0px 4px;
+	padding: 17px 0px;
+	width: 60px; 
+}
+.ellipsis {
+	padding: 0px 10px;
+	color: #969696;
+}
 @font-face {
 	font-family: 'FranklinGothic';
 	src: url('../fonts/FranklinGothicMediumCondRegular.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */

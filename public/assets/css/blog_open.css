@@ -11,3 +11,13 @@
 	margin-top: 26px;
 	float: right;
 }
+.col4 {
+	width: 214px;
+	float: left;
+}
+.col4+.col4{
+	margin-left: 126px;
+}
+.another_article {
+	margin-top: 120px;
+}
