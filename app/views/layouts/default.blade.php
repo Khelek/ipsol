@@ -119,7 +119,10 @@
 			<div class="content clear-fix">
 				<div class="contact_text">
 					<a class="phone"href="tel:+74955653204">+7 495 565 32 04</a>
-					<a href="">Заказать звонок</a> <a class="email"href="">sale@ssdfasf</a>
+					<a href="">Заказать звонок</a> 					
+					<script>
+						document.write('<a class="email "href=" m' + 'ailto:sa' + 'le@ip-so' + 'l.ru ">sale@' + 'ip-sol.' + 'ru</a>');
+					</script>
 				</div>
 				<div class="social clear-fix">
 					<div class="icons ">
