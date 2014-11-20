@@ -34,7 +34,7 @@ class BlogsController extends AdminController {
 	{
         $post = $this->post;
 
-        if (Input::get('slug') === "") Input::replace(['slug' => \Slug::make(Input::get('title'))]);
+        if (Input::get('slug') === "") Input::merge(['slug' => \Slug::make(Input::get('title'))]);
 
         $post->fill(Input::all());
 
@@ -74,7 +74,7 @@ class BlogsController extends AdminController {
 	{
         $post = $this->post->find($id);
 
-        if (Input::get('slug') === "") Input::replace(['slug' => \Slug::make(Input::get('title'))]);
+        if (Input::get('slug') === "") Input::merge(['slug' => \Slug::make(Input::get('title'))]);
         $post->fill(Input::all());
         if ($post->updateUniques())
         {

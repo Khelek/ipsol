@@ -4,34 +4,28 @@ class SecurityController extends BaseController {
 
     protected $tip;
 
-    /*public function __construct(Tip $tip)
+    public function __construct(SecurityTip $tip)
     {
         parent::__construct();
         $this->tip = $tip;
-        }*/
+    }
 
     public function index()
     {
-        $title = Lang::get('admin/blogs/title.blog_management');
+        $title = "Советы по безопасности";//Lang::get('admin/blogs/title.blog_management');
 
-        /*$rubrics = \Rubric::all();
-        $tips = $this->tip;
+        $tips = $this->tip->paginate(10);
 
-        if(Input::get('search')) $tips = $tips->search(Input::get('search'));
-        if(Input::get('tag')) $tips = $tips->withAnyTag(Input::get('tag'));
-        if(Input::get('rubric')) $tips = $tips->whereHas('rubrics', function($q) {
-            $q->where('name', Input::get('rubric'));
-        });
-
-        $tips = $tips->paginate(10);*/
-        return View::make('security/index', compact([]));
+        return View::make('security/index', compact('tips'));
     }
 
     public function show($slug)
     {
         //$title = Lang::get('admin/blogs/title.blog_show');
-        //$tip = $this->tip->where('slug', $slug)->firstOrFail();
+        $title = "Совет";
+        $tip = $this->tip->where('slug', $slug)->firstOrFail();
+        $another_tips = \SecurityTip::orderBy(DB::raw("RANDOM()"))->take(2)->get();
 
-        return View::make('security/show', compact([]));
+        return View::make('security/show', compact('tip', 'another_tips'));
     }
 }

@@ -54,7 +54,7 @@
             <tr>
                 <td> {{{ $post->id }}} </td>
                 <td> {{{ $post->title }}} </td>
-                <td> comm </td>
+                <td>  </td>
                 <td> {{{ $post->created_at }}} </td>
                 <td>
                     <a href="{{{ route('admin.blogs.edit', $post->id) }}}"

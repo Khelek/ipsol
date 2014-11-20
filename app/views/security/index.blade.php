@@ -23,24 +23,24 @@
 	</div>
 	<div class="content clear-fix">
 	    <div class="main">
-	    	<div class="article clear-fix">
-	    		<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
-	    		<div class="article_container">
-		    		<h2><a class="article_header" href="">В Французуком городе</a></h2>
-		    		<p class="description"> Много много текста всягоко разного, увлекательного
-		    		 и интересного, может быть даже полезного </p>
-					<p class="date">30/09/2014</p>
-					    Тэги:
-                    <a href="" class="tag">красивый тег</a>
-					<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
-	    		</div>
-	    	</div>
+          @foreach ($tips as $tip)
+	    	      <div class="article clear-fix">
+	    		        <img src="{{ $tip->preview->url('medium') }}" alt="">
+	    		        <div class="article_container">
+		    		          <h2><a class="article_header" href="{{	URL::route('security.show', $tip->slug) }}">{{ $tip->title }}</a></h2>
+		    		          <p class="description"> {{ Str::limit($tip->content, 100) }} </p>
+					            <p class="date">{{ $tip->created_at() }}</p>
+	    		        </div>
+	    	      </div>
+        @endforeach
 	    </div>
 	</div>
+
+  <?php $paginator = $tips; ?>
+  @include('components.pagination')
 @stop
-	
+
 @section('styles')
 	  <link rel="stylesheet" href="{{	asset('assets/css/blog.css') }}">
-	  <link rel="stylesheet" href="{{	asset('assets/css/theme.css') }}">
 	  <link rel="stylesheet" href="{{	asset('assets/css/security.css') }}">
 @stop
