@@ -134,6 +134,7 @@ return array(
         'Codesleeve\LaravelStapler\LaravelStaplerServiceProvider',
         'Cviebrock\EloquentSluggable\SluggableServiceProvider',
         'Ivanlemeshev\LaravelCyrillicSlug\SlugServiceProvider',
+        'Bootstrapper\BootstrapperServiceProvider',
 
 	),
 
@@ -210,6 +211,7 @@ return array(
         'Timer'             => 'Bkwld\Reporter\Facades\Timer',
         'Slug'              => 'Ivanlemeshev\LaravelCyrillicSlug\Facades\Slug',
         'Carbon'            => 'Carbon\Carbon',
+        'BootstrapForm'     => 'Bootstrapper\Facades\Form',
 
 	),
 

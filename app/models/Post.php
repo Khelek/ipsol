@@ -10,12 +10,14 @@ class Post extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
     use Conner\Tagging\TaggableTrait;
     use SearchableTrait;
 
+    public $autoPurgeRedundantAttributes = true;
+
     public static $relationsData = array(
         'rubrics'  => array(self::BELONGS_TO_MANY, 'Rubric')
     );
 
-    protected $fillable = ['preview', 'content', 'title', 'slug', 'meta-title',
-                           'meta-description', 'meta-keywords'];
+    protected $fillable = ['preview', 'content', 'title', 'slug', 'meta_title',
+                           'meta_description', 'meta_keywords'];
     protected $searchable = [
         'columns' => [
             'content' => 2,
@@ -23,12 +25,12 @@ class Post extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
         ]
     ];
 
-    public static $rules = [
+    public static $rules = array(
         'content' => 'required',
         'preview' => 'file',
         'title'   => 'required',
-        'slug'    => 'required|unique:posts,slug',
-    ];
+        'slug'    => 'required|unique:posts'
+    );
 
     public function __construct(array $attributes = array()) {
         $this->hasAttachedFile('preview', [

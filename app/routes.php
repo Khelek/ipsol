@@ -20,6 +20,7 @@ Route::get('/', function()
 Route::group(array('prefix' => 'admin', 'namespace' => 'Admin'), function()
 {
     Route::resource('blogs', 'BlogsController');
+    Route::resource('rubrics', 'RubricsController', ['only' => ['store', 'update', 'destroy']]);
 });
 
 
