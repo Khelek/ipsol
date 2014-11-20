@@ -116,6 +116,7 @@ a {
 	float: left;
 }
 .ban_text {
+	font-size: 62px;
     float: left;
 	color: #fff;
 	background-color: #232323;
@@ -286,8 +287,16 @@ a {
 }
 .pagination .button {
 	margin: 0px 4px;
-	padding: 17px 0px;
 	width: 60px; 
+	padding: 0px;
+}
+.pagination a {
+	box-sizing: border-box;
+	text-align: center;
+	display: block;
+	padding: 15px 0px;
+	width: 60px;
+	height: 60px;
 }
 .ellipsis {
 	padding: 0px 10px;
