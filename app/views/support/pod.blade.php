@@ -12,7 +12,7 @@
 	<div class="ban clear-fix">
 		<div class="ban_gray">
 			<div class="col2">
-				<h1><span class="ban_text">Советы по безопасности</span></h1>
+				<h1><span class="ban_text">Поддержка</span></h1>
 			</div>
 		</div>
 		<div class="ban_orange">
@@ -67,6 +67,17 @@
 		    </div>
 		    <div class="col2">
 				<div class="address_block clear-fix">
+					<h2>Веб камера GRT-45JkL</h2>
+					<p>Адреса:</p>
+					<p class="address ">
+						Москва, ул. Колотушкина, 1<br>
+						Москва, ул. Можайского, 14<br>
+						Москва, ул. Крутые Ключище, 5<br>
+						Москва, ул. Матросова, 10 <br>
+						Москва, ул. Рейкеса, 11 <br>
+					</p>
+		    	</div>
+		    	<div class="address_block clear-fix">
 					<h2>Веб камера GRT-45JkL</h2>
 					<p>Адреса:</p>
 					<p class="address ">
