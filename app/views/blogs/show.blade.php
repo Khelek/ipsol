@@ -37,7 +37,7 @@
 	</div>
 	<div class="content">
 		<div class="article">
-			<h1>Заголовок статьи</h1>
+			<h1 class="title">Заголовок статьи</h1>
 			<pre>
 4 и 5 октября состоится праздник, посвященный поселку таунхаусов «Немецкая деревня»
 В первые выходные октября компания «Сабидом» устраивает для своих клиентов праздник на свежем воздухе. На мероприятие 
@@ -66,10 +66,41 @@
 Ждем всех 4 и 5 октября с 12 до 17 часов в поселке таунхаусов «Белый город»! Запишитесь на праздник в отделе продаж или call-центре.
 			</pre>
 			<p class="date">30/05/2014</p>
-		<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
+			<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
+		</div>
+		<div class="another_article clear-fix">
+			<h1 class="title">Другие статьи</h1>
+			<div class="col4">
+				<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
+				<a href="">В немецкой деревне открылось что-то там</a>
+				<p>В рамках Дня открытых дверей состоится презентация поселка</p>
+				<p class="date">30/05/2014</p>
+			</div>
+			<div class="col4">
+				<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
+				<a href="">В немецкой деревне открылось что-то там</a>
+				<p>В рамках Дня открытых дверей состоится презентация поселка: здесь можно будет узнать все подробности о архитектуре, ходе 
+					строительства, возможностях приобретения таунхаусов</p>
+				<p class="date">30/05/2014</p>
+			</div>
+			<div class="col4">
+				<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
+				<a href="">В немецкой деревне открылось что-то там</a>
+				<p>В рамках Дня открытых дверей состоится презентация поселка: здесь можно будет узнать все подробности о архитектуре, ходе 
+					строительства, возможностях приобретения.</p>
+				<p class="date">30/05/2014</p>
+			</div>
+			<div class="col4">
+				<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
+				<a href="">В немецкой деревне открылось что-то там</a>
+				<p>В рамках Дня открытых дверей состоится презентация поселка</p>
+				<p class="date">30/05/2014</p>
+			</div>
+		</div> 
+		<div class="comments">
+			<h1 class="title">Комментарии</h1>
 		</div>
 	</div>
-
 @stop
 
 
