@@ -51,7 +51,7 @@
 					<li class="item"><a href="">Системы по типам задач</a></li>
 					<li class="item"><a href="">По типам систем</a></li>
 					<li class="item"><a href="">Наши работы</a></li>
-					<li class="item"><a href="">Блог</a></li>
+					<li class="item"><a href="{{ URL::route('blogs.index') }}">Блог</a></li>
 					<li class="item"><a href="">Контакты</a></li>
 				</ul>
 
