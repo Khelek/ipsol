@@ -31,7 +31,10 @@ class BlogsController extends BaseController {
     {
       $title = Lang::get('admin/blogs/title.blog_show');
       $post = $this->post->where('slug', $slug)->firstOrFail();
+      $rubrics = \Rubric::all();
+      // FIXME В mysql RAND()!
+      $another_posts = $post->rubrics()->first()->posts()->orderBy(DB::raw("RANDOM()"))->take(4)->get();
 
-      return View::make('blogs/show', compact('post', 'title'));
+      return View::make('blogs/show', compact('post', 'title', 'rubrics', 'another_posts'));
     }
 }
