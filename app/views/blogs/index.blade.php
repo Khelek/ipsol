@@ -35,7 +35,7 @@
           @if ($post->tagNames() != [])
 					    Тэги:
               {{ implode(", ", array_map(function($name) {
-                    return '<a href="" class="tag">'.$name.'</a>';
+                    return '<a href="/blogs?tag='.$name.'" class="tag">'.$name.'</a>';
                 }, $post->tagNames())) }}
           @endif
 					<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
@@ -46,12 +46,14 @@
 	    </div>
 	    <div class="sidebar">
 	    	<div class="input_search_block">
-				<input type="text" placeholder="Поиск"class="input input_search">
-				<button class="input_search_button"></button>
+            {{ Form::open(['url' => '/blogs', 'method' => 'get']) }}
+				        <input type="text" name="search" placeholder="Поиск"class="input input_search">
+				        <button class="input_search_button" type="submit"></button>
+            {{ Form::close() }}
 			</div>
     		<p>Выбор рубрики:</p>
         @foreach ($rubrics as $rubric)
-    		    <a href="">{{ $rubric->name }}</a>
+    		    <a href="/blogs?rubric={{ $rubric->name }}">{{ $rubric->name }}</a>
         @endforeach
     		<p>Подписаться на статьи.<br>
 			Я хочу быть в курсе<br>

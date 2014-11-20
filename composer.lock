@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b1d0a445b2aff8c697ce9308f00ffea4",
+    "hash": "a53ae6db6dbcdc43d90aa6d76dcdc5f6",
     "packages": [
         {
             "name": "anahkiasen/former",
@@ -1316,6 +1316,51 @@
                 "time"
             ],
             "time": "2014-09-26 02:52:02"
+        },
+        {
+            "name": "nicolaslopezj/searchable",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nicolaslopezj/searchable.git",
+                "reference": "7cc0a9e2d6f3e7229ad2c9186f08483c1ef97fe4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nicolaslopezj/searchable/zipball/7cc0a9e2d6f3e7229ad2c9186f08483c1ef97fe4",
+                "reference": "7cc0a9e2d6f3e7229ad2c9186f08483c1ef97fe4",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "4.2.x|~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nicolaslopezj\\Searchable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Lopez",
+                    "email": "nicolaslopezj@me.com"
+                }
+            ],
+            "description": "Eloquent model search trait.",
+            "keywords": [
+                "database",
+                "eloquent",
+                "laravel",
+                "model",
+                "search",
+                "searchable"
+            ],
+            "time": "2014-11-19 16:36:56"
         },
         {
             "name": "nikic/php-parser",
