@@ -46,7 +46,7 @@
 		</div>
     	<div class="sidebar">
     		<h2 class="title">Ещё советы</h2>
-    		<div class="sidebar_article"><img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
+    		<d+iv class="sidebar_article"><img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
 				<a href="">В немецкой деревне открылось что-то там очень увлекательное и интересное</a>
 				<p>В рамках Дня открытых дверей состоится презентация поселка</p>
 				<p class="date">30/05/2014</p>
