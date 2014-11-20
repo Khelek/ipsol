@@ -15,6 +15,9 @@ h1 {
 	color: #232323;
 	font-size: 64px;
 }
+h2 {
+	font-size: 40px;
+}
 h1, h2 {
 	font-family: 'FranklinGothic', sans-serif;
 	font-weight: 400;
@@ -35,7 +38,7 @@ a {
 	color: #232323;
 }
 .title {
-	margin-bottom: 40px;
+	margin: 60px 0px 40px 0px;
 }
 .content {
 	width: 1240px;
@@ -117,7 +120,7 @@ a {
 	float: left;
 }
 .ban_text {
-	font-size: 62px;
+	font-size: 60px;
     float: left;
 	color: #fff;
 	background-color: #232323;

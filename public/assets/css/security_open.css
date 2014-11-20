@@ -1,7 +1,6 @@
 .main {
 	width: 930px;
 	float: left;
-	margin-top: 70px;
 	position: relative;
 }
 .article {
@@ -15,7 +14,7 @@
 	height: 100%;
     position: absolute;
     margin-left: 945px;
-    margin-top: 40px;
+    margin-top: 80px;
     max-height: 100%;
     background-color: #d2d2d2;
 }
@@ -23,7 +22,7 @@
 	width: 214px;
 	float: right;
 	height: 100%;
-	margin-top: 150px;
+	margin-top: 100px;
 }
 .sidebar a, .main a {
 	color: #1d7ac0;
@@ -33,7 +32,4 @@
 }
 .sidebar .date {
 	margin: 0px 0px 55px 0px;
-}
-h2 {
-	font-size: 40px;
 }
