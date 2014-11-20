@@ -32,7 +32,8 @@
     "codesleeve/laravel-stapler": "1.0.*",
     "cviebrock/eloquent-sluggable": "~2.0",
     "ivanlemeshev/laravel-cyrillic-slug": "dev-master",
-    "nicolaslopezj/searchable": "1.*"
+    "nicolaslopezj/searchable": "1.*",
+    "patricktalmadge/bootstrapper": "~5"
 	},
 	"autoload": {
 		"classmap": [

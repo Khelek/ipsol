@@ -11,15 +11,33 @@
 
 {{-- Content --}}
 @section('content')
+
 	<div class="page-header">
 		<h3>
 			{{{ $title }}}
+		</h3>
+	</div>
+
+	<div class="page-header">
+		  <h3>
+			    Рубрики
+		  </h3>
+	</div>
+
+  @include('admin.blogs.rubrics')
+
+  <div class="page-header">
+		<h3>
+		 Посты
 
 			<div class="pull-right">
-				<a href="{{{ route('admin.blogs.create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
+				<a href="{{{ route('admin.blogs.create') }}}" class="btn
+				btn-small btn-info iframe"><span class="glyphicon
+				glyphicon-plus-sign"></span> Создать пост</a>
 			</div>
 		</h3>
 	</div>
+
 
 	<table id="blogs" class="table table-striped table-hover">
 		<thead>
@@ -40,11 +58,11 @@
                 <td> {{{ $post->created_at }}} </td>
                 <td>
                     <a href="{{{ route('admin.blogs.edit', $post->id) }}}"
-		                   class="btn btn-xs btn-info"> Edit </a>
+		                   class="btn btn-xs btn-info"> Редактировать </a>
                     <a href="{{{ route('admin.blogs.destroy', $post->id) }}}"
 		                   class="btn btn-xs btn-danger"
 		                   data-method="delete"
-                       data-confirm="Are you sure?"> Delete </a>
+                       data-confirm="Are you sure?"> Удалить </a>
                 </td>
 
             </tr>

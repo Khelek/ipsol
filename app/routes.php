@@ -20,6 +20,7 @@ Route::get('/', function()
 Route::group(array('prefix' => 'admin', 'namespace' => 'Admin'), function()
 {
     Route::resource('blogs', 'BlogsController');
+    Route::resource('rubrics', 'RubricsController', ['only' => ['store', 'update', 'destroy']]);
 });
 
 
@@ -28,3 +29,9 @@ Route::resource('blogs', 'BlogsController', ['except' => ['show']]);
 
 Route::get('security/{slug}', ['as' => 'security.show', 'uses' => 'SecurityController@show'])->where('slug', '[A-Za-z0-9\-]+');
 Route::resource('security', 'SecurityController', ['except' => ['show']]);
+
+
+Route::get('support/ask', ['as' => 'support.ask', 'uses' => 'SupportController@ask']);
+Route::get('support/sip', ['as' => 'support.sip', 'uses' => 'SupportController@sip']);
+Route::get('support/pod', ['as' => 'support.pod', 'uses' => 'SupportController@pod']);
+Route::get('support/ask/{slug}', ['as' => 'support.ask.show', 'uses' => 'SupportController@ask_show'])->where('slug', '[A-Za-z0-9\-]+');

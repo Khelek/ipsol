@@ -8,16 +8,7 @@ class RubricsController extends AdminController {
     public function __construct(Rubric $rubric)
     {
         parent::__construct();
-        $this->rubirc = $rubric;
-    }
-
-    public function index()
-    {
-        $title = Lang::get('admin/blogs/title.blog_management');
-
-        $rubrics = $this->rubric->all();
-
-        return View::make('admin/blogs/index', compact('rubrics', 'title'));
+        $this->rubric = $rubric;
     }
 
 	public function store()

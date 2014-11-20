@@ -16,8 +16,9 @@ class BlogsController extends AdminController {
         $title = Lang::get('admin/blogs/title.blog_management');
 
         $posts = $this->post->all();
+        $rubrics = \Rubric::all();
 
-        return View::make('admin/blogs/index', compact('posts', 'title'));
+        return View::make('admin/blogs/index', compact('posts', 'title', 'rubrics'));
     }
 
 	public function create()
@@ -74,8 +75,8 @@ class BlogsController extends AdminController {
         $post = $this->post->find($id);
 
         if (Input::get('slug') === "") Input::replace(['slug' => \Slug::make(Input::get('title'))]);
-
-        if ($post->update(Input::all()))
+        $post->fill(Input::all());
+        if ($post->updateUniques())
         {
             if (Input::get('rubrics')) $post->rubrics()->sync(Input::get('rubrics'));
             if (Input::get('tags')) $post->retag(explode(",", Input::get('tags')));
