@@ -25,3 +25,6 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin'), function()
 
 Route::get('blogs/{slug}', ['as' => 'blogs.show', 'uses' => 'BlogsController@show'])->where('slug', '[A-Za-z0-9\-]+');
 Route::resource('blogs', 'BlogsController', ['except' => ['show']]);
+
+Route::get('security/{slug}', ['as' => 'security.show', 'uses' => 'SecurityController@show'])->where('slug', '[A-Za-z0-9\-]+');
+Route::resource('security', 'SecurityController', ['except' => ['show']]);
