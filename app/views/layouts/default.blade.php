@@ -149,7 +149,7 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>
-
+	<script src="{{asset('bower/jquery/dist/jquery.min.js')}}"></script>
   @yield('scripts')
 </body>
 </html>

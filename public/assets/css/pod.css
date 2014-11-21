@@ -40,3 +40,6 @@ h2 {
 .ask_form, .ask_form .button {
 	margin-top: 20px;
 }
+.address_block_hidden {
+	display: none;
+}

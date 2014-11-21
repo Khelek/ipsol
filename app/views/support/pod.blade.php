@@ -64,6 +64,39 @@
 						Москва, ул. Рейкеса, 11 <br>
 					</p>
 		    	</div>
+		    	<div class="address_block clear-fix address_block_hidden">
+					<h2>Веб камера GRT-45JkL</h2>
+					<p>Адреса:</p>
+					<p class="address ">
+						Москва, ул. Колотушкина, 1<br>
+						Москва, ул. Можайского, 14<br>
+						Москва, ул. Крутые Ключище, 5<br>
+						Москва, ул. Матросова, 10 <br>
+						Москва, ул. Рейкеса, 11 <br>
+					</p>
+		    	</div>
+		    	<div class="address_block clear-fix address_block_hidden">
+					<h2>Веб камера GRT-45JkL</h2>
+					<p>Адреса:</p>
+					<p class="address ">
+						Москва, ул. Колотушкина, 1<br>
+						Москва, ул. Можайского, 14<br>
+						Москва, ул. Крутые Ключище, 5<br>
+						Москва, ул. Матросова, 10 <br>
+						Москва, ул. Рейкеса, 11 <br>
+					</p>
+		    	</div>
+		    	<div class="address_block clear-fix address_block_hidden">
+					<h2>Веб камера GRT-45JkL</h2>
+					<p>Адреса:</p>
+					<p class="address ">
+						Москва, ул. Колотушкина, 1<br>
+						Москва, ул. Можайского, 14<br>
+						Москва, ул. Крутые Ключище, 5<br>
+						Москва, ул. Матросова, 10 <br>
+						Москва, ул. Рейкеса, 11 <br>
+					</p>
+		    	</div>
 		    </div>
 		    <div class="col2">
 				<div class="address_block clear-fix">
@@ -77,7 +110,7 @@
 						Москва, ул. Рейкеса, 11 <br>
 					</p>
 		    	</div>
-		    	<div class="address_block clear-fix">
+		    	<div class="address_block clear-fix ">
 					<h2>Веб камера GRT-45JkL</h2>
 					<p>Адреса:</p>
 					<p class="address ">
@@ -89,6 +122,61 @@
 					</p>
 		    	</div>
 		    	<div class="address_block clear-fix">
+					<h2>Веб камера GRT-45JkL</h2>
+					<p>Адреса:</p>
+					<p class="address ">
+						Москва, ул. Колотушкина, 1<br>
+						Москва, ул. Можайского, 14<br>
+						Москва, ул. Крутые Ключище, 5<br>
+						Москва, ул. Матросова, 10 <br>
+						Москва, ул. Рейкеса, 11 <br>
+					</p>
+		    	</div>
+		    	<div class="address_block clear-fix address_block_hidden">
+					<h2>Веб камера GRT-45JkL</h2>
+					<p>Адреса:</p>
+					<p class="address ">
+						Москва, ул. Колотушкина, 1<br>
+						Москва, ул. Можайского, 14<br>
+						Москва, ул. Крутые Ключище, 5<br>
+						Москва, ул. Матросова, 10 <br>
+						Москва, ул. Рейкеса, 11 <br>
+					</p>
+		    	</div>
+		    	<div class="address_block clear-fix address_block_hidden">
+					<h2>Веб камера GRT-45JkL</h2>
+					<p>Адреса:</p>
+					<p class="address ">
+						Москва, ул. Колотушкина, 1<br>
+						Москва, ул. Можайского, 14<br>
+						Москва, ул. Крутые Ключище, 5<br>
+						Москва, ул. Матросова, 10 <br>
+						Москва, ул. Рейкеса, 11 <br>
+					</p>
+		    	</div>
+		    	<div class="address_block clear-fix address_block_hidden">
+					<h2>Веб камера GRT-45JkL</h2>
+					<p>Адреса:</p>
+					<p class="address ">
+						Москва, ул. Колотушкина, 1<br>
+						Москва, ул. Можайского, 14<br>
+						Москва, ул. Крутые Ключище, 5<br>
+						Москва, ул. Матросова, 10 <br>
+						Москва, ул. Рейкеса, 11 <br>
+					</p>
+		    	</div>
+		    	<div class="address_block clear-fix address_block_hidden">
+					<h2>Веб камера GRT-45JkL</h2>
+					<p>Адреса:</p>
+					<p class="address ">
+						Москва, ул. Колотушкина, 1<br>
+						Москва, ул. Можайского, 14<br>
+						Москва, ул. Крутые Ключище, 5<br>
+						Москва, ул. Матросова, 10 <br>
+						Москва, ул. Рейкеса, 11 <br>
+					</p>
+		    	</div>
+		    	<div class="address_block clear-fix address_block_hidden">
 					<h2>Веб камера GRT-45JkL</h2>
 					<p>Адреса:</p>
 					<p class="address ">
@@ -101,7 +189,7 @@
 		    	</div>
 		    </div>
 	   	</div>
-	    <button class="button button_active">Показать всё</button>
+	    <button class="show_address_block button button_active">Показать всё</button>
 	</div>
 	<div class="content clear-fix">
 	    <h1 class="title">Нужна помощь?</h1>
@@ -116,11 +204,12 @@
 			<button class="button button_active">Оставить заявку</button>
 		</div>
 	</div>
-
-
+	
 @stop
 
-
+@section('scripts')
+	<script src="{{	asset('assets/js/application.js') }}"></script>
+@stop
 @section('styles')
-	  <link rel="stylesheet" href="{{	asset('assets/css/pod.css') }}">
+	<link rel="stylesheet" href="{{	asset('assets/css/pod.css') }}">
 @stop
