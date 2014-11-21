@@ -16,11 +16,19 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+Route::get('/admin', function()
+{
+    return Redirect::route('admin.blogs.index');
+});
+
+
 
 Route::group(array('prefix' => 'admin', 'namespace' => 'Admin'), function()
 {
     Route::resource('blogs', 'BlogsController');
+    Route::resource('security', 'SecurityController');
     Route::resource('rubrics', 'RubricsController', ['only' => ['store', 'update', 'destroy']]);
+    Route::resource('support', 'SupportController');
 });
 
 

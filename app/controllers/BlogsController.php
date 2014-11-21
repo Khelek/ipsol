@@ -23,7 +23,7 @@ class BlogsController extends BaseController {
             $q->where('name', Input::get('rubric'));
         });
 
-        $posts = $posts->paginate(1);
+        $posts = $posts->paginate(10);
         return View::make('blogs/index', compact('posts', 'title', 'rubrics', 'paginator'));
     }
 

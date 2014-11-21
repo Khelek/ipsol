@@ -5,31 +5,21 @@ use Codesleeve\Stapler\ORM\StaplerableInterface;
 use Codesleeve\Stapler\ORM\EloquentTrait;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
-class Post extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
+class SecurityTip extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
     use EloquentTrait; // for Stapler
     use Conner\Tagging\TaggableTrait;
     use SearchableTrait;
 
     public $autoPurgeRedundantAttributes = true;
 
-    public static $relationsData = array(
-        'rubrics'  => array(self::BELONGS_TO_MANY, 'Rubric')
-    );
-
     protected $fillable = ['preview', 'content', 'title', 'slug', 'meta_title',
                            'meta_description', 'meta_keywords'];
-    protected $searchable = [
-        'columns' => [
-            'content' => 2,
-            'title' => 1
-        ]
-    ];
 
     public static $rules = array(
         'content' => 'required',
         'preview' => 'file',
         'title'   => 'required',
-        'slug'    => 'required|unique:posts'
+        'slug'    => 'required|unique:security_tips'
     );
 
     public function __construct(array $attributes = array()) {
