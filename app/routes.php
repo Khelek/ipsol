@@ -28,6 +28,7 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin'), function()
     Route::resource('blogs', 'BlogsController');
     Route::resource('security', 'SecurityController');
     Route::resource('rubrics', 'RubricsController', ['only' => ['store', 'update', 'destroy']]);
+    Route::resource('support', 'SupportController');
 });
 
 

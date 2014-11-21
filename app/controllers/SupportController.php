@@ -23,7 +23,8 @@ class SupportController extends BaseController {
 
     public function pod()
     {
-        return View::make('support/pod', compact(''));
+        $addresses = \Address::all();
+        return View::make('support/pod', compact('addresses'));
     }
 
     public function ask_show($slug)

@@ -68,6 +68,9 @@
     				<ul class="nav navbar-nav">
     					<li{{ (Request::is('admin/blogs*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/blogs') }}}"><span class="glyphicon glyphicon-list-alt"></span> Блог</a></li>
     					<li{{ (Request::is('admin/security*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/security')	}}}"><span class="glyphicon glyphicon-list-alt"></span> Советы по безопасности</a></li>
+    					<li{{ (Request::is('admin/support*') ? ' class="active"'
+	: '') }}><a href="{{{ URL::to('admin/support')	}}}"><span
+	class="glyphicon glyphicon-list-alt"></span> Поддержка</a></li>
     				</ul>
     				<ul class="nav navbar-nav pull-right">
     					<li><a href="{{{ URL::to('/') }}}">View Homepage</a></li>
