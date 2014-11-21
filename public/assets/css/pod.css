@@ -7,12 +7,10 @@
 	width: 245px;
 	margin-top: 30px;
 }
-.col2 {
+.col_addresess {
 	float: left;
-	box-sizing: border-box;
-	padding-right: 20px;
 }
-.address_container .col2 p {
+.address_container .col_addresess p {
 	float: left;
 }
 .address_container .address {
@@ -23,13 +21,19 @@ h2 {
 }
 .address_block {
 	margin-bottom: 40px;
+	width: 620px;
 }
 .address_container .button {
 	display: block;
 	margin: 0 auto;
 }
-.col2:last-child .address_block {
-	padding-left: 60px;
+.address_block {
+	float: left;
+}
+.address_block:nth-child(3n) {
+	padding-left: 40px;
+	box-sizing: border-box;
+	float: right;
 }
 .ask_form .input {
 

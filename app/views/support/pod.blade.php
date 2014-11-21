@@ -30,12 +30,15 @@
 	<div class="address_container content clear-fix">
 	    <h1 class="title">Адреса сервисных центров</h1>
 	    <div class="clear-fix">
-		    <div class="col2">
+		    <div class="col_addresess">
             @for ($i = 0; $i < count($addresses); $i++)
+        			  @if ($i % 2 == 0)
+		    	      		<div class="address_row clear-fix"></div>
+		    	      @endif
 		    	      <div class="address_block clear-fix {{ $i < 6 ? '' : 'address_block_hidden' }}">
 					          <h2>{{ $addresses[$i]->name }}</h2>
 					          <p>Адреса:</p>
-					          <p class="address ">
+					          <p class="address">
                         @foreach ($addresses[$i]->addresses as $addr)
                             {{ $addr }} <br>
                         @endforeach
