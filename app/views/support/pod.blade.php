@@ -31,21 +31,8 @@
 	    <h1 class="title">Адреса сервисных центров</h1>
 	    <div class="clear-fix">
 		    <div class="col2">
-            @for ($i = 0; $i < intval(count($addresses)/2); $i++)
-		    	      <div class="address_block clear-fix {{ $i < 3 ? '' : 'address_block_hidden' }}">
-					          <h2>{{ $addresses[$i]->name }}</h2>
-					          <p>Адреса:</p>
-					          <p class="address ">
-                        @foreach ($addresses[$i]->addresses as $addr)
-                            {{ $addr }} <br>
-                        @endforeach
-					          </p>
-		    	      </div>
-            @endfor
-		    </div>
-		    <div class="col2">
-            @for ($i = intval(count($addresses)/2); $i < count($addresses); $i++)
-		    	      <div class="address_block clear-fix {{ $i <	intval(count($addresses)/2) + 3 ? '' : 'address_block_hidden' }}">
+            @for ($i = 0; $i < count($addresses); $i++)
+		    	      <div class="address_block clear-fix {{ $i < 6 ? '' : 'address_block_hidden' }}">
 					          <h2>{{ $addresses[$i]->name }}</h2>
 					          <p>Адреса:</p>
 					          <p class="address ">
