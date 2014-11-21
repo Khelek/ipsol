@@ -23,8 +23,7 @@
 @section('scripts')
     @parent
     <script type="bogus" id="multi">
-     <?php $service_addr = ''; // Иначе почему то в @include будет последнее значение этой переменной ?>
-     @include('admin.support.service_center_address_input')
+     @include('admin.support.service_center_address_input', ["service_addr" => ''])
     </script>
 
     <script type="text/javascript">

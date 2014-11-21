@@ -31,162 +31,30 @@
 	    <h1 class="title">Адреса сервисных центров</h1>
 	    <div class="clear-fix">
 		    <div class="col2">
-		    	<div class="address_block clear-fix">
-					<h2>Веб камера GRT-45JkL</h2>
-					<p>Адреса:</p>
-					<p class="address ">
-						Москва, ул. Колотушкина, 1<br>
-						Москва, ул. Можайского, 14<br>
-						Москва, ул. Крутые Ключище, 5<br>
-						Москва, ул. Матросова, 10 <br>
-						Москва, ул. Рейкеса, 11 <br>
-					</p>
-		    	</div>
-		    	<div class="address_block clear-fix">
-					<h2>Веб камера GRT-45JkL</h2>
-					<p>Адреса:</p>
-					<p class="address ">
-						Москва, ул. Колотушкина, 1<br>
-						Москва, ул. Можайского, 14<br>
-						Москва, ул. Крутые Ключище, 5<br>
-						Москва, ул. Матросова, 10 <br>
-						Москва, ул. Рейкеса, 11 <br>
-					</p>
-		    	</div>
-		    	<div class="address_block clear-fix">
-					<h2>Веб камера GRT-45JkL</h2>
-					<p>Адреса:</p>
-					<p class="address ">
-						Москва, ул. Колотушкина, 1<br>
-						Москва, ул. Можайского, 14<br>
-						Москва, ул. Крутые Ключище, 5<br>
-						Москва, ул. Матросова, 10 <br>
-						Москва, ул. Рейкеса, 11 <br>
-					</p>
-		    	</div>
-		    	<div class="address_block clear-fix address_block_hidden">
-					<h2>Веб камера GRT-45JkL</h2>
-					<p>Адреса:</p>
-					<p class="address ">
-						Москва, ул. Колотушкина, 1<br>
-						Москва, ул. Можайского, 14<br>
-						Москва, ул. Крутые Ключище, 5<br>
-						Москва, ул. Матросова, 10 <br>
-						Москва, ул. Рейкеса, 11 <br>
-					</p>
-		    	</div>
-		    	<div class="address_block clear-fix address_block_hidden">
-					<h2>Веб камера GRT-45JkL</h2>
-					<p>Адреса:</p>
-					<p class="address ">
-						Москва, ул. Колотушкина, 1<br>
-						Москва, ул. Можайского, 14<br>
-						Москва, ул. Крутые Ключище, 5<br>
-						Москва, ул. Матросова, 10 <br>
-						Москва, ул. Рейкеса, 11 <br>
-					</p>
-		    	</div>
-		    	<div class="address_block clear-fix address_block_hidden">
-					<h2>Веб камера GRT-45JkL</h2>
-					<p>Адреса:</p>
-					<p class="address ">
-						Москва, ул. Колотушкина, 1<br>
-						Москва, ул. Можайского, 14<br>
-						Москва, ул. Крутые Ключище, 5<br>
-						Москва, ул. Матросова, 10 <br>
-						Москва, ул. Рейкеса, 11 <br>
-					</p>
-		    	</div>
+            @for ($i = 0; $i < intval(count($addresses)/2); $i++)
+		    	      <div class="address_block clear-fix {{ $i < 3 ? '' : 'address_block_hidden' }}">
+					          <h2>{{ $addresses[$i]->name }}</h2>
+					          <p>Адреса:</p>
+					          <p class="address ">
+                        @foreach ($addresses[$i]->addresses as $addr)
+                            {{ $addr }} <br>
+                        @endforeach
+					          </p>
+		    	      </div>
+            @endfor
 		    </div>
 		    <div class="col2">
-				<div class="address_block clear-fix">
-					<h2>Веб камера GRT-45JkL</h2>
-					<p>Адреса:</p>
-					<p class="address ">
-						Москва, ул. Колотушкина, 1<br>
-						Москва, ул. Можайского, 14<br>
-						Москва, ул. Крутые Ключище, 5<br>
-						Москва, ул. Матросова, 10 <br>
-						Москва, ул. Рейкеса, 11 <br>
-					</p>
-		    	</div>
-		    	<div class="address_block clear-fix ">
-					<h2>Веб камера GRT-45JkL</h2>
-					<p>Адреса:</p>
-					<p class="address ">
-						Москва, ул. Колотушкина, 1<br>
-						Москва, ул. Можайского, 14<br>
-						Москва, ул. Крутые Ключище, 5<br>
-						Москва, ул. Матросова, 10 <br>
-						Москва, ул. Рейкеса, 11 <br>
-					</p>
-		    	</div>
-		    	<div class="address_block clear-fix">
-					<h2>Веб камера GRT-45JkL</h2>
-					<p>Адреса:</p>
-					<p class="address ">
-						Москва, ул. Колотушкина, 1<br>
-						Москва, ул. Можайского, 14<br>
-						Москва, ул. Крутые Ключище, 5<br>
-						Москва, ул. Матросова, 10 <br>
-						Москва, ул. Рейкеса, 11 <br>
-					</p>
-		    	</div>
-		    	<div class="address_block clear-fix address_block_hidden">
-					<h2>Веб камера GRT-45JkL</h2>
-					<p>Адреса:</p>
-					<p class="address ">
-						Москва, ул. Колотушкина, 1<br>
-						Москва, ул. Можайского, 14<br>
-						Москва, ул. Крутые Ключище, 5<br>
-						Москва, ул. Матросова, 10 <br>
-						Москва, ул. Рейкеса, 11 <br>
-					</p>
-		    	</div>
-		    	<div class="address_block clear-fix address_block_hidden">
-					<h2>Веб камера GRT-45JkL</h2>
-					<p>Адреса:</p>
-					<p class="address ">
-						Москва, ул. Колотушкина, 1<br>
-						Москва, ул. Можайского, 14<br>
-						Москва, ул. Крутые Ключище, 5<br>
-						Москва, ул. Матросова, 10 <br>
-						Москва, ул. Рейкеса, 11 <br>
-					</p>
-		    	</div>
-		    	<div class="address_block clear-fix address_block_hidden">
-					<h2>Веб камера GRT-45JkL</h2>
-					<p>Адреса:</p>
-					<p class="address ">
-						Москва, ул. Колотушкина, 1<br>
-						Москва, ул. Можайского, 14<br>
-						Москва, ул. Крутые Ключище, 5<br>
-						Москва, ул. Матросова, 10 <br>
-						Москва, ул. Рейкеса, 11 <br>
-					</p>
-		    	</div>
-		    	<div class="address_block clear-fix address_block_hidden">
-					<h2>Веб камера GRT-45JkL</h2>
-					<p>Адреса:</p>
-					<p class="address ">
-						Москва, ул. Колотушкина, 1<br>
-						Москва, ул. Можайского, 14<br>
-						Москва, ул. Крутые Ключище, 5<br>
-						Москва, ул. Матросова, 10 <br>
-						Москва, ул. Рейкеса, 11 <br>
-					</p>
-		    	</div>
-		    	<div class="address_block clear-fix address_block_hidden">
-					<h2>Веб камера GRT-45JkL</h2>
-					<p>Адреса:</p>
-					<p class="address ">
-						Москва, ул. Колотушкина, 1<br>
-						Москва, ул. Можайского, 14<br>
-						Москва, ул. Крутые Ключище, 5<br>
-						Москва, ул. Матросова, 10 <br>
-						Москва, ул. Рейкеса, 11 <br>
-					</p>
-		    	</div>
+            @for ($i = intval(count($addresses)/2); $i < count($addresses); $i++)
+		    	      <div class="address_block clear-fix {{ $i <	intval(count($addresses)/2) + 3 ? '' : 'address_block_hidden' }}">
+					          <h2>{{ $addresses[$i]->name }}</h2>
+					          <p>Адреса:</p>
+					          <p class="address ">
+                        @foreach ($addresses[$i]->addresses as $addr)
+                            {{ $addr }} <br>
+                        @endforeach
+					          </p>
+		    	      </div>
+            @endfor
 		    </div>
 	   	</div>
 	    <button class="show_address_block button button_active">Показать всё</button>
