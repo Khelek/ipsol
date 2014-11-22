@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+    return Redirect::route('blogs.index');
 });
 
 Route::get('/admin', function()
@@ -27,19 +27,42 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin'), function()
 {
     Route::resource('blogs', 'BlogsController');
     Route::resource('security', 'SecurityController');
-    Route::resource('rubrics', 'RubricsController', ['only' => ['store', 'update', 'destroy']]);
-    Route::resource('support', 'SupportController');
+    Route::resource('rubrics', 'RubricsController', ['only' => ['store', 'update', 'destroy']]); // for blogs
+
+    Route::resource('categories', 'CategoriesController', ['only' => ['store', 'update', 'destroy']]); // for works
+    Route::resource('news', 'NewsController');
+    Route::resource('works', 'WorksController');
+    Route::resource('banners', 'BannersController');
+    Route::group(array('prefix' => 'support', 'namespace' => 'Support'), function()
+    {
+        Route::resource('addresses', 'AddressesController');
+        Route::resource('asks', 'AsksController');
+        Route::resource('instructions', 'InstructionsController');
+    });
 });
 
 
-Route::get('blogs/{slug}', ['as' => 'blogs.show', 'uses' => 'BlogsController@show'])->where('slug', '[A-Za-z0-9\-]+');
+// FIXME add filter for {slug}
+// /blogs/rubric/{rubric} need maybe redirecs to /blogs?rubric=hui
+Route::get('blogs/{slug}', ['as' => 'blogs.show',
+                            'uses' => 'BlogsController@show'])->where('slug', '[A-Za-z0-9\-]+');
 Route::resource('blogs', 'BlogsController', ['except' => ['show']]);
 
-Route::get('security/{slug}', ['as' => 'security.show', 'uses' => 'SecurityController@show'])->where('slug', '[A-Za-z0-9\-]+');
+Route::get('security/{slug}', ['as' => 'security.show',
+                               'uses' => 'SecurityController@show'])->where('slug', '[A-Za-z0-9\-]+');
 Route::resource('security', 'SecurityController', ['except' => ['show']]);
 
+Route::get('news/{slug}', ['as' => 'news.show',
+                           'uses' => 'NewsController@show'])->where('slug', '[A-Za-z0-9\-]+');
+Route::resource('news', 'NewsController', ['except' => ['show']]);
 
+// /works/category/{rubric} need maybe redirect to /works?category=hui
+Route::get('works/{slug}', ['as' => 'works.show',
+                            'uses' => 'WorksController@show'])->where('slug', '[A-Za-z0-9\-]+');
+Route::resource('works', 'WorksController', ['except' => ['show']]);
+
+Route::get('support/ask/{slug}', ['as' => 'support.ask.show',
+                                  'uses' => 'SupportController@ask_show'])->where('slug', '[A-Za-z0-9\-]+');
 Route::get('support/ask', ['as' => 'support.ask', 'uses' => 'SupportController@ask']);
 Route::get('support/sip', ['as' => 'support.sip', 'uses' => 'SupportController@sip']);
 Route::get('support/pod', ['as' => 'support.pod', 'uses' => 'SupportController@pod']);
-Route::get('support/ask/{slug}', ['as' => 'support.ask.show', 'uses' => 'SupportController@ask_show'])->where('slug', '[A-Za-z0-9\-]+');

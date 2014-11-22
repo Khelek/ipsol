@@ -1,7 +1,7 @@
-<?php namespace Admin;
+<?php namespace Admin\Support;
 use Address, Lang, AdminController, View, Input, Redirect;
 
-class SupportController extends AdminController {
+class AddressesController extends AdminController {
 
     protected $address;
 
@@ -17,7 +17,7 @@ class SupportController extends AdminController {
 
         $addresses = $this->address->all();
 
-        return View::make('admin/support/index', compact('addresses', 'title'));
+        return View::make('admin/support/addresses/index', compact('addresses', 'title'));
     }
 
 	public function create()
@@ -25,7 +25,7 @@ class SupportController extends AdminController {
         $title = "Новый адрес";//Lang::get('admin/security/title.create_a_new_blog');
 
         $address = $this->address;
-        return View::make('admin/support/create', compact('title', 'address'));
+        return View::make('admin/support/addresses/create', compact('title', 'address'));
 	}
 
 	public function store()
@@ -36,7 +36,7 @@ class SupportController extends AdminController {
 
         if ($address->save())
         {
-            return Redirect::route('admin.support.edit', $address->id)->with('success', lang::get('admin/security/messages.create.success'));
+            return Redirect::route('admin.support.addresses.edit', $address->id)->with('success', lang::get('admin/security/messages.create.success'));
         } else {
             return Redirect::back()->withInput()->withErrors($address->errors());
         }
@@ -44,7 +44,7 @@ class SupportController extends AdminController {
 
 	public function show($id)
 	{
-        return Redirect::route('admin.support.edit', $id);
+        return Redirect::route('admin.support.addresses.edit', $id);
 	}
 
 
@@ -55,10 +55,10 @@ class SupportController extends AdminController {
 
 		if (is_null($address))
 		{
-			return Redirect::route('admin.support.index');
+			return Redirect::route('admin.support.addresses.index');
 		}
 
-        return View::make('admin/support/edit', compact('address', 'title'));
+        return View::make('admin/support/addresses/edit', compact('address', 'title'));
 	}
 
 
@@ -72,7 +72,7 @@ class SupportController extends AdminController {
 
         if ($address->update())
         {
-            return Redirect::route('admin.support.edit', $address->id)->with('success', Lang::get('admin/security/messages.create.success'));
+            return Redirect::route('admin.support.addresses.edit', $address->id)->with('success', Lang::get('admin/security/messages.create.success'));
         } else {
             return Redirect::back()->withInput()->withErrors($address->errors());
         }
@@ -82,7 +82,7 @@ class SupportController extends AdminController {
 	{
 		$this->address->find($id)->delete();
 
-		return Redirect::route('admin.support.index');
+		return Redirect::route('admin.support.addresses.index');
 	}
 
 }
