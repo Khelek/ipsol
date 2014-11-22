@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 <?php namespace Admin\Support;
 use Ask, Lang, AdminController, View, Input, Redirect;
 
@@ -23,7 +22,7 @@ class AsksController extends AdminController {
 
 	public function create()
 	{
-        $title = "Новый адрес";//Lang::get('admin/security/title.create_a_new_blog');
+        $title = "Новый вопрос";//Lang::get('admin/security/title.create_a_new_blog');
 
         $ask = $this->ask;
         return View::make('admin/support/asks/create', compact('title', 'ask'));
@@ -33,6 +32,7 @@ class AsksController extends AdminController {
 	{
         $ask = $this->ask;
 
+        if (Input::get('slug') === "") Input::merge(['slug' => \Slug::make(Input::get('title'))]);
         $ask->fill(Input::all());
 
         if ($ask->save())
@@ -51,7 +51,7 @@ class AsksController extends AdminController {
 
 	public function edit($id)
 	{
-        $title = "Изменить адрес";//Lang::get('admin/security/title.blog_update');
+        $title = "Изменить вопрос";//Lang::get('admin/security/title.blog_update');
 		$ask = $this->ask->find($id);
 
 		if (is_null($ask))
@@ -67,11 +67,11 @@ class AsksController extends AdminController {
 	{
         $ask = $this->ask->find($id);
 
-        if(!Input::get("asks")) Input::merge([ 'asks' => [] ]);
+        if (Input::get('slug') === "") Input::merge(['slug' => \Slug::make(Input::get('title'))]);
 
         $ask->fill(Input::all());
 
-        if ($ask->update())
+        if ($ask->updateUniques())
         {
             return Redirect::route('admin.support.asks.edit', $ask->id)->with('success', Lang::get('admin/security/messages.create.success'));
         } else {

@@ -5,7 +5,7 @@ use Codesleeve\Stapler\ORM\StaplerableInterface;
 use Codesleeve\Stapler\ORM\EloquentTrait;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
-class Post extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
+class News extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
     use EloquentTrait; // for Stapler
     use Conner\Tagging\TaggableTrait;
     use SearchableTrait;

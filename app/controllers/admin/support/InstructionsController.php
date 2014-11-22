@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 <?php namespace Admin\Support;
 use Instruction, Lang, AdminController, View, Input, Redirect;
 
@@ -23,7 +22,7 @@ class InstructionsController extends AdminController {
 
 	public function create()
 	{
-        $title = "Новый адрес";//Lang::get('admin/security/title.create_a_new_blog');
+        $title = "Новая инструкция";//Lang::get('admin/security/title.create_a_new_blog');
 
         $instruction = $this->instruction;
         return View::make('admin/support/instructions/create', compact('title', 'instruction'));
@@ -51,13 +50,13 @@ class InstructionsController extends AdminController {
 
 	public function edit($id)
 	{
-        $title = "Изменить адрес";//Lang::get('admin/security/title.blog_update');
-		$instruction = $this->instruction->find($id);
+        $title = "Изменить инструкцию";//Lang::get('admin/security/title.blog_update');
+        $instruction = $this->instruction->find($id);
 
-		if (is_null($instruction))
-		{
-			return Redirect::route('admin.support.instructions.index');
-		}
+        if (is_null($instruction))
+        {
+            return Redirect::route('admin.support.instructions.index');
+        }
 
         return View::make('admin/support/instructions/edit', compact('instruction', 'title'));
 	}
@@ -66,8 +65,6 @@ class InstructionsController extends AdminController {
 	public function update($id)
 	{
         $instruction = $this->instruction->find($id);
-
-        if(!Input::get("instructions")) Input::merge([ 'instructions' => [] ]);
 
         $instruction->fill(Input::all());
 

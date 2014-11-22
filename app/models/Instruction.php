@@ -2,25 +2,27 @@
 
 use Illuminate\Support\Facades\URL;
 
-class Address extends \LaravelBook\Ardent\Ardent {
+use Codesleeve\Stapler\ORM\StaplerableInterface;
+use Codesleeve\Stapler\ORM\EloquentTrait;
+
+class Instruction extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
+    use EloquentTrait; // for Stapler
 
     public $autoPurgeRedundantAttributes = true;
 
-    protected $fillable = ['name', 'addresses'];
+    protected $fillable = ['name', 'instruction', 'documentation',
+                           'certificate'];
 
     public static $rules = array(
         'name' => 'required'
     );
 
-    public function getAddressesAttribute($value)
-    {
-        $res =  unserialize($value);
-        return $res ? $res : [];
-    }
+    public function __construct(array $attributes = array()) {
+        $this->hasAttachedFile('documentation');
+        $this->hasAttachedFile('instruction');
+        $this->hasAttachedFile('certificate');
 
-    public function setAddressesAttribute($value)
-    {
-        $this->attributes['addresses'] = serialize($value);
+        parent::__construct($attributes);
     }
 
     use BeutifullTimestamps;

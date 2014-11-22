@@ -1,39 +1,32 @@
 {{ Former::string('name')->required() }}
-<div id="service-center-addresses">
-    {{-- TODO мб сделать хелпер вместо импорта --}}
-    <div style='margin-left: -15px; margin-right: -15px;'>
-        {{ Form::label('addresses', 'Addresses', ["class" => "col-lg-2 col-sm-4 control-label"]) }}
-    </div>
 
-    @foreach($instruction->addresses as $service_addr)
-        @include('admin.support.instructions.service_center_address_input')
-    @endforeach
-</div>
+@if ($instruction->instruction_updated_at)
+   <div class="col-lg-10 col-lg-offset-2 col-sm-8 col-sm-offset-4">
+       <a href="{{ $instruction->instruction->url() }}" > Инструкция </a>
+   </div>
+   {{ Former::file('instruction') }}
+@else
+   {{ Former::file('instruction') }}
+@endif
 
-<div class="form-group" style="margin-bottom: 20px">
-    <div class="col-lg-2 col-sm-4"></div>
-    <div class="col-lg-8 col-sm-6">
-        <a href="#" class="add-address btn btn-default"> Добавить адрес </a>
-    </div>
-</div>
+@if ($instruction->documentation_updated_at)
+   <div class="col-lg-10 col-lg-offset-2 col-sm-8 col-sm-offset-4">
+       <a href="{{ $instruction->documentation->url() }}" > Документация </a>
+   </div>
+   {{ Former::file('documentation') }}
+@else
+   {{ Former::file('documentation') }}
+@endif
+
+@if ($instruction->certificate_updated_at)
+   <div class="col-lg-10 col-lg-offset-2 col-sm-8 col-sm-offset-4">
+       <a href="{{ $instruction->certificate->url() }}" > Сертификат </a>
+   </div>
+   {{ Former::file('certificate') }}
+@else
+   {{ Former::file('certificate') }}
+@endif
+
 {{ Former::actions()
             ->large_primary_submit('Submit')
             ->large_inverse_reset('Reset') }}
-
-@section('scripts')
-    @parent
-    <script type="bogus" id="multi">
-     @include('admin.support.instructions.service_center_address_input', ["service_addr" => ''])
-    </script>
-
-    <script type="text/javascript">
-        $(document).on('click', '.destroy-address', function() {
-            $(this).parents('.address-container').remove();
-        });
-
-        $(document).on('click', '.add-address', function() {
-            var a = $("#multi").html();
-           $('#service-center-addresses').append(a);
-        });
-    </script>
-@stop

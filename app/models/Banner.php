@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\URL;
 
-class Address extends \LaravelBook\Ardent\Ardent {
+class Banner extends \LaravelBook\Ardent\Ardent {
 
     public $autoPurgeRedundantAttributes = true;
 

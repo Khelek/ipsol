@@ -2,26 +2,18 @@
 
 use Illuminate\Support\Facades\URL;
 
-class Address extends \LaravelBook\Ardent\Ardent {
+class Ask extends \LaravelBook\Ardent\Ardent {
 
     public $autoPurgeRedundantAttributes = true;
 
-    protected $fillable = ['name', 'addresses'];
+    protected $fillable = ['title', 'content', 'slug', 'meta_title',
+                           'meta_description', 'meta_keywords'];
 
     public static $rules = array(
-        'name' => 'required'
+        'title' => 'required',
+        'content' => 'required',
+        'slug'    => 'required|unique:asks'
     );
-
-    public function getAddressesAttribute($value)
-    {
-        $res =  unserialize($value);
-        return $res ? $res : [];
-    }
-
-    public function setAddressesAttribute($value)
-    {
-        $this->attributes['addresses'] = serialize($value);
-    }
 
     use BeutifullTimestamps;
 }
