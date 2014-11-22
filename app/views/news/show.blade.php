@@ -1,12 +1,12 @@
 @extends('layouts.default')
 
 @section('title')
-    {{{ $post->$title }}}
+    {{{ $news->$title }}}
 @stop
 
-@section('keywords') $post->meta_keywords @stop
+@section('keywords') $news->meta_keywords @stop
 @section('author') @stop
-@section('description') $post->meta_description @stop
+@section('description') $news->meta_description @stop
 
 
 @section('content')
@@ -37,9 +37,9 @@
 	</div>
 	<div class="content">
 		<div class="article">
-			<h1 class="title">{{ $post->title }}</h1>
-			{{ $post->content }}
-			<p class="date">{{ $post->created_at() }}</p>
+			<h1 class="title">{{ $news->title }}</h1>
+			{{ $news->content }}
+			<p class="date">{{ $news->created_at() }}</p>
 			<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
 		</div>
 		<div class="another_article clear-fix">
@@ -47,7 +47,7 @@
       @foreach ($another_posts as $a_post)
 			    <div class="col4">
 				      <img src="{{ $a_post->preview->url('medium') }}" alt="">
-				      <a href="{{ URL::route('blogs.show', $a_post->slug) }}">{{ $a_post->title }}</a>
+				      <a href="{{ URL::route('news.show', $a_post->slug) }}">{{ $a_post->title }}</a>
 				      <p>{{ Str::limit($a_post->content, 100) }}</p>
 				      <p class="date">{{ $a_post->created_at() }}</p>
 			    </div>

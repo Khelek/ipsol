@@ -24,14 +24,14 @@
 		  </h3>
 	</div>
 
-  @include('admin.blogs.rubrics')
+  @include('admin.news.rubrics')
 
   <div class="page-header">
 		<h3>
 		 Посты
 
 			<div class="pull-right">
-				<a href="{{{ route('admin.blogs.create') }}}" class="btn
+				<a href="{{{ route('admin.news.create') }}}" class="btn
 				btn-small btn-info iframe"><span class="glyphicon
 				glyphicon-plus-sign"></span> Создать пост</a>
 			</div>
@@ -50,16 +50,16 @@
 			</tr>
 		</thead>
 		<tbody>
-        @foreach ($posts as $post)
+        @foreach ($news as $one_news)
             <tr>
-                <td> {{{ $post->id }}} </td>
-                <td> {{{ $post->title }}} </td>
+                <td> {{{ $one_news->id }}} </td>
+                <td> {{{ $one_news->title }}} </td>
                 <td>  </td>
-                <td> {{{ $post->created_at }}} </td>
+                <td> {{{ $one_news->created_at }}} </td>
                 <td>
-                    <a href="{{{ route('admin.blogs.edit', $post->id) }}}"
+                    <a href="{{{ route('admin.news.edit', $one_news->id) }}}"
 		                   class="btn btn-xs btn-info"> Редактировать </a>
-                    <a href="{{{ route('admin.blogs.destroy', $post->id) }}}"
+                    <a href="{{{ route('admin.news.destroy', $one_news->id) }}}"
 		                   class="btn btn-xs btn-danger"
 		                   data-method="delete"
                        data-confirm="Are you sure?"> Удалить </a>

@@ -25,18 +25,18 @@
 	<div class="content clear-fix">
 	    <div class="main">
 			<div class="line"></div>
-      @foreach ($posts as $post)
+      @foreach ($works as $work)
 	    	<div class="article clear-fix">
-	    		<img src="{{ $post->preview->url('medium') }}" alt="" class="article_img">
+	    		<img src="{{ $work->preview->url('medium') }}" alt="" class="article_img">
 	    		<div class="article_container">
-		    		<h2><a class="article_header" href="{{ URL::route('blogs.show', $post->slug) }}">{{ $post->title }}</a></h2>
-		    		<p class="description"> {{ Str::limit($post->content, 100) }} </p>
-					<p class="date">{{ $post->created_at() }}</p>
-          @if ($post->tagNames() != [])
+		    		<h2><a class="article_header" href="{{ URL::route('works.show', $work->slug) }}">{{ $work->title }}</a></h2>
+		    		<p class="description"> {{ Str::limit($work->content, 100) }} </p>
+					<p class="date">{{ $work->created_at() }}</p>
+          @if ($work->tagNames() != [])
 					    Тэги:
               {{ implode(", ", array_map(function($name) {
                     return '<a href="/blogs?tag='.$name.'" class="tag">'.$name.'</a>';
-                }, $post->tagNames())) }}
+                }, $work->tagNames())) }}
           @endif
 					<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
 	    		</div>
@@ -62,7 +62,7 @@
 	    </div>
 	</div>
 
-<?php $paginator = $posts; ?>
+<?php $paginator = $works; ?>
 @include('components.pagination')
 @stop
 

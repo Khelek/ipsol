@@ -16,7 +16,7 @@
 		<h3>
         Адреса сервисных центров
 			<div class="pull-right">
-				<a href="{{{ route('admin.support.create') }}}" class="btn
+				<a href="{{{ route('admin.support.addresses.create') }}}" class="btn
 				btn-small btn-info iframe"><span class="glyphicon
 				glyphicon-plus-sign"></span> Создать объект</a>
 			</div>
@@ -40,9 +40,9 @@
                 <td> {{{ $address->name }}} </td>
                 <td> {{{ $address->created_at }}} </td>
                 <td>
-                    <a href="{{{ route('admin.support.edit', $address->id) }}}"
+                    <a href="{{{ route('admin.support.addresses.edit', $address->id) }}}"
 		                   class="btn btn-xs btn-info"> Редактировать </a>
-                    <a href="{{{ route('admin.support.destroy', $address->id) }}}"
+                    <a href="{{{ route('admin.support.addresses.destroy', $address->id) }}}"
 		                   class="btn btn-xs btn-danger"
 		                   data-method="delete"
                        data-confirm="Are you sure?"> Удалить </a>

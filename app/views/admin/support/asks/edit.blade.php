@@ -5,16 +5,16 @@
 @stop
 
 @section('back-url')
-    {{ URL::route("admin.support.index") }}
+    {{ URL::route("admin.support.asks.index") }}
 @stop
 
 
 @section('content')
     {{ Former::framework('TwitterBootstrap3') }}
-    {{ Former::populate($address) }}
-    {{ Former::open_for_files()->method('PUT')->route('admin.support.update', $address->id) }}
+    {{ Former::populate($ask) }}
+    {{ Former::open_for_files()->method('PUT')->route('admin.support.asks.update', $ask->id) }}
 
-    @include('admin.support.form')
+    @include('admin.support.asks.form')
 
     {{ Former::close() }}
 @stop

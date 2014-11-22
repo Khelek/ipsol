@@ -6,7 +6,7 @@
     </div>
 
     @foreach($address->addresses as $service_addr)
-        @include('admin.support.service_center_address_input')
+        @include('admin.support.addresses.service_center_address_input')
     @endforeach
 </div>
 
@@ -23,7 +23,7 @@
 @section('scripts')
     @parent
     <script type="bogus" id="multi">
-     @include('admin.support.service_center_address_input', ["service_addr" => ''])
+     @include('admin.support.addresses.service_center_address_input', ["service_addr" => ''])
     </script>
 
     <script type="text/javascript">

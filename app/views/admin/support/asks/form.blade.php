@@ -5,8 +5,8 @@
         {{ Form::label('addresses', 'Addresses', ["class" => "col-lg-2 col-sm-4 control-label"]) }}
     </div>
 
-    @foreach($address->addresses as $service_addr)
-        @include('admin.support.service_center_address_input')
+    @foreach($ask->addresses as $service_addr)
+        @include('admin.support.asks.service_center_address_input')
     @endforeach
 </div>
 
@@ -23,7 +23,7 @@
 @section('scripts')
     @parent
     <script type="bogus" id="multi">
-     @include('admin.support.service_center_address_input', ["service_addr" => ''])
+     @include('admin.support.asks.service_center_address_input', ["service_addr" => ''])
     </script>
 
     <script type="text/javascript">

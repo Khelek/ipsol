@@ -5,18 +5,18 @@
 @stop
 
 @section('back-url')
-    {{ URL::route("admin.blogs.index") }}
+    {{ URL::route("admin.news.index") }}
 @stop
 
 
 @section('content')
     {{ Former::framework('TwitterBootstrap3') }}
-    {{ Former::populate($post) }}
+    {{ Former::populate($news) }}
     {{-- TODO мб вынести куда-то --}}
-    {{ Former::populateField('tags', implode(",", $post->tagNames())) }}
-    {{ Former::open_for_files()->method('PUT')->route('admin.blogs.update', $post->id) }}
+    {{ Former::populateField('tags', implode(",", $news->tagNames())) }}
+    {{ Former::open_for_files()->method('PUT')->route('admin.news.update', $news->id) }}
 
-    @include('admin.blogs.form')
+    @include('admin.news.form')
 
     {{ Former::close() }}
 @stop

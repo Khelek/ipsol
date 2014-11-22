@@ -4,16 +4,16 @@
 {{ Former::string('meta_title') }}
 {{ Former::string('meta_description') }}
 {{ Former::string('meta_keywords') }}
-@if ($post->preview_updated_at)
+@if ($news->preview_updated_at)
    <div class="col-md-8 col-md-offset-4">
-       {{ HTML::image($post->preview->url('medium')) }}
+       {{ HTML::image($news->preview->url('medium')) }}
    </div>
    {{ Former::file('preview')->accept('image') }}
 @else
    {{ Former::file('preview')->accept('image')->required() }}
 @endif
 {{ Former::select('rubrics[]')->fromQuery($rubrics, 'name', 'id')
-                              ->select($post->rubrics()->getRelatedIds())
+                              ->select($news->rubrics()->getRelatedIds())
                               ->id('rubrics')
                               ->multiple() }}
 <div class="form-group">

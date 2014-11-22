@@ -16,7 +16,7 @@
 		<h3>
         Адреса сервисных центров
 			<div class="pull-right">
-				<a href="{{{ route('admin.support.create') }}}" class="btn
+				<a href="{{{ route('admin.support.asks.create') }}}" class="btn
 				btn-small btn-info iframe"><span class="glyphicon
 				glyphicon-plus-sign"></span> Создать объект</a>
 			</div>
@@ -34,15 +34,15 @@
 			</tr>
 		</thead>
 		<tbody>
-        @foreach ($addresses as $address)
+        @foreach ($asks as $ask)
             <tr>
-                <td> {{{ $address->id }}} </td>
-                <td> {{{ $address->name }}} </td>
-                <td> {{{ $address->created_at }}} </td>
+                <td> {{{ $ask->id }}} </td>
+                <td> {{{ $ask->name }}} </td>
+                <td> {{{ $ask->created_at }}} </td>
                 <td>
-                    <a href="{{{ route('admin.support.edit', $address->id) }}}"
+                    <a href="{{{ route('admin.support.asks.edit', $ask->id) }}}"
 		                   class="btn btn-xs btn-info"> Редактировать </a>
-                    <a href="{{{ route('admin.support.destroy', $address->id) }}}"
+                    <a href="{{{ route('admin.support.asks.destroy', $ask->id) }}}"
 		                   class="btn btn-xs btn-danger"
 		                   data-method="delete"
                        data-confirm="Are you sure?"> Удалить </a>
