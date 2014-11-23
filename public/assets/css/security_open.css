@@ -292,6 +292,7 @@ a {
 .pagination {
   width: 520px;
   margin: 0 auto;
+  margin-top: 30px;
   color: #808080; }
   .pagination .button {
     width: 60px;
@@ -342,12 +343,16 @@ a {
 .date {
   margin: 28px 0 55px 0; }
 
-.line {
+.line_padding {
   position: absolute;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 110px 0px 36px 0px; }
+
+.line {
   width: 1px;
   height: 100%;
   max-height: 100%;
-  margin-top: 80px;
   margin-left: 945px;
   background-color: #d2d2d2; }
 

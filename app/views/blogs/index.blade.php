@@ -24,7 +24,9 @@
 	</div>
 	<div class="content clear-fix">
 	    <div class="main">
-			<div class="line"></div>
+	    <div class="line_padding">
+    		<div class="line"></div>
+	    </div>
       @foreach ($posts as $post)
 	    	<div class="article clear-fix">
 	    		<img src="{{ $post->preview->url('medium') }}" alt="" class="article_img">

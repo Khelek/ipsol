@@ -1,0 +1,55 @@
+@import 'theme';
+
+.ban a {
+    float: left;
+
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+.ban_form {
+    width: 245px;
+    margin-top: 30px;
+}
+.links {
+    padding-top: 55px;
+    a {
+        margin-right: 28px;
+    }
+    +.title {
+        margin-top: 34px;
+    }
+}
+.support_container {
+    p {
+        float: left;
+    }
+    .address {
+        margin-left: 15px;        
+    }
+    .button {
+        display: block;
+        margin: 0 auto;
+    }
+}
+.instruction_files {
+    display: block;
+}
+.support_block_hidden {
+    display: none;
+}
+h2 {
+    margin-bottom: 10px;
+}
+.support_block {
+    width: 620px;
+    margin-bottom: 40px;
+}
+.support_block {
+    float: left;
+}
+.support_block:nth-child(3n) {
+    float: right;
+
+    box-sizing: border-box;
+    padding-left: 40px;
+}

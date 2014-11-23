@@ -292,6 +292,7 @@ a {
 .pagination {
   width: 520px;
   margin: 0 auto;
+  margin-top: 30px;
   color: #808080; }
   .pagination .button {
     width: 60px;
@@ -398,12 +399,15 @@ a {
   position: relative;
   top: -7px; }
 
+.line_padding {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 30px 0px 36px 0px;
+  position: absolute; }
+
 .line {
-  position: absolute;
   width: 1px;
   height: 100%;
-  max-height: 100%;
-  margin-top: 30px;
   margin-left: 945px;
   background-color: #d2d2d2; }
 

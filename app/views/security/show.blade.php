@@ -24,7 +24,9 @@
 	</div>
 	<div class="content clear-fix">
 	    <div class="main">
-			<div class="line"></div>
+			<div class="line_padding">
+				<div class="line"></div>
+			</div>
 			<div class="article">
 				<h1 class="title">{{ $tip->title }}</h1>
 				<p>

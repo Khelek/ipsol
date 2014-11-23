@@ -1,0 +1,87 @@
+@import 'theme';
+@import 'share';
+.main {
+    position: relative;
+
+    float: left;
+
+    width: 930px;
+    margin-top: 70px;
+}
+.article {
+    margin-bottom: 36px;
+    img {
+        float: left;
+
+        width: 214px;
+    }
+}
+
+.article_container {
+    float: left;
+
+    width: 630px;
+    margin-left: 52px;
+
+    color: $very_light_grey;
+}
+.description {
+    line-height: 16px;
+
+    margin: 15px 0 5px 0;
+
+    color: #505050;
+}
+.article_header {
+    font-family: 'FranklinGothicBook', sans-serif;
+    font-size: 37px;
+
+    text-decoration: none;
+
+    color: #1d7ac0;
+    border-bottom: 1px #1d7ac0 solid;
+}
+.article .article_header {
+    position: relative;
+    top: -7px;
+}
+.line_padding {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 30px 0px 36px 0px;
+    position: absolute;
+}
+.line {
+
+    width: 1px;
+    height: 100%;
+    margin-left: 945px;
+
+    background-color: #d2d2d2;
+}
+.sidebar {
+    float: right;
+
+    width: 255px;
+    height: 100%;
+    margin-top: 100px;
+    p {
+        margin: 45px 0 10px 0;
+    }
+    a {
+        display: block;
+
+        margin-top: 10px;
+
+        color: #1d7ac0;
+    }
+    .input_search_block, .input_email {
+        width: 250px;
+    }
+    .input_search {
+        width: 205px;
+    }
+    .button {
+        margin-top: 20px;
+    }
+}
