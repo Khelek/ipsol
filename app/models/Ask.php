@@ -15,5 +15,10 @@ class Ask extends \LaravelBook\Ardent\Ardent {
         'slug'    => 'required|unique:asks'
     );
 
+    public function setContentAttribute($value)
+    {
+        $this->attributes['content'] = Purifier::clean($value, 'nofollow');
+    }
+
     use BeutifullTimestamps;
 }

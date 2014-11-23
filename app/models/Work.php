@@ -64,6 +64,15 @@ class Work extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
         parent::__construct($attributes);
     }
 
+    public function setQuestDescriptionAttribute($value)
+    {
+        $this->attributes['quest_description'] = Purifier::clean($value, 'nofollow');
+    }
+    public function setSolutionContentAttribute($value)
+    {
+        $this->attributes['solution_content'] = Purifier::clean($value, 'nofollow');
+    }
+
     use PostMetaTags;
     use BeutifullTimestamps;
 

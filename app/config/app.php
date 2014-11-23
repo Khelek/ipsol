@@ -135,6 +135,7 @@ return array(
         'Cviebrock\EloquentSluggable\SluggableServiceProvider',
         'Ivanlemeshev\LaravelCyrillicSlug\SlugServiceProvider',
         'Bootstrapper\BootstrapperServiceProvider',
+        'Mews\Purifier\PurifierServiceProvider',
 
 	),
 
@@ -212,6 +213,7 @@ return array(
         'Slug'              => 'Ivanlemeshev\LaravelCyrillicSlug\Facades\Slug',
         'Carbon'            => 'Carbon\Carbon',
         'BootstrapForm'     => 'Bootstrapper\Facades\Form',
+        'Purifier'      => 'Mews\Purifier\Facades\Purifier'
 
 	),
 

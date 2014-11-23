@@ -34,6 +34,11 @@ class SecurityTip extends \LaravelBook\Ardent\Ardent implements StaplerableInter
         parent::__construct($attributes);
     }
 
+    public function setContentAttribute($value)
+    {
+        $this->attributes['content'] = Purifier::clean($value, 'nofollow');
+    }
+
     use PostMetaTags;
     use BeutifullTimestamps;
 

@@ -34,7 +34,8 @@
     "ivanlemeshev/laravel-cyrillic-slug": "dev-master",
     "nicolaslopezj/searchable": "1.*",
     "patricktalmadge/bootstrapper": "~5",
-		"marc-mabe/php-enum": "~1.2"
+		"marc-mabe/php-enum": "~1.2",
+    "mews/purifier": "dev-master",
 	},
 	"autoload": {
 		"classmap": [
