@@ -34,25 +34,13 @@
 			<div class="dot"></div><hr class="horizontal_line">
 		</div>
 		<div class="main">
-	    	<div class="article clear-fix">
-		    		<h2><a class="article_header" href="">В немецкой деревне открылся демонстративный стенд</a></h2>
-		    		<p class="description">Рядом с офисом продаж поселка «Немецкая деревня» установлен демонстрационный стенд, на котором выставлены 
-образцы материалов из которого строятся таунхаусы...</p>
-					<p class="date">20/12/2014</p>
-		    </div>
-		    <div class="article clear-fix">
-		    		<h2><a class="article_header" href="">В немецкой деревне </a></h2>
-		    		<p class="description">Рядом с офисом продаж поселка «Немецкая деревня» установлен демонстрационный стенд, на котором выставлены 
-образцы материалов из которого строятся таунхаусы...В поселке таунхаусов «Николино» усовершенствована пропускная система: вместо традиционного шлагбаума 
-установлены современные и удобные автоматические болларды. Таунхаусы надежно защищены...</p>
-					<p class="date">20/12/2014</p>
-		    </div>
-		    <div class="article clear-fix">
-		    		<h2><a class="article_header" href="">В немецкой деревне открылся демонстративный стенд</a></h2>
-		    		<p class="description">Рядом с офисом продаж поселка «Немецкая деревня» установлен демонстрационный стенд, на котором выставлены 
-образцы материалов из которого строятся таунхаусы...</p>
-					<p class="date">20/12/2014</p>
-		    </div>
+        @foreach ($asks as $ask)
+	    	    <div class="article clear-fix">
+		    		    <h2><a class="article_header" href="{{ URL::route('support.ask.show', $ask->slug) }}">{{{ $ask->title }}}</a></h2>
+		    		    <p class="description"> {{ Str::limit($ask->content, 100) }}</p>
+					      <p class="date">{{ $ask->created_at() }}</p>
+		        </div>
+        @endforeach
 	    </div>
 	</div>
 	<div class="content clear-fix">
@@ -72,7 +60,7 @@
 			<button class="button button_active">Оставить заявку</button>
 		</div>
 	</div>
-	
+
 @stop
 
 @section('scripts')

@@ -19,9 +19,9 @@
 			<div class="col2">
 				<div class="triangle"></div>
 				<div class="ban_form">
-					<a href="">Часто задаваемые вопросы</a>
-					<a href="">Адреса сервисных центров</a>
-					<a href="">Список инструкций пользования</a>
+					<a href="{{ URL::route('support.ask') }}">Часто задаваемые вопросы</a>
+					<a href="{{ URL::route('support.pod') }}">Адреса сервисных центров</a>
+					<a href="{{ URL::route('support.sip') }}">Список инструкций пользования</a>
 				</div>
 
 			</div>
@@ -29,9 +29,9 @@
 	</div>
 	<div class="support_container content clear-fix">
 		<div class="links clear-fix">
-			<a href="">Часто задаваемые вопросы</a>
-			<a href="">Адреса сервисных центров</a>
-			<a href="">Список инструкций пользователя</a>
+			<a href="{{ URL::route('support.ask') }}">Часто задаваемые вопросы</a>
+			<a href="{{ URL::route('support.pod') }}">Адреса сервисных центров</a>
+			<a href="{{ URL::route('support.sip') }}">Список инструкций пользователя</a>
 		</div>
 		
 		<div class="title_container clear-fix">
@@ -39,19 +39,23 @@
 			<div class="dot"></div><hr class="horizontal_line">
 		</div>
 		<div class="clear-fix">
-		    <div class="support_row clear-fix"></div>
-		    <div class="support_block clear-fix">
-				<h2>Веб камера 100500</h2>
-				<a class="instruction_files">Инструкции по экспуатации</a>
-		    	<a class="instruction_files">Техническая документация</a>
-		    	<a class="instruction_files">Сертификат</a>
-		    </div>
-		    <div class="support_block clear-fix">
-				<h2>Веб камера 100500</h2>
-				<a class="instruction_files">Инструкции по экспуатации</a>
-		    	<a class="instruction_files">Техническая документация</a>
-		    	<a class="instruction_files">Сертификат</a>
-		    </div>
+        @for ($i = 0; $i < count($instructions); $i++)
+        		@if ($i % 2 == 0)
+		    	      <div class="support_row clear-fix"></div>
+		    	  @endif
+		    	  <div class="support_block clear-fix {{ $i < 6 ? '' : 'support_block_hidden' }}">
+					      <h2>{{ $instructions[$i]->name }}</h2>
+                @if ($instructions[$i]->instruction)
+				            <a class="instruction_files" href="{{ $instructions[$i]->instruction->url() }}">Инструкции по экспуатации</a>
+                @endif
+                @if ($instructions[$i]->documentation)
+		    	          <a class="instruction_files" href="{{ $instructions[$i]->documentation->url() }}">Техническая документация</a>
+                @endif
+                @if ($instructions[$i]->certificate)
+		    	          <a class="instruction_files" href="{{ $instructions[$i]->certificate->url() }}">Сертификат</a>
+                @endif
+		    	  </div>
+        @endfor
 		</div>
 	    <button class="show_support_block button button_active">Показать всё</button>
 	</div>
@@ -72,7 +76,6 @@
 			<button class="button button_active">Оставить заявку</button>
 		</div>
 	</div>
-	
 @stop
 
 @section('scripts')

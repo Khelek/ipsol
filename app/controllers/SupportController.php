@@ -1,24 +1,17 @@
-
 <?php
 
 class SupportController extends BaseController {
 
-    /*protected $post;
-
-    public function __construct(Post $post)
-    {
-        parent::__construct();
-        $this->post = $post;
-        }*/
-
     public function ask()
     {
-        return View::make('support/ask', compact(''));
+        $asks = \Ask::all();
+        return View::make('support/ask', compact('asks'));
     }
 
     public function sip()
     {
-        return View::make('support/sip', compact(''));
+        $instructions = \Instruction::all();
+        return View::make('support/sip', compact('instructions'));
     }
 
     public function pod()
@@ -29,6 +22,8 @@ class SupportController extends BaseController {
 
     public function ask_show($slug)
     {
-      return View::make('support/ask_show', compact(''));
+        $ask = \Ask::where('slug', $slug)->firstOrFail();
+        $another_asks = \Ask::orderBy(DB::raw("RANDOM()"))->take(2)->get();
+        return View::make('support/ask_show', compact('ask', 'another_asks'));
     }
 }
