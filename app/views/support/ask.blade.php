@@ -28,7 +28,11 @@
 		</div>
 	</div>
 	<div class="content clear-fix">
-		<h1 class="title">Часто задаваемые вопросы</h1>
+		
+		<div class="title_container clear-fix">
+			<h1 class="title">Часто задаваемые вопросы</h1>
+			<div class="horizontal_decoration"><div class="dot"></div><hr class="horizontal_line"></div>
+		</div>
 		<div class="main">
 	    	<div class="article clear-fix">
 		    		<h2><a class="article_header" href="">В немецкой деревне открылся демонстративный стенд</a></h2>
@@ -52,7 +56,11 @@
 	    </div>
 	</div>
 	<div class="content clear-fix">
-	    <h1 class="title">Нужна помощь?</h1>
+
+		<div class="title_container clear-fix">
+	    	<h1 class="title">Нужна помощь?</h1>
+			<div class="horizontal_decoration"><div class="dot"></div><hr class="horizontal_line"></div>
+		</div>
 	    <p>Просто заполните заявку и мы свяжемся с Вами в течении дня и мгновенно <br>
 проконсультируем!</p>
 		<div class="ask_form">

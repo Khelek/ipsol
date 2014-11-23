@@ -36,14 +36,20 @@
 		</div>
 	</div>
 	<div class="content">
-		<div class="article">
+		<div class="title_container clear-fix">
 			<h1 class="title">{{ $post->title }}</h1>
+			<div class="horizontal_decoration"><div class="dot"></div><hr class="horizontal_line"></div>
+		</div>
+		<div class="article">
 			{{ $post->content }}
 			<p class="date">{{ $post->created_at() }}</p>
 			<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
 		</div>
 		<div class="another_article clear-fix">
+			<div class="title_container clear-fix">
 			<h1 class="title">Другие статьи</h1>
+			<div class="horizontal_decoration"><div class="dot"></div><hr class="horizontal_line"></div>
+		</div>
       @foreach ($another_posts as $a_post)
 			    <div class="col4">
 				      <img src="{{ $a_post->preview->url('medium') }}" alt="">
@@ -54,7 +60,10 @@
       @endforeach
 		</div>
 		<div class="comments">
+		<div class="title_container clear-fix">
 			<h1 class="title">Комментарии</h1>
+			<div class="horizontal_decoration"><div class="dot"></div><hr class="horizontal_line"></div>
+		</div>
       <div id="disqus_thread"></div>
       <script type="text/javascript">
        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

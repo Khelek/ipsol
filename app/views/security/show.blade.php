@@ -23,12 +23,16 @@
 		</div>
 	</div>
 	<div class="content clear-fix">
-	    <div class="main">
-			<div class="line_padding">
+		<div class="line_padding">
 				<div class="line"></div>
-			</div>
-			<div class="article">
+		</div>
+		<div class="title_container clear-fix">
 				<h1 class="title">{{ $tip->title }}</h1>
+			<div class="horizontal_decoration"><div class="dot"></div><hr class="horizontal_line"></div>
+		</div>
+	    <div class="main">
+			
+			<div class="article">
 				<p>
             {{ $tip->content }}
 				</p>
@@ -39,7 +43,7 @@
 	    	<a href="{{	URL::route('security.index') }}">Назад к списку советов</a>
 		</div>
     	<div class="sidebar">
-    		<h2 class="title">Ещё советы</h2>
+    		<h2>Ещё советы</h2>
         @foreach ($another_tips as $a_tip)
     		    <div class="sidebar_article"><img src="{{ $a_tip->preview->url('medium') }}" alt="">
 				        <a href="{{	URL::route('security.show', $a_tip->slug) }}">{{ $a_tip->title }}</a>

@@ -31,14 +31,43 @@ h1, h2 {
   text-decoration: none;
   color: #969696; }
 
-.line_horizontal {
-  width: 100%; }
-
 a {
   color: #1d7ac0; }
 
 .title {
-  margin: 60px 0 40px 0; }
+  margin: 60px 0 40px 0;
+  display: block;
+  float: left;
+  margin-right: 36px; }
+
+.dot {
+  border-radius: 50%;
+  margin-top: 100px;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #d2d2d2; }
+
+.horizontal_line {
+  position: relative;
+  top: -18px;
+  border: 0px;
+  border-top: 1px #d2d2d2;
+  border-style: solid; }
+
+.line_padding {
+  position: absolute;
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 103px;
+  padding-bottom: 100px; }
+
+.line {
+  width: 1px;
+  height: 100%;
+  max-height: 100%;
+  margin-left: 945px;
+  background-color: #d2d2d2; }
 
 .content {
   width: 1240px;
@@ -360,7 +389,8 @@ a {
 
 .yashare-auto-init .b-share {
   margin: 0 !important;
-  padding: 0 !important; }
+  padding: 0 !important;
+  height: 50px; }
 
 .b-share .b-share__link {
   padding: 5px 5px 5px 0 !important; }

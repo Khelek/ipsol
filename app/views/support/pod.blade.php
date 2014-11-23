@@ -28,7 +28,11 @@
 		</div>
 	</div>
 	<div class="support_container content clear-fix">
-	    <h1 class="title">Адреса сервисных центров</h1>
+	    
+	    <div class="title_container clear-fix">
+			<h1 class="title">Адреса сервисных центров</h1>
+			<div class="horizontal_decoration"><div class="dot"></div><hr class="horizontal_line"></div>
+		</div>
 	    <div class="clear-fix">
             @for ($i = 0; $i < count($addresses); $i++)
         			  @if ($i % 2 == 0)
@@ -48,7 +52,10 @@
 	    <button class="show_support_block button button_active">Показать всё</button>
 	</div>
 	<div class="content clear-fix">
-	    <h1 class="title">Нужна помощь?</h1>
+	    <div class="title_container clear-fix">
+			<h1 class="title">Нужна помощь?</h1>
+			<div class="horizontal_decoration"><div class="dot"></div><hr class="horizontal_line"></div>
+		</div>
 	    <p>Просто заполните заявку и мы свяжемся с Вами в течении дня и мгновенно <br>
 проконсультируем!</p>
 		<div class="ask_form">
