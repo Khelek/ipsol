@@ -19,7 +19,7 @@
 		<div class="ban_orange">
 			<div class="col2 clear-fix">
 				<div class="triangle"></div>
-				<div class="form">
+				<div class="ban_form">
 					<div class="input_search_block">
             {{ Form::open(['url' => '/blogs', 'method' => 'get']) }}
 						    <input type="text" name="search" placeholder="Поиск" class="input input_search">

@@ -18,7 +18,7 @@
 		<div class="ban_orange">
 			<div class="col2">
 				<div class="triangle"></div>
-				<div class="form">
+				<div class="ban_form">
 					<a href="">Часто задаваемые вопросы</a>
 					<a href="">Адреса сервисных центров</a>
 					<a href="">Список инструкций пользования</a>
@@ -27,15 +27,14 @@
 			</div>
 		</div>
 	</div>
-	<div class="address_container content clear-fix">
+	<div class="support_container content clear-fix">
 	    <h1 class="title">Адреса сервисных центров</h1>
 	    <div class="clear-fix">
-		    <div class="col_addresess">
             @for ($i = 0; $i < count($addresses); $i++)
         			  @if ($i % 2 == 0)
-		    	      		<div class="address_row clear-fix"></div>
+		    	      		<div class="support_row clear-fix"></div>
 		    	      @endif
-		    	      <div class="address_block clear-fix {{ $i < 6 ? '' : 'address_block_hidden' }}">
+		    	      <div class="support_block clear-fix {{ $i < 6 ? '' : 'support_block_hidden' }}">
 					          <h2>{{ $addresses[$i]->name }}</h2>
 					          <p>Адреса:</p>
 					          <p class="address">
@@ -45,9 +44,8 @@
 					          </p>
 		    	      </div>
             @endfor
-		    </div>
-	   	</div>
-	    <button class="show_address_block button button_active">Показать всё</button>
+	    </div>
+	    <button class="show_support_block button button_active">Показать всё</button>
 	</div>
 	<div class="content clear-fix">
 	    <h1 class="title">Нужна помощь?</h1>

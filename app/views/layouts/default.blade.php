@@ -26,9 +26,6 @@
 
 	<!-- CSS -->
 	<link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/share.css') }}">
-
 	@yield('styles')
 
 </head>
