@@ -20,32 +20,32 @@
 
 	<div class="page-header">
 		  <h3>
-			    Рубрики
+			    Категории
 		  </h3>
 	</div>
 
-  @include('admin.works.rubrics')
+  @include('admin.works.categories')
 
   <div class="page-header">
 		<h3>
-		 Посты
+		 Работы
 
 			<div class="pull-right">
 				<a href="{{{ route('admin.works.create') }}}" class="btn
 				btn-small btn-info iframe"><span class="glyphicon
-				glyphicon-plus-sign"></span> Создать пост</a>
+				glyphicon-plus-sign"></span> Создать работу</a>
 			</div>
 		</h3>
 	</div>
 
 
-	<table id="blogs" class="table table-striped table-hover">
+	<table id="works" class="table table-striped table-hover">
 		<thead>
 			<tr>
 				<th>id</th>
-				<th>{{{ Lang::get('admin/blogs/table.title') }}}</th>
-				<th>{{{ Lang::get('admin/blogs/table.comments') }}}</th>
-				<th>{{{ Lang::get('admin/blogs/table.created_at') }}}</th>
+				<th>{{{ Lang::get('admin/works/table.title') }}}</th>
+				<th>{{{ Lang::get('admin/works/table.preview') }}}</th>
+				<th>{{{ Lang::get('admin/works/table.created_at') }}}</th>
 				<th>{{{ Lang::get('table.actions') }}}</th>
 			</tr>
 		</thead>
@@ -54,7 +54,7 @@
             <tr>
                 <td> {{{ $work->id }}} </td>
                 <td> {{{ $work->title }}} </td>
-                <td>  </td>
+                <td> {{ HTML::image($work->preview->url('small')) }} </td>
                 <td> {{{ $work->created_at }}} </td>
                 <td>
                     <a href="{{{ route('admin.works.edit', $work->id) }}}"
@@ -76,7 +76,7 @@
 	<script type="text/javascript">
 		var oTable;
 		$(document).ready(function() {
-			oTable = $('#blogs').DataTable();
+			oTable = $('#works').DataTable();
 		});
 	</script>
 @stop

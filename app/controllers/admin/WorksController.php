@@ -16,18 +16,18 @@ class WorksController extends AdminController {
         $title = Lang::get('admin/works/title.blog_management');
 
         $works = $this->work->all();
-        $rubrics = \Rubric::all();
+        $categories = \Category::all();
 
-        return View::make('admin/works/index', compact('works', 'title', 'rubrics'));
+        return View::make('admin/works/index', compact('works', 'title', 'categories'));
     }
 
 	public function create()
 	{
         $title = Lang::get('admin/works/title.create_a_new_blog');
 
-        $rubrics = \Rubric::all();
+        $categories = \Category::all();
         $work = $this->work;
-        return View::make('admin/works/create', compact('title', 'rubrics', 'work'));
+        return View::make('admin/works/create', compact('title', 'categories', 'work'));
 	}
 
 	public function store()
@@ -40,8 +40,7 @@ class WorksController extends AdminController {
 
         if ($work->save())
         {
-            if (Input::get('rubrics')) $work->rubrics()->sync(Input::get('rubrics'));
-            if (Input::get('tags')) $work->retag(explode(",", Input::get('tags')));
+            if (Input::get('categories')) $work->categories()->sync(Input::get('categories'));
 
             return Redirect::route('admin.works.edit', $work->id)->with('success', lang::get('admin/works/messages.create.success'));
         } else {
@@ -58,15 +57,15 @@ class WorksController extends AdminController {
 	public function edit($id)
 	{
         $title = Lang::get('admin/works/title.blog_update');
-		$work = $this->work->with('rubrics')->find($id);
-        $rubrics = \Rubric::all();
+		$work = $this->work->with('categories')->find($id);
+        $categories = \Category::all();
 
 		if (is_null($work))
 		{
 			return Redirect::route('admin.works.index');
 		}
 
-        return View::make('admin/works/edit', compact('work', 'title', 'rubrics'));
+        return View::make('admin/works/edit', compact('work', 'title', 'categories'));
 	}
 
 
@@ -75,11 +74,12 @@ class WorksController extends AdminController {
         $work = $this->work->find($id);
 
         if (Input::get('slug') === "") Input::merge(['slug' => \Slug::make(Input::get('title'))]);
+
         $work->fill(Input::all());
+
         if ($work->updateUniques())
         {
-            if (Input::get('rubrics')) $work->rubrics()->sync(Input::get('rubrics'));
-            if (Input::get('tags')) $work->retag(explode(",", Input::get('tags')));
+            if (Input::get('categories')) $work->categories()->sync(Input::get('categories'));
 
             return Redirect::route('admin.works.edit', $work->id)->with('success', Lang::get('admin/works/messages.create.success'));
         } else {

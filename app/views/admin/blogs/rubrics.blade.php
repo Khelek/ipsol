@@ -10,20 +10,20 @@
 		<tbody>
         @foreach ($rubrics as $rubric)
             <tr>
-                {{ BootstrapForm::inline(['route' => ['admin.rubrics.update', $rubric->id], 'method' => 'PUT']) }}
+                {{ BootstrapForm::inline(['route' => ['admin.blogs.rubrics.update', $rubric->id], 'method' => 'PUT']) }}
                 <td> {{ $rubric->id }}
                      {{ Form::hidden('id', $rubric->id) }}
                 </td>
                 <td> {{ BootstrapForm::text('name', $rubric->name, ['class' => 'input-small', 'placeholder' => 'Название']) }} </td>
                 <td> {{ BootstrapForm::submit('Сохранить') }} </td>
-                <td> <a href="{{{ route('admin.rubrics.destroy', $rubric->id) }}}"
+                <td> <a href="{{{ route('admin.blogs.rubrics.destroy', $rubric->id) }}}"
 		                   data-method="delete"
                        data-confirm="Are you sure?"> Удалить </a> </td>
                 {{ BootstrapForm::close() }}
             </tr>
         @endforeach
             <tr>
-                {{ BootstrapForm::inline(['route' => ['admin.rubrics.store'], 'method' => 'POST']) }}
+                {{ BootstrapForm::inline(['route' => ['admin.blogs.rubrics.store'], 'method' => 'POST']) }}
                 <td> </td>
                 <td> {{ BootstrapForm::text('name', "", ['class' => 'input-small', 'placeholder' => 'Название']) }} </td>
                 <td> {{ BootstrapForm::submit('Новая рубрика') }} </td>

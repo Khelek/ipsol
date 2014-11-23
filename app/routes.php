@@ -26,12 +26,18 @@ Route::get('/admin', function()
 Route::group(array('prefix' => 'admin', 'namespace' => 'Admin'), function()
 {
     Route::resource('blogs', 'BlogsController');
+    Route::group(array('prefix' => 'blogs', 'namespace' => 'Blogs'), function()
+    {
+        Route::resource('rubrics', 'RubricsController', ['only' => ['store', 'update', 'destroy']]); // for blogs
+    });
     Route::resource('security', 'SecurityController');
-    Route::resource('rubrics', 'RubricsController', ['only' => ['store', 'update', 'destroy']]); // for blogs
-
-    Route::resource('categories', 'CategoriesController', ['only' => ['store', 'update', 'destroy']]); // for works
     Route::resource('news', 'NewsController');
+
     Route::resource('works', 'WorksController');
+    Route::group(array('prefix' => 'works', 'namespace' => 'Works'), function()
+    {
+        Route::resource('categories', 'CategoriesController', ['only' => ['store', 'update', 'destroy']]); // for works
+    });
     Route::resource('banners', 'BannersController');
     Route::group(array('prefix' => 'support', 'namespace' => 'Support'), function()
     {

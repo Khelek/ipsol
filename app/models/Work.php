@@ -13,32 +13,53 @@ class Work extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
     public $autoPurgeRedundantAttributes = true;
 
     public static $relationsData = array(
-        'rubrics'  => array(self::BELONGS_TO_MANY, 'Rubric')
+        'categories'  => array(self::BELONGS_TO_MANY, 'Category')
     );
 
-    protected $fillable = ['preview', 'content', 'title', 'slug', 'meta_title',
-                           'meta_description', 'meta_keywords'];
-    protected $searchable = [
-        'columns' => [
-            'content' => 2,
-            'title' => 1
-        ]
-    ];
+    protected $fillable = ['preview', 'big_preview', 'solution_content',
+                           'title', 'slug', 'meta_title',
+                           'meta_description', 'meta_keywords',
+                           'quest_description', 'client_name',
+                           'client_post', 'client_description',
+                           'main_photo', 'second_photo', 'third_photo'];
 
     public static $rules = array(
-        'content' => 'required',
+        'solution_content' => 'required',
+        'quest_description' => 'required',
+        'client_name' => 'required',
+        'client_post' => 'required',
+        'client_description' => 'required',
         'preview' => 'file',
+        'big_preview' => 'file',
         'title'   => 'required',
-        'slug'    => 'required|unique:posts'
+        'slug'    => 'required|unique:works',
     );
 
+    private function attachImage($attribute, $dimensions, $url)
+    {
+        $this->hasAttachedFile($attribute, [
+            'styles' => [
+                'medium' => ['dimensions' => $dimensions, 'auto-orient' => true, 'convert_options' => ['quality' => 100]],
+            ],
+            'url' => $url
+        ]);
+    }
+
     public function __construct(array $attributes = array()) {
+        $url = '/system/:attachment/:model/:id_partition/:style/:filename';
+
         $this->hasAttachedFile('preview', [
             'styles' => [
-                'medium' => ['dimensions' => '214x214#', 'auto-orient' => true, 'convert_options' => ['quality' => 100]]
+                'medium' => ['dimensions' => '214x214#', 'auto-orient' => true, 'convert_options' => ['quality' => 100]],
+                'small' => ['dimensions' => '100x100#', 'auto-orient' => true, 'convert_options' => ['quality' => 100]]
             ],
-            'url' => '/system/:attachment/:id_partition/:style/:filename'
+            'url' => $url
         ]);
+
+        $this->attachImage('big_preview', '416x214#', $url);
+        $this->attachImage('main_photo', '214x214#', $url);
+        $this->attachImage('second_photo', '214x214#', $url);
+        $this->attachImage('third_photo', '214x214#', $url);
 
         parent::__construct($attributes);
     }

@@ -35,7 +35,8 @@ class Post extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
     public function __construct(array $attributes = array()) {
         $this->hasAttachedFile('preview', [
             'styles' => [
-                'medium' => ['dimensions' => '214x214#', 'auto-orient' => true, 'convert_options' => ['quality' => 100]]
+                'medium' => ['dimensions' => '214x214#', 'auto-orient' => true, 'convert_options' => ['quality' => 100]],
+                'small' => ['dimensions' => '100x100#', 'auto-orient' => true, 'convert_options' => ['quality' => 100]]
             ],
             'url' => '/system/:attachment/:id_partition/:style/:filename'
         ]);

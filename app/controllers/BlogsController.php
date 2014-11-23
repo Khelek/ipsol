@@ -33,7 +33,12 @@ class BlogsController extends BaseController {
       $post = $this->post->where('slug', $slug)->firstOrFail();
       $rubrics = \Rubric::all();
       // FIXME В mysql RAND()!
-      $another_posts = $post->rubrics()->first()->posts()->orderBy(DB::raw("RANDOM()"))->take(4)->get();
+      $rubric = $another_posts = $post->rubrics()->first();
+      if (!is_null($rubric)) {
+          $another_posts = $rubric->posts()->orderBy(DB::raw("RANDOM()"))->take(4)->get();
+      } else {
+          $another_posts = [];
+      }
 
       return View::make('blogs/show', compact('post', 'title', 'rubrics', 'another_posts'));
     }

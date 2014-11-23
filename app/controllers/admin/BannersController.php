@@ -1,7 +1,7 @@
 <?php namespace Admin;
 use Banner, Lang, AdminController, View, Input, Redirect;
 
-class SupportController extends AdminController {
+class BannersController extends AdminController {
 
     protected $banner;
 
@@ -22,7 +22,7 @@ class SupportController extends AdminController {
 
 	public function create()
 	{
-        $title = "Новый адрес";//Lang::get('admin/security/title.create_a_new_blog');
+        $title = "Новый баннер";//Lang::get('admin/security/title.create_a_new_blog');
 
         $banner = $this->banner;
         return View::make('admin/banners/create', compact('title', 'banner'));
@@ -50,7 +50,7 @@ class SupportController extends AdminController {
 
 	public function edit($id)
 	{
-        $title = "Изменить адрес";//Lang::get('admin/security/title.blog_update');
+        $title = "Изменить баннер";//Lang::get('admin/security/title.blog_update');
 		$banner = $this->banner->find($id);
 
 		if (is_null($banner))
@@ -65,8 +65,6 @@ class SupportController extends AdminController {
 	public function update($id)
 	{
         $banner = $this->banner->find($id);
-
-        if(!Input::get("banners")) Input::merge([ 'banners' => [] ]);
 
         $banner->fill(Input::all());
 

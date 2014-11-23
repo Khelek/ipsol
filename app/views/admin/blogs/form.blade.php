@@ -4,14 +4,9 @@
 {{ Former::string('meta_title') }}
 {{ Former::string('meta_description') }}
 {{ Former::string('meta_keywords') }}
-@if ($post->preview_updated_at)
-   <div class="col-md-8 col-md-offset-4">
-       {{ HTML::image($post->preview->url('medium')) }}
-   </div>
-   {{ Former::file('preview')->accept('image') }}
-@else
-   {{ Former::file('preview')->accept('image')->required() }}
-@endif
+
+@include('components.image_upload_input', ["object" => $post, "image" => 'preview'])
+
 {{ Former::select('rubrics[]')->fromQuery($rubrics, 'name', 'id')
                               ->select($post->rubrics()->getRelatedIds())
                               ->id('rubrics')

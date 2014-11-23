@@ -132,7 +132,6 @@
     <script src="{{asset('bower/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js')}}"></script>
 
     <script src="{{asset('js/ckeditor/ckeditor.js')}}"></script>
-    <script src="{{asset('assets/js/application.js')}}"></script>
     <script src="{{asset('assets/js/laravel.js')}}"></script>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
     <script src="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>

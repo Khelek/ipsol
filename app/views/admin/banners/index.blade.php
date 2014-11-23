@@ -5,30 +5,32 @@
 {{{ $title }}} :: @parent
 @stop
 
-@section('keywords')Addresses administration @stop
+@section('keywords')Banners administration @stop
 @section('author')Laravel 4 Bootstrap Starter SIte @stop
-@section('description')Addresses administration index @stop
+@section('description')Banners administration index @stop
 
 {{-- Content --}}
 @section('content')
 
   <div class="page-header">
 		<h3>
-        Адреса сервисных центров
+        Баннеры
 			<div class="pull-right">
 				<a href="{{{ route('admin.banners.create') }}}" class="btn
 				btn-small btn-info iframe"><span class="glyphicon
-				glyphicon-plus-sign"></span> Создать объект</a>
+				glyphicon-plus-sign"></span> Создать баннер</a>
 			</div>
 		</h3>
 	</div>
 
 
-	<table id="addresses" class="table table-striped table-hover">
+	<table id="banners" class="table table-striped table-hover">
 		<thead>
 			<tr>
 				<th>id</th>
 				<th> Заголовок </th>
+				<th>  </th>
+				<th> Показывать в новостях </th>
 				<th> Дата создание </th>
 				<th>  </th>
 			</tr>
@@ -38,6 +40,8 @@
             <tr>
                 <td> {{{ $banner->id }}} </td>
                 <td> {{{ $banner->name }}} </td>
+                <td> {{ HTML::image($banner->img->url('small')) }} </td>
+                <td> {{ $banner->view_in_news ? 'Да' : 'Нет' }} </td>
                 <td> {{{ $banner->created_at }}} </td>
                 <td>
                     <a href="{{{ route('admin.banners.edit', $banner->id) }}}"
@@ -59,7 +63,7 @@
 	<script type="text/javascript">
 		var oTable;
 		$(document).ready(function() {
-			oTable = $('#addresses').DataTable();
+			oTable = $('#banners').DataTable();
 		});
 	</script>
 @stop

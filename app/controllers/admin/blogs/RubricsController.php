@@ -1,4 +1,4 @@
-<?php namespace Admin;
+<?php namespace Admin\Blogs;
 use Rubric, Lang, AdminController, View, Input, Redirect;
 
 class RubricsController extends AdminController {
