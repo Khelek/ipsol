@@ -1,0 +1,33 @@
+@import 'theme';
+
+.works_images {
+	margin: 20px 0px 20px 0px;  
+}
+.work_img_big {
+	width: 810px;
+	height: 457px;
+	float: left;
+}
+.work_img_small {
+	float: right;
+	width: 400px;
+	height: 214px;
+	margin-bottom: 29px;
+}
+h2 {
+	margin-bottom: 11px;
+}
+.about_client_text {
+	float: left;
+}
+.about_client {
+	img {
+		float: left;
+		width: 214px;
+		margin-right: 52px;
+	}
+	.post_work {
+		color: $light-grey;
+		margin-bottom: 30px; 
+	}
+}
