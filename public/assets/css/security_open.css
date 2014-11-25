@@ -125,7 +125,7 @@ a {
 /*<---- Баннер begin ----->*/
 .ban {
   width: 100%;
-  min-width: 1024px; }
+  min-width: 1240px; }
   .ban .ban_form {
     float: right; }
 
@@ -178,8 +178,9 @@ a {
 /*<---- Баннер end ----->*/
 /*<---- Кнопки, поля ввода begin ----->*/
 .button {
-  font-size: 23px;
-  padding: 17px 23px;
+  font-size: 20px;
+  display: block;
+  padding: 15px 38px;
   cursor: pointer;
   color: #fff;
   border: 0;
@@ -326,7 +327,8 @@ a {
   .pagination .button {
     width: 60px;
     margin: 0 4px;
-    padding: 0; }
+    padding: 0;
+    display: inline-block; }
   .pagination a {
     display: block;
     box-sizing: border-box;

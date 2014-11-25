@@ -3,6 +3,8 @@ $grey: #3d3d3d;
 $light-grey: #808080;
 $very-light-grey: #969696; 
 $ban-orange: #ffcf3f;
+$dark-orange-active-menu: #e7b41f;
+$border-menu: #b68039;
 $button-deactive: #d2d2d2;
 $violet-button-active: #5a38ab;
 $fucked-blue-link: #1d7ac0;
@@ -157,7 +159,7 @@ a {
 /*<---- Баннер begin ----->*/
 .ban {
     width: 100%;
-    min-width: 1024px;
+    min-width: 1240px;
     .ban_form {
         float: right;
     }
@@ -224,9 +226,9 @@ a {
 /*<---- Баннер end ----->*/
 /*<---- Кнопки, поля ввода begin ----->*/
 .button {
-    font-size: 23px;
-
-    padding: 17px 23px;
+    font-size: 20px;
+    display: block;
+    padding: 15px 38px;
 
     cursor: pointer;
 
@@ -404,7 +406,8 @@ a {
     .button {
         width: 60px;
         margin: 0 4px;
-        padding: 0;    
+        padding: 0;
+        display: inline-bloc    
     }
     a {
     display: block;

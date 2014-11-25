@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "892667135ec4a180c5febbd526c720c5",
+    "hash": "c2bff2d157099073dc7b8d050b202820",
     "packages": [
         {
             "name": "anahkiasen/former",
@@ -1617,16 +1617,16 @@
         },
         {
             "name": "patricktalmadge/bootstrapper",
-            "version": "5.3.0",
+            "version": "5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/patricktalmadge/bootstrapper.git",
-                "reference": "3dd21b7c9c0a730ef8d284962e2977b9a73c75be"
+                "reference": "95e635d3e5e618bb74e74c09579b068ce693c965"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/patricktalmadge/bootstrapper/zipball/3dd21b7c9c0a730ef8d284962e2977b9a73c75be",
-                "reference": "3dd21b7c9c0a730ef8d284962e2977b9a73c75be",
+                "url": "https://api.github.com/repos/patricktalmadge/bootstrapper/zipball/95e635d3e5e618bb74e74c09579b068ce693c965",
+                "reference": "95e635d3e5e618bb74e74c09579b068ce693c965",
                 "shasum": ""
             },
             "require": {
@@ -1670,7 +1670,7 @@
                 "bootstrap",
                 "laravel"
             ],
-            "time": "2014-11-11 21:44:02"
+            "time": "2014-11-25 01:17:15"
         },
         {
             "name": "phpseclib/phpseclib",

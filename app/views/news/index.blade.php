@@ -23,43 +23,6 @@
 		</div>
 	</div>
 	<div class="content clear-fix">
-	    <div class="main">
-			<div class="line"></div>
-      @foreach ($news as $one_news)
-	    	<div class="article clear-fix">
-	    		<img src="{{ $one_news->preview->url('medium') }}" alt="" class="article_img">
-	    		<div class="article_container">
-		    		<h2><a class="article_header" href="{{ URL::route('news.show', $one_news->slug) }}">{{ $one_news->title }}</a></h2>
-		    		<p class="description"> {{ Str::limit($one_news->content, 100) }} </p>
-					<p class="date">{{ $one_news->created_at() }}</p>
-          @if ($one_news->tagNames() != [])
-					    Тэги:
-              {{ implode(", ", array_map(function($name) {
-                    return '<a href="/blogs?tag='.$name.'" class="tag">'.$name.'</a>';
-                }, $one_news->tagNames())) }}
-          @endif
-					<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
-	    		</div>
-	    	</div>
-      @endforeach
-	    </div>
-	    <div class="sidebar">
-	    	<div class="input_search_block">
-            {{ Form::open(['url' => '/blogs', 'method' => 'get']) }}
-				        <input type="text" name="search" placeholder="Поиск"class="input input_search">
-				        <button class="input_search_button" type="submit"></button>
-            {{ Form::close() }}
-			</div>
-    		<p>Выбор рубрики:</p>
-        @foreach ($rubrics as $rubric)
-    		    <a href="/blogs?rubric={{ $rubric->name }}">{{ $rubric->name }}</a>
-        @endforeach
-    		<p>Подписаться на статьи.<br>
-			Я хочу быть в курсе<br>
-			последних статей</p>
-			<input class="input input_email" placeholder="Ваш e-mail">
-			<button class="button button_active">Подписаться</button>
-	    </div>
 	</div>
 
 <?php $paginator = $news; ?>

@@ -31,10 +31,7 @@ class WorksController extends BaseController {
     {
       $title = Lang::get('admin/works/title.blog_show');
       $work = $this->work->where('slug', $slug)->firstOrFail();
-      $rubrics = \Rubric::all();
-      // FIXME В mysql RAND()!
-      $another_works = $work->rubrics()->first()->works()->orderBy(DB::raw("RANDOM()"))->take(4)->get();
-
+      
       return View::make('works/show', compact('work', 'title', 'rubrics', 'another_works'));
     }
 }
