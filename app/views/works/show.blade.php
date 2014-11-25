@@ -41,15 +41,20 @@
 				<h1 class="title">Клиент</h1>
 				<div class="dot"></div><hr class="horizontal_line">
 	</div>
-	<div class="about_client">
+	<div class="about_client clear-fix">
 		<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
-		<h2 class="client_name">Санта клаус</h2>
-		<p class="post_work">Генеральный директор</p>	
+		<div class="about_client_text">
+			<h2 class="client_name">Санта клаус</h2>
+			<p class="post_work">Генеральный директор</p>
+			<p class="client_comment">Нам очень нужно было побольше снега, нам его оперативно доставили, мы очень довольны.<br>
+			Хотя можно было бы и прислать немного льда...</p>
+		</div>
 	</div>
 	<div class="title_container clear-fix">
 				<h1 class="title">Реализация</h1>
 				<div class="dot"></div><hr class="horizontal_line">
 	</div>
+	<p>Какой-то текст</p>
 </div>
 
 @stop

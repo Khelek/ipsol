@@ -327,7 +327,8 @@ a {
   .pagination .button {
     width: 60px;
     margin: 0 4px;
-    padding: 0; }
+    padding: 0;
+    display: inline-block; }
   .pagination a {
     display: block;
     box-sizing: border-box;
