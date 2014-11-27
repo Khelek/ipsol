@@ -3,9 +3,10 @@
 @section('title')
 @stop
 
-@section('keywords')Posts administration @stop
+@section('keywords') $ask->meta_keywords @stop
 @section('author')Laravel 4 Bootstrap Starter SIte @stop
-@section('description')Posts administration index @stop
+@section('description') $ask->meta_description @stop
+
 
 
 @section('content')
