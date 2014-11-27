@@ -10,7 +10,7 @@ class BlogsController extends BaseController {
         $this->post = $post;
     }
 
-    public function index()
+    public function index($rubricSlug = NULL)
     {
         $title = Lang::get('admin/blogs/title.blog_management');
 
@@ -19,8 +19,8 @@ class BlogsController extends BaseController {
 
         if(Input::get('search')) $posts = $posts->search(Input::get('search'));
         if(Input::get('tag')) $posts = $posts->withAnyTag(Input::get('tag'));
-        if(Input::get('rubric')) $posts = $posts->whereHas('rubrics', function($q) {
-            $q->where('name', Input::get('rubric'));
+        if($rubricSlug) $posts = $posts->whereHas('rubrics', function($q) use ($rubricSlug) {
+            $q->where('name', $rubricSlug);
         });
 
         $posts = $posts->paginate(10);

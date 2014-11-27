@@ -48,11 +48,12 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin'), function()
 });
 
 
-// FIXME add filter for {slug}
-// /blogs/rubric/{rubric} need maybe redirecs to /blogs?rubric=hui
 Route::get('blogs/{slug}', ['as' => 'blogs.show',
                             'uses' => 'BlogsController@show'])->where('slug', '[A-Za-z0-9\-]+');
+Route::get('blogs/rubric/{slug}', ['as' => 'blogs.index.rubric',
+                            'uses' => 'BlogsController@index'])->where('slug', '[A-Za-z0-9\-]+');
 Route::resource('blogs', 'BlogsController', ['except' => ['show']]);
+
 
 Route::get('security/{slug}', ['as' => 'security.show',
                                'uses' => 'SecurityController@show'])->where('slug', '[A-Za-z0-9\-]+');
@@ -62,12 +63,13 @@ Route::get('news/{slug}', ['as' => 'news.show',
                            'uses' => 'NewsController@show'])->where('slug', '[A-Za-z0-9\-]+');
 Route::resource('news', 'NewsController', ['except' => ['show']]);
 
-// /works/category/{rubric} need maybe redirect to /works?category=hui
+
 Route::get('works/{slug}', ['as' => 'works.show',
                             'uses' => 'WorksController@show'])->where('slug', '[A-Za-z0-9\-]+');
 Route::get('works/categories/{slug}', ['as' => 'works.index.category',
                             'uses' => 'WorksController@index'])->where('slug', '[A-Za-z0-9\-]+');
 Route::resource('works', 'WorksController', ['except' => ['show']]);
+
 
 Route::get('support/ask/{slug}', ['as' => 'support.ask.show',
                                   'uses' => 'SupportController@ask_show'])->where('slug', '[A-Za-z0-9\-]+');

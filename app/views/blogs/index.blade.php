@@ -54,7 +54,8 @@
 			</div>
     		<p>Выбор рубрики:</p>
         @foreach ($rubrics as $rubric)
-    		    <a href="/blogs?rubric={{ $rubric->name }}">{{ $rubric->name }}</a>
+    		    <a href="{{ URL::route('blogs.index.rubric',
+	$rubric->slug) }}" class="{{ Request::is('blogs/rubric/'. $rubric->slug) ?	'blog_rubric_active' : 	'' }}">{{ $rubric->name }}</a>
         @endforeach
     		<p>Подписаться на статьи.<br>
 			Я хочу быть в курсе<br>

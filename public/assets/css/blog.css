@@ -451,3 +451,6 @@ a {
     width: 205px; }
   .sidebar .button {
     margin-top: 20px; }
+  .sidebar .blog_rubric_active {
+    font-weight: bold;
+    color: #5a38ab; }
