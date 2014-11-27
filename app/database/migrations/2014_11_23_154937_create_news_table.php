@@ -26,6 +26,11 @@ class CreateNewsTable extends Migration {
 			$table->string('preview_content_type')->nullable();
 			$table->timestamp('preview_updated_at')->nullable();
 
+            $table->string('big_preview_file_name')->nullable();
+			$table->integer('big_preview_file_size')->nullable();
+			$table->string('big_preview_content_type')->nullable();
+			$table->timestamp('big_preview_updated_at')->nullable();
+
 			$table->timestamps();
 		});
 	}

@@ -19,7 +19,7 @@
 	<div class="ban_orange">
 		<div class="col2">
 			<div class="triangle"></div>
-    	<a href="{{	URL::route('works.index') }}">Назад к списку советов</a>
+    	<a href="{{	URL::route('works.index') }}">Назад к списку работ</a>
 		</div>
 	</div>
 </div>
@@ -29,32 +29,29 @@
 				<div class="dot"></div><hr class="horizontal_line">
 	</div>
 	<div class="works_images clear-fix">
-		<img class="work_img_big" src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
-		<img class="work_img_small" src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
-		<img class="work_img_small" src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
+		<img class="work_img_big" src="{{	$work->main_photo->url('medium') }}" alt="">
+		<img class="work_img_small" src="{{ $work->second_photo->url('medium') }}" alt="">
+		<img class="work_img_small" src="{{	$work->third_photo->url('medium') }}" alt="">
 	</div>
 	<h2>Описание задачи</h2>
-	<p>Здравствуйте многоуважаемое общество! В группе уже 42000, и я надеюсь, что есть люди, или люди которые знают людей, которые занимаются мореплавством, морские бродяги может, на маленьком судне, которые бороздят океаны и моря в различных целях, или собираются отплыть. Хотел бы найти таких людей, и как-то втерется в команду :)
-Я правда не тямлю в морских делах, но мог бы драить палубу там, посуду мыть, подсобные дела, а там может и научился бы чего) И зарплата не нужна, ну еда только...
-Может вы мне подскажете?</p>
+	<p>{{ $work->quest_description }}</p>
 	<div class="title_container clear-fix">
 				<h1 class="title">Клиент</h1>
 				<div class="dot"></div><hr class="horizontal_line">
 	</div>
 	<div class="about_client clear-fix">
-		<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
+		<img src="{{ $work->client_photo->url('medium') }}" alt="">
 		<div class="about_client_text">
-			<h2 class="client_name">Санта клаус</h2>
-			<p class="post_work">Генеральный директор</p>
-			<p class="client_comment">Нам очень нужно было побольше снега, нам его оперативно доставили, мы очень довольны.<br>
-			Хотя можно было бы и прислать немного льда...</p>
+			<h2 class="client_name">{{ $work->client_name }}</h2>
+			<p class="post_work">{{ $work->client_post }}</p>
+			<p class="client_comment">{{ $work->client_description }}</p>
 		</div>
 	</div>
 	<div class="title_container clear-fix">
 				<h1 class="title">Реализация</h1>
 				<div class="dot"></div><hr class="horizontal_line">
 	</div>
-	<p>Какой-то текст</p>
+	<p>{{ $work->solution_content }}</p>
 </div>
 
 @stop

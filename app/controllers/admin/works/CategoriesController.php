@@ -1,7 +1,7 @@
 <?php namespace Admin\Works;
 use Category, Lang, AdminController, View, Input, Redirect;
 
-class CategorysController extends AdminController {
+class CategoriesController extends AdminController {
 
     protected $category;
 
@@ -29,7 +29,7 @@ class CategorysController extends AdminController {
 	{
         $category = $this->category->find($id);
 
-        if ($category->update(Input::all()))
+        if ($category->updateUniques(Input::all()))
         {
             return Redirect::route('admin.works.index')->with('success', Lang::get('admin/blogs/messages.create.success'));
         } else {

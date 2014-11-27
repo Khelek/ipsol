@@ -1,4 +1,4 @@
-var gulp = require('gulp'), 
+var gulp = require('gulp'),
 	csso = require('gulp-csso'), // Минификация CSS
     imagemin = require('gulp-imagemin'), // Минификация изображений
     uglify = require('gulp-uglify'), // Минификация JS

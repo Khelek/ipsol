@@ -28,71 +28,38 @@
 и используем новые технологии, которые значительно отличают нашу компанию
 	   </p>
 	   <ul class="works_menu clear-fix">
-	   	<li class="works_menu_item works_menu_item_active"><a href="">Всё</a></li>
-	   	<li class="works_menu_item"><a href="">Почти всё</a></li>
-	   	<li class="works_menu_item"><a href="">Не совсем всё</a></li>
-	   	<li class="works_menu_item"><a href="">Половина всего</a></li>
-	   	<li class="works_menu_item"><a href="">Чуть-чуть всего</a></li>
-	   	<li class="works_menu_item"><a href="">Почти ничего</a></li>
-	   	<li class="works_menu_item"><a href="">Ничего</a></li>
-	   	<li class="works_menu_item"><a href="">Совсем ничего</a></li>
-	   	<li class="works_menu_item"><a href="">Безысходно ничего</a></li>
-	   	<li class="works_menu_item"><a href="">чёрная дыра от ничего</a></li>
+	   	<li class="works_menu_item {{ Request::is('works') ? 'works_menu_item_active' : '' }}"><a href="{{ URL::route('works.index') }}">Всё</a></li>
+      @foreach ($categories as $category)
+	   	    <li class="works_menu_item {{ Request::is('works/categories/'. $category->slug) ?	'works_menu_item_active' : 	'' }}">
+              <a href="{{ URL::route('works.index.category', $category->slug) }}">{{ $category->name }}</a>
+          </li>
+      @endforeach
 	   </ul>
 	</div>
 	<div class="content works clear-fix">
-		<div class="works_row clear-fix">
-			<div class="work_preview">
-				<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
-				<a href="">Что здесь интересненького</a>
-				<p>Какой-то тоже очень увлекательный и познавательный конечно текстываываыва</p>
-			</div>
-			<div class="work_preview">
-				<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
-				<a href="">Что здесь интересненького</a>
-				<p>Какой-то тоже очень увлекательный и познавательный конечно текстываываыва</p>
-			</div>
-			<div class="work_preview work_preview_big">
-				<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
-				<a href="">Что здесь интересненького</a>
-				<p>Какой-то тоже очень увлекательный и познавательный конечно текстываываыва</p>
-			</div>
-		</div>
-		<div class="works_row clear-fix">
-			<div class="work_preview">
-				<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
-				<a href="">Что здесь интересненького</a>
-				<p>Какой-то тоже очень увлекательный и познавательный конечно текстываываыва</p>
-			</div>
-			<div class="work_preview">
-				<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
-				<a href="">Что здесь интересненького</a>
-				<p>Какой-то тоже очень увлекательный и познавательный конечно текстываываыва</p>
-			</div>
-			<div class="work_preview">
-				<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
-				<a href="">Что здесь интересненького</a>
-				<p>Какой-то тоже очень увлекательный и познавательный конечно текстываываыва</p>
-			</div>
-			<div class="work_preview">
-				<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
-				<a href="">Что здесь интересненького</a>
-				<p>Какой-то тоже очень увлекательный и познавательный конечно текстываываыва</p>
-			</div>
-		</div>
-		<div class="works_row clear-fix">
-			<div class="work_preview work_preview_big">
-				<img src="{{	asset('assets/images/article_img_small.jpg') }}" alt="">
-				<a href="">Что здесь интересненького</a>
-				<p>Какой-то тоже очень увлекательный и познавательный конечно текстываываыва</p>
-			</div>
-			<div class="work_preview work_preview_big">
-				<img src="{{	asset('assets/images/article_img_big.jpg') }}" alt="">
-				<a href="">Что здесь интересненького</a>
-				<p>Какой-то тоже очень увлекательный и познавательный конечно текстываываыва</p>
-			</div>
-		</div>
-		<button class="button button_active">Показать больше объектов</button>
+      <?php /*строки рассчитываются по весам: у маленького превью вес
+	            1, у большого - 2. всего в строке может быть не больше 4*/ ?>
+      <?php function sum_weight($carry, $item) { $carry += $item->weight(); return $carry; } ?>
+      @for ($i = 0, $row_count = 1; $i < count($works); $i++, $row_count++)
+          <?php $arr = $works->slice($i, 4) ?>
+          @if ($arr->reduce('sum_weight') <= 4)
+              @include('works.works_row', ["arr" => $arr, "row_count" => $row_count])
+              <?php $i = $i + count($arr) ?>
+              <?php continue; ?>
+          @endif
+
+          <?php $arr->pop() ?>
+          @if ($arr->reduce('sum_weight') <= 4)
+              @include('works.works_row', ["arr" => $arr, "row_count" => $row_count])
+              <?php $i = $i + count($arr) ?>
+              <?php continue; ?>
+          @endif
+
+          <?php $arr->pop() ?>
+          @include('works.works_row', ["arr" => $arr, "row_count" => $row_count])
+          <?php $i = $i + count($arr) ?>
+      @endfor
+		<button class="show_works_button button button_active">Показать больше объектов</button>
 	</div>
 	<div class="content clear-fix">
 	    <div class="title_container clear-fix">
@@ -116,4 +83,8 @@
 
 @section('styles')
 	  <link rel="stylesheet" href="{{	asset('assets/css/works.css') }}">
+@stop
+
+@section('scripts')
+	<script src="{{	asset('assets/js/application.js') }}"></script>
 @stop

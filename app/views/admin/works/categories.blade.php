@@ -3,7 +3,7 @@
 			  <tr>
 				    <th>id</th>
 				    <th> Название </th>
-				    <th></th>
+				    <th> ЧПУ </th>
 				    <th></th>
 			  </tr>
 		</thead>
@@ -15,6 +15,7 @@
                      {{ Form::hidden('id', $category->id) }}
                 </td>
                 <td> {{ BootstrapForm::text('name', $category->name, ['class' => 'input-small', 'placeholder' => 'Название']) }} </td>
+                <td> {{ BootstrapForm::text('slug', $category->slug, ['class' => 'input-small', 'placeholder' => 'URL']) }} </td>
                 <td> {{ BootstrapForm::submit('Сохранить') }} </td>
                 <td> <a href="{{{ route('admin.works.categories.destroy', $category->id) }}}"
 		                   data-method="delete"
@@ -26,6 +27,7 @@
                 {{ BootstrapForm::inline(['route' => ['admin.works.categories.store'], 'method' => 'POST']) }}
                 <td> </td>
                 <td> {{ BootstrapForm::text('name', "", ['class' => 'input-small', 'placeholder' => 'Название']) }} </td>
+                <td> {{ BootstrapForm::text('slug', "", ['class' => 'input-small', 'placeholder' => 'ЧПУ']) }} </td>
                 <td> {{ BootstrapForm::submit('Новая категория') }} </td>
                 <td> </td>
                 {{ BootstrapForm::close() }}

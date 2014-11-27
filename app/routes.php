@@ -65,6 +65,8 @@ Route::resource('news', 'NewsController', ['except' => ['show']]);
 // /works/category/{rubric} need maybe redirect to /works?category=hui
 Route::get('works/{slug}', ['as' => 'works.show',
                             'uses' => 'WorksController@show'])->where('slug', '[A-Za-z0-9\-]+');
+Route::get('works/categories/{slug}', ['as' => 'works.index.category',
+                            'uses' => 'WorksController@index'])->where('slug', '[A-Za-z0-9\-]+');
 Route::resource('works', 'WorksController', ['except' => ['show']]);
 
 Route::get('support/ask/{slug}', ['as' => 'support.ask.show',

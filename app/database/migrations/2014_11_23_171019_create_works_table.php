@@ -24,6 +24,7 @@ class CreateWorksTable extends Migration {
 			$table->string('meta_title')->nullable();
 			$table->string('meta_description')->nullable();
 			$table->string('meta_keywords')->nullable();
+			$table->boolean('need_big_preview')->nullable();
 
             // превью и большое превью
             $table->string('preview_file_name')->nullable();
@@ -53,6 +54,13 @@ class CreateWorksTable extends Migration {
 			$table->string('third_photo_content_type')->nullable();
 			$table->timestamp('third_photo_updated_at')->nullable();
             // end три фотографии
+
+            //фото клиента
+            $table->string('client_photo_file_name')->nullable();
+			$table->integer('client_photo_file_size')->nullable();
+			$table->string('client_photo_content_type')->nullable();
+			$table->timestamp('client_photo_updated_at')->nullable();
+            //
 
 			$table->timestamps();
 		});

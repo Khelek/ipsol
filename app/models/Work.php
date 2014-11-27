@@ -21,7 +21,8 @@ class Work extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
                            'meta_description', 'meta_keywords',
                            'quest_description', 'client_name',
                            'client_post', 'client_description',
-                           'main_photo', 'second_photo', 'third_photo'];
+                           'main_photo', 'second_photo', 'third_photo',
+                           'need_big_preview', 'client_photo'];
 
     public static $rules = array(
         'solution_content' => 'required',
@@ -35,18 +36,10 @@ class Work extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
         'slug'    => 'required|unique:works',
     );
 
-    private function attachImage($attribute, $dimensions, $url)
-    {
-        $this->hasAttachedFile($attribute, [
-            'styles' => [
-                'medium' => ['dimensions' => $dimensions, 'auto-orient' => true, 'convert_options' => ['quality' => 100]],
-            ],
-            'url' => $url
-        ]);
-    }
+    use AttachImageTrait;
 
     public function __construct(array $attributes = array()) {
-        $url = '/system/:attachment/:model/:id_partition/:style/:filename';
+        $url = '/system/:attachment/works/:id_partition/:style/:filename';
 
         $this->hasAttachedFile('preview', [
             'styles' => [
@@ -56,10 +49,12 @@ class Work extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
             'url' => $url
         ]);
 
+        // мб добавить аргумент ['medium' => '416x214#', 'small' => '100x100#'] и вынести в trait
         $this->attachImage('big_preview', '416x214#', $url);
-        $this->attachImage('main_photo', '214x214#', $url);
-        $this->attachImage('second_photo', '214x214#', $url);
-        $this->attachImage('third_photo', '214x214#', $url);
+        $this->attachImage('main_photo', '810x457#', $url);
+        $this->attachImage('second_photo', '400x214#', $url);
+        $this->attachImage('third_photo', '400x214#', $url);
+        $this->attachImage('client_photo', '214x214#', $url);
 
         parent::__construct($attributes);
     }
@@ -75,6 +70,10 @@ class Work extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
 
     use PostMetaTags;
     use BeutifullTimestamps;
+
+    public function weight() {
+        return $this->need_big_preview ? 2 : 1; 
+    }
 
 	/**
 	 * Returns a formatted post content entry,

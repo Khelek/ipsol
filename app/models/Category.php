@@ -4,10 +4,11 @@ class Category extends \LaravelBook\Ardent\Ardent {
 
     public $autoPurgeRedundantAttributes = true;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'slug'];
 
     public static $rules = array(
-        'name' => 'required'
+        'name' => 'required',
+        'slug' => 'required|unique:categories'
     );
 
     public static $relationsData = array(
