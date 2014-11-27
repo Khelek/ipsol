@@ -13,13 +13,13 @@
 	<div class="ban clear-fix">
 		<div class="ban_gray">
 			<div class="col2">
-				<h1><span class="ban_text">Советы по безопасности</span></h1>
+				<h1><span class="ban_text">Новости</span></h1>
 			</div>
 		</div>
 		<div class="ban_orange">
 			<div class="col2">
 				<div class="triangle"></div>
-	    	<a href="{{	URL::route('news.index') }}">Назад к списку советов</a>
+	    	<a href="{{	URL::route('news.index') }}">Назад к списку новостей</a>
 			</div>
 		</div>
 	</div>
@@ -41,10 +41,10 @@
 
 
 	    	</div>
-	    	<a href="{{	URL::route('news.index') }}">Назад к списку советов</a>
+	    	<a href="{{	URL::route('news.index') }}">Назад к списку новостей</a>
 		</div>
     	<div class="sidebar">
-    		<h2>Ещё советы</h2>
+    		<h2>Ещё новости</h2>
         @foreach ($another_news as $a_news)
     		    <div class="sidebar_article"><img src="{{ $a_news->preview->url('medium') }}" alt="">
 				        <a href="{{	URL::route('news.show', $a_news->slug) }}">{{ $a_news->title }}</a>
@@ -59,5 +59,5 @@
 
 
 @section('styles')
-	  <link rel="stylesheet" href="{{	asset('assets/css/blog_open.css') }}">
+	  <link rel="stylesheet" href="{{	asset('assets/css/security_open.css') }}">
 @stop

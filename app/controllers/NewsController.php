@@ -18,7 +18,9 @@ class NewsController extends BaseController {
 
         $news = $news->paginate(10);
         $last_news = $this->news->first();
-        return View::make('news/index', compact('news', 'last_news', 'title'));
+        $another_news = $news->slice(1,9);
+
+        return View::make('news/index', compact('news', 'last_news', 'title', 'another_news'));
     }
 
     public function show($slug)

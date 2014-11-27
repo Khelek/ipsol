@@ -34,7 +34,7 @@
 			<p class="date">{{ $last_news->created_at() }}</p>
   </div>
 	 <div class="main">
-          @foreach ($news as $one_news)
+          @foreach ($another_news as $one_news)
 	    	      <div class="article clear-fix">
 	    		        <img src="{{ $one_news->preview->url('medium') }}" alt="">
 	    		        <div class="article_container">
