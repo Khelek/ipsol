@@ -20,7 +20,9 @@ class NewsController extends BaseController {
         $last_news = $this->news->first();
         $another_news = $news->slice(1,9);
 
-        return View::make('news/index', compact('news', 'last_news', 'title', 'another_news'));
+        $banners = \Banner::where('view_in_news', true)->take(2)->get();
+
+        return View::make('news/index', compact('news', 'last_news', 'title', 'another_news', 'banners'));
     }
 
     public function show($slug)

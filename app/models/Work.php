@@ -72,7 +72,7 @@ class Work extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
     use BeutifullTimestamps;
 
     public function weight() {
-        return $this->need_big_preview ? 2 : 1; 
+        return $this->need_big_preview ? 2 : 1;
     }
 
 	/**
