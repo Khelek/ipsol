@@ -16,9 +16,8 @@ class NewsController extends BaseController {
 
         $news = $this->news;
 
-        $news = $news->paginate(10)->get();
-        $last_news = $news->shift();
-        dd(count($news));
+        $news = $news->paginate(10);
+        $last_news = $this->news->first();
         return View::make('news/index', compact('news', 'last_news', 'title'));
     }
 
