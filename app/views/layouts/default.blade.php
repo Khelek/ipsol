@@ -11,7 +11,7 @@
   <!-- hui -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="keywords" content="@yield('keywords')" />
-	<meta name="author" content="@yield('author')" />
+	<meta name="title" content="@yield('meta_title')" />
 	<!-- Google will often use this as its description of your page/site. Make it good. -->
 	<meta name="description" content="@yield('description')" />
 

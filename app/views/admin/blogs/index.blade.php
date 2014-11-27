@@ -44,7 +44,7 @@
 			<tr>
 				<th>id</th>
 				<th>{{{ Lang::get('admin/blogs/table.title') }}}</th>
-				<th>{{{ Lang::get('admin/blogs/table.comments') }}}</th>
+				<th>{{{ Lang::get('admin/blogs/table.slug') }}}</th>
 				<th>{{{ Lang::get('admin/blogs/table.created_at') }}}</th>
 				<th>{{{ Lang::get('table.actions') }}}</th>
 			</tr>
@@ -54,7 +54,7 @@
             <tr>
                 <td> {{{ $post->id }}} </td>
                 <td> {{{ $post->title }}} </td>
-                <td>  </td>
+                <td> {{{ $post->slug }}} </td>
                 <td> {{{ $post->created_at }}} </td>
                 <td>
                     <a href="{{{ route('admin.blogs.edit', $post->id) }}}"

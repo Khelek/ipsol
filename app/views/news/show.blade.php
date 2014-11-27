@@ -4,9 +4,9 @@
     {{{ $news->$title }}}
 @stop
 
-@section('keywords') $news->meta_keywords @stop
-@section('author') @stop
-@section('description') $news->meta_description @stop
+@section('keywords') {{{ $news->meta_keywords }}} @stop
+@section('meta_title') {{{ $news->meta_title }}} @stop
+@section('description') {{{ $news->meta_description }}} @stop
 
 
 @section('content')

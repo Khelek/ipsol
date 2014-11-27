@@ -3,9 +3,9 @@
 @section('title')
 @stop
 
-@section('keywords') $tip->meta_keywords @stop
-@section('author')Laravel 4 Bootstrap Starter SIte @stop
-@section('description') $tip->meta_description @stop
+@section('keywords') {{{ $tip->meta_keywords }}} @stop
+@section('meta_title') {{{ $tip->meta_title }}} @stop
+@section('description') {{{ $tip->meta_description }}} @stop
 
 
 @section('content')

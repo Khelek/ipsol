@@ -4,9 +4,9 @@
     {{{  $work->$title }}}
 @stop
 
-@section('keywords') $work->meta_keywords @stop
-@section('author') @stop
-@section('description') $work->meta_description @stop
+@section('keywords') {{{ $work->meta_keywords }}} @stop
+@section('meta_title') {{{ $work->meta_title }}} @stop
+@section('description') {{{ $work->meta_description }}} @stop
 
 
 @section('content')
