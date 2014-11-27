@@ -28,7 +28,7 @@ class NewsController extends BaseController {
       $title = Lang::get('admin/news/title.blog_show');
       $news = $this->news->where('slug', $slug)->firstOrFail();
       // FIXME В mysql RAND()!
-      $another_news = $this->news->orderBy(DB::raw("RANDOM()"))->take(4)->get();
+      $another_news = $this->news->orderBy(DB::raw("RANDOM()"))->take(2)->get();
 
       return View::make('news/show', compact('news', 'title', 'another_news'));
     }
