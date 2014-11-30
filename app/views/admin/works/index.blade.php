@@ -46,7 +46,7 @@
 				<th>{{{ Lang::get('admin/works/table.title') }}}</th>
 				<th>{{{ Lang::get('admin/works/table.preview') }}}</th>
 				<th>{{{ Lang::get('admin/works/table.created_at') }}}</th>
-				<th>{{{ Lang::get('table.actions') }}}</th>
+				<th>{{{ Lang::get('admin/works/table.actions') }}}</th>
 			</tr>
 		</thead>
 		<tbody>

@@ -2,7 +2,7 @@
 <div id="service-center-addresses">
     {{-- TODO мб сделать хелпер вместо импорта --}}
     <div style='margin-left: -15px; margin-right: -15px;'>
-        {{ Form::label('addresses', 'Addresses', ["class" => "col-lg-2 col-sm-4 control-label"]) }}
+        {{ Form::label('addresses', Lang::get('validation.attributes.addresses'), ["class" => "col-lg-2 col-sm-4 control-label"]) }}
     </div>
 
     @foreach($address->addresses as $service_addr)
@@ -17,8 +17,7 @@
     </div>
 </div>
 {{ Former::actions()
-            ->large_primary_submit('Submit')
-            ->large_inverse_reset('Reset') }}
+            ->large_primary_submit(Lang::get('validation.attributes.submit')) }}
 
 @section('scripts')
     @parent

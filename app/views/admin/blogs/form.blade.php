@@ -21,8 +21,7 @@
 </div>
 {{ Former::text('tags') }}
 {{ Former::actions()
-            ->large_primary_submit('Submit')
-            ->large_inverse_reset('Reset') }}
+            ->large_primary_submit(Lang::get('validation.attributes.submit')) }}
 
 @section('scripts')
 	<script type="text/javascript">

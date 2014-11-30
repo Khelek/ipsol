@@ -38,7 +38,8 @@
     <link rel="stylesheet" href="{{asset('bower/bootstrap-tokenfield/dist/css/bootstrap-tokenfield.min.css/')}}">
     <link rel="stylesheet" href="{{asset('bower/select2/select2.css')}}">
     <link rel="stylesheet" href="{{asset('bower/select2/select2-bootstrap.css')}}">
-    <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css">
+	  <link rel="stylesheet" href="{{	asset('assets/css/style_v2.css') }}">
+    <!--link rel="stylesheet" href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css"-->
 
 	<style>
 	body {
@@ -50,74 +51,107 @@
 
 </head>
 
-<body>
+<body style="padding: 0;">
 	<!-- Container -->
-	<div class="container">
-		<!-- Navbar -->
-		<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-    			<div class="collapse navbar-collapse navbar-ex1-collapse">
-    				<ul class="nav navbar-nav">
-    					<li{{ (Request::is('admin/blogs*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/blogs') }}}"><span class="glyphicon glyphicon-list-alt"></span> Блог</a></li>
-    					<li{{ (Request::is('admin/security*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/security')	}}}"><span class="glyphicon glyphicon-list-alt"></span> Советы по безопасности</a></li>
-    					<li{{ (Request::is('admin/support*') ? ' class="active"'
-	: '') }}><a href="{{{ URL::to('admin/support')	}}}"><span
-	class="glyphicon glyphicon-list-alt"></span> Поддержка</a></li>
-    				</ul>
-    				<ul class="nav navbar-nav pull-right">
-    					<li><a href="{{{ URL::to('/') }}}">View Homepage</a></li>
-    					<li class="divider-vertical"></li>
-    					<li class="dropdown">
-    							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-    								<span class="glyphicon glyphicon-user"></span> {{-- Auth::user()->username --}}	<span class="caret"></span>
-    							</a>
-    							<ul class="dropdown-menu">
-    								<li><a href="{{{ URL::to('user/settings') }}}"><span class="glyphicon glyphicon-wrench"></span> Settings</a></li>
-    								<li class="divider"></li>
-    								<li><a href="{{{ URL::to('user/logout') }}}"><span class="glyphicon glyphicon-share"></span> Logout</a></li>
-    							</ul>
-    					</li>
-    				</ul>
-    			</div>
+    <!-- FIXME DANGER - на мобилках этого меню нет -->
+    <header class="col-sm-2" style="border: 0; position: fixed;">
+        <div id="logo" class="row">
+            <div class="col-sm-12">
+                <a> Админка </a>
             </div>
-		</div>
-		<!-- ./ navbar -->
+        </div>
+    </header>
+	<div id="main" class="container-fluid" style="margin-top: 0">
+      <div class="row">
+          <!-- sidebar -->
+          <div id="sidebar-left" class="col-xs-2 col-sm-2"
+	style="margin-top: 51px">
+              <ul class="nav main-menu">
+                  <li>
+                      <a href="{{ URL::route('admin.blogs.index') }}">
+                          <i class="fa fa-table"></i>
+                          <span class="hidden-xs">
+                              Блоги
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="{{ URL::route('admin.works.index') }}">
+                          <i class="fa fa-cloud-download"></i>
+                          <span class="hidden-xs">
+                              Работы
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="{{ URL::route('admin.news.index') }}">
+                          <i class="fa fa-ticket"></i>
+                          <span class="hidden-xs">
+                              Новости
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="{{ URL::route('admin.banners.index') }}">
+                          <i class="fa fa-dollar"></i>
+                          <span class="hidden-xs">
+                              Баннеры
+                          </span>
+                      </a>
+                  </li>
+                  <li class="dropdown">
+                      <a class="dropdown-toggle" href="#">
+                          <i class="fa fa-at"></i>
+                          Поддержка
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="{{ URL::route('admin.support.asks.index') }}">
+                                  <span class="hidden-xs">
+                                      Вопросы
+                                  </span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="{{ URL::route('admin.support.instructions.index') }}">
+                                  <span class="hidden-xs">
+                                      Инструкции
+                                  </span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="{{ URL::route('admin.support.addresses.index') }}">
+                                  <span class="hidden-xs">
+                                      Адреса
+                                  </span>
+                              </a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                      
+                      <a href="{{ URL::route('admin.security.index') }}">
+                          <i class="fa fa-user"></i>
+                          <span class="hidden-xs">
+                              Советы по безопасности
+                          </span>
+                      </a>
+                  </li>
+              </ul>
+              
+          </div>
+         <!-- end sidebar -->
+          <div id="content" class="col-xs-12 col-sm-10">
+              <div style="padding-left: 20px">
+		              @yield('content')
+              </div>
+          </div>
+      </div>
+  </div>
 
-    @if (trim($__env->yieldContent('back-url')))
-		    <div class="page-header">
-            <div class="row">
-                <div class="col-md-10">
-			              <h3>
-				                {{ $title }}
-		       	        </h3>
-                </div>
-			          <div class="col-md-2">
-                    <a href="@yield('back-url')" class="btn btn-default btn-small btn-inverse close_popup" style="margin-top: 20px"> 
-                        <span class="glyphicon glyphicon-circle-arrow-left"></span>
-                        Back</a>
-                </div>
-            </div>
-		    </div>
-    @endif
-
-
-		<!-- Content -->
-		@yield('content')
-		<!-- ./ content -->
-
-		<!-- Footer -->
-		<footer class="clearfix">
+	<footer class="clearfix">
 			@yield('footer')
-		</footer>
-		<!-- ./ Footer -->
+	</footer>
 
 	</div>
 	<!-- ./ container -->
@@ -133,8 +167,9 @@
 
     <script src="{{asset('js/ckeditor/ckeditor.js')}}"></script>
     <script src="{{asset('assets/js/laravel.js')}}"></script>
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
-    <script src="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script src="{{asset('assets/js/application.js')}}"></script>
+    <!--script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script-->
+    <!--script src="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script-->
 
     @yield('scripts')
 

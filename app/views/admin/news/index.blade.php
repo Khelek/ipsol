@@ -38,7 +38,7 @@
 				<th>{{{ Lang::get('admin/news/table.title') }}}</th>
 				<th>{{{ Lang::get('admin/news/table.preview') }}}</th>
 				<th>{{{ Lang::get('admin/news/table.created_at') }}}</th>
-				<th>{{{ Lang::get('table.actions') }}}</th>
+				<th>{{{ Lang::get('admin/news/table.actions') }}}</th>
 			</tr>
 		</thead>
 		<tbody>

@@ -8,5 +8,4 @@
 @include('components.image_upload_input', ["object" => $tip, "image" => 'preview'])
 
 {{ Former::actions()
-            ->large_primary_submit('Submit')
-            ->large_inverse_reset('Reset') }}
+            ->large_primary_submit(Lang::get('validation.attributes.submit')) }}

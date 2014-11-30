@@ -14,7 +14,7 @@
 
   <div class="page-header">
 		<h3>
-        Адреса сервисных центров
+        FAQ(Часто задаваемые вопросы)
 			<div class="pull-right">
 				<a href="{{{ route('admin.support.asks.create') }}}" class="btn
 				btn-small btn-info iframe"><span class="glyphicon

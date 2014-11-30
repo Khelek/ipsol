@@ -5,5 +5,4 @@
 {{ Former::string('meta_description') }}
 {{ Former::string('meta_keywords') }}
 {{ Former::actions()
-            ->large_primary_submit('Submit')
-            ->large_inverse_reset('Reset') }}
+            ->large_primary_submit(Lang::get('validation.attributes.submit')) }}

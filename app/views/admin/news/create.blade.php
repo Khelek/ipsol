@@ -4,12 +4,9 @@
     {{{ $title }}} :: @parent
 @stop
 
-@section('back-url')
-    {{ URL::route("admin.news.index") }}
-@stop
-
 
 @section('content')
+    @include('components.admin_header', ['title' => $title, 'route' => URL::route("admin.news.index")])
     {{ Former::framework('TwitterBootstrap3') }}
     {{ Former::open_for_files()->method('POST')->route('admin.news.store') }}
 
