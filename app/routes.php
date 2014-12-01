@@ -11,6 +11,11 @@
 |
 */
 
+Route::filter('basic.once', function()
+{
+    return Auth::onceBasic();
+});
+
 Route::get('/', function()
 {
     return Redirect::route('blogs.index');
@@ -23,7 +28,7 @@ Route::get('/admin', function()
 
 
 
-Route::group(array('prefix' => 'admin', 'namespace' => 'Admin'), function()
+Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'), function()
 {
     Route::resource('blogs', 'BlogsController');
     Route::group(array('prefix' => 'blogs', 'namespace' => 'Blogs'), function()
@@ -47,6 +52,10 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin'), function()
     });
 });
 
+
+Route::post('login', 'UserController@postLogin');
+Route::get('login', 'UserController@getLogin');
+Route::get('logout', 'UserController@postLogin');
 
 Route::get('blogs/{slug}', ['as' => 'blogs.show',
                             'uses' => 'BlogsController@show'])->where('slug', '[A-Za-z0-9\-]+');
