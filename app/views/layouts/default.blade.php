@@ -47,7 +47,7 @@
 					<li class="item"><a href="">Компания</a></li>
 					<li class="item"><a href="">Системы по типам задач</a></li>
 					<li class="item"><a href="">По типам систем</a></li>
-					<li class="item"><a href="">Наши работы</a></li>
+					<li class="item"><a href="/works">Наши работы</a></li>
 					<li class="item"><a href="{{ URL::route('blogs.index') }}">Блог</a></li>
 					<li class="item"><a href="">Контакты</a></li>
 				</ul>
@@ -67,9 +67,9 @@
 				<div class="footer_col5">
 					<h5><a href="">Компания</a></h5>
 					<a href="">О компании</a>
-					<a href="">Новости</a>
-					<a h-ref="">Поддержка</a>
-					<a href="">Советы по безопасности</a>
+					<a href="/news">Новости</a>
+					<a href="/support">Поддержка</a>
+					<a href="/security">Советы по безопасности</a>
 				</div>
 				<div class="footer_col5">
 					<h5><a href="">Системы по типам задач</a></h5>
@@ -97,18 +97,18 @@
 					<a href="">Шлагбаумы</a>
 				</div>
 				<div class="footer_col5">
-					<h5><a href="">Наши работы</a></h5>
-					<a href="">Офисы</a>
-					<a href="">Склады</a>
-					<a href="">Магазины и рестораны</a>
-					<a href="">Автостоянки (Автобазы)</a>
+					<h5><a href="/works">Наши работы</a></h5>
+					<!--a href="">Офисы</a-->
+					<!--a href="">Склады</a-->
+					<!--a href="">Магазины и рестораны</a-->
+					<!--a href="">Автостоянки (Автобазы)</a-->
 				</div>
 				<div class="footer_col5">
-					<h5><a href="">Блог</a></h5>
-					<a href="">Лучшее</a>
-					<a href="">Популярное</a>
-					<a href="">Как выбрать камеру</a>
-					<a href="">Вы должны это прочитать</a>
+					<h5><a href="/blogs">Блог</a></h5>
+					<!--a href="">Лучшее</a-->
+					<!--a href="">Популярное</a-->
+					<!--a href="">Как выбрать камеру</a-->
+					<!--a href="">Вы должны это прочитать</a-->
 				</div>
 			</div>
 		</div>

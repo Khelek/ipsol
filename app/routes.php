@@ -26,6 +26,10 @@ Route::get('/admin', function()
     return Redirect::route('admin.blogs.index');
 });
 
+Route::get('/support', function()
+{
+    return Redirect::route('support.sip');
+});
 
 
 Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'), function()

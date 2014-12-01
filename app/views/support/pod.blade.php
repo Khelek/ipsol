@@ -19,9 +19,9 @@
 			<div class="col2">
 				<div class="triangle"></div>
 				<div class="ban_form">
-					<a href="">Часто задаваемые вопросы</a>
-					<a href="">Адреса сервисных центров</a>
-					<a href="">Список инструкций пользования</a>
+					<a href="{{ URL::route('support.ask') }}">Часто задаваемые вопросы</a>
+					<a href="{{ URL::route('support.pod') }}">Адреса сервисных центров</a>
+					<a href="{{ URL::route('support.sip') }}">Список инструкций пользования</a>
 				</div>
 
 			</div>
