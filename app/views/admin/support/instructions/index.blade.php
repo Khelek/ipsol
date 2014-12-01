@@ -14,7 +14,7 @@
 
   <div class="page-header">
 		<h3>
-        Адреса сервисных центров
+        Инструкции по использованию
 			<div class="pull-right">
 				<a href="{{{ route('admin.support.instructions.create') }}}" class="btn
 				btn-small btn-info iframe"><span class="glyphicon

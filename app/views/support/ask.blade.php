@@ -43,6 +43,8 @@
         @endforeach
 	    </div>
 	</div>
+  <?php $paginator = $asks; ?>
+  @include('components.pagination')
 	<div class="content clear-fix">
 
 		<div class="title_container clear-fix">

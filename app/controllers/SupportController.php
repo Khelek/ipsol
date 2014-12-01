@@ -4,7 +4,7 @@ class SupportController extends BaseController {
 
     public function ask()
     {
-        $asks = \Ask::all();
+        $asks = \Ask::paginate(10);
         return View::make('support/ask', compact('asks'));
     }
 
