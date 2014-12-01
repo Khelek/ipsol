@@ -254,6 +254,9 @@ a {
   margin: 80px 0;
   color: #505050; }
 
+.footer {
+  width: 1240px; }
+
 .footer_menu {
   padding-bottom: 70px;
   background-color: #232323; }
