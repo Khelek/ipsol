@@ -3,17 +3,13 @@
 $mysqlconf = array();
 
 if (!App::environment('local')) {
-    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+    $password = parse_url(getenv("DB_LARAVEL_PASSWORD"));
 
-    $host = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
-    $database = substr($url["path"], 1);
     $mysqlconf = array(
         'driver'    => 'mysql',
-        'host'      => $host,
-        'database'  => $database,
-        'username'  => $username,
+        'host'      => 'localhost',
+        'database'  => 'ipsoldb',
+        'username'  => 'root',
         'password'  => $password,
         'charset'   => 'utf8',
         'collation' => 'utf8_unicode_ci',
