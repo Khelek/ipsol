@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="{{asset('bower/select2/select2.css')}}">
     <link rel="stylesheet" href="{{asset('bower/select2/select2-bootstrap.css')}}">
 	  <link rel="stylesheet" href="{{	asset('assets/css/style_v2.css') }}">
-    <!--link rel="stylesheet" href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css"-->
+    <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css">
 
 	<style>
 	body {
@@ -168,8 +168,8 @@
     <script src="{{asset('js/ckeditor/ckeditor.js')}}"></script>
     <script src="{{asset('assets/js/laravel.js')}}"></script>
     <script src="{{asset('assets/js/application.js')}}"></script>
-    <!--script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script-->
-    <!--script src="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script-->
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 
     @yield('scripts')
 
