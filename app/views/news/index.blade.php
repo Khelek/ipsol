@@ -1,4 +1,4 @@
-@extends('layouts.default')
+-@extends('layouts.default')
 
 @section('title')
     {{{ $title }}}
@@ -29,15 +29,15 @@
 		    <a href="{{ $banners->get($i)->url }}"><img class="work_img_small" src="{{	$banners->get($i)->img->url('medium') }}" alt=""></a>
     @endfor
 	</div>
-	<div class="article_container">
+	<div class="article_container article_container_main">
 	    <h2><a class="article_header" href="{{	URL::route('news.show', $last_news->slug) }}">{{ $last_news->title }}</a></h2>
 	    <p class="description"> {{ Str::limit($last_news->content, 100) }} </p>
 			<p class="date">{{ $last_news->created_at() }}</p>
-  </div>
+	</div>
 	 <div class="main">
           @foreach ($another_news as $one_news)
 	    	      <div class="article clear-fix">
-	    		        <img src="{{ $one_news->preview->url('medium') }}" alt="">
+	    		        <a href="{{	URL::route('news.show', $one_news->slug) }}"><img src="{{ $one_news->preview->url('medium') }}" alt=""></a>
 	    		        <div class="article_container">
 		    		          <h2><a class="article_header" href="{{	URL::route('news.show', $one_news->slug) }}">{{ $one_news->title }}</a></h2>
 		    		          <p class="description"> {{ Str::limit($one_news->content, 100) }} </p>
@@ -54,8 +54,5 @@
 
 
 @section('styles')
-	  <link rel="stylesheet" href="{{	asset('assets/css/blog.css') }}">
-	  <link rel="stylesheet" href="{{	asset('assets/css/security.css') }}">
 	  <link rel="stylesheet" href="{{	asset('assets/css/news.css') }}">
-	  <link rel="stylesheet" href="{{	asset('assets/css/works_open.css') }}">
 @stop

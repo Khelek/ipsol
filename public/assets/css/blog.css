@@ -255,7 +255,7 @@ a {
   color: #505050; }
 
 .footer {
-  width: 1240px; }
+  min-width: 1240px; }
 
 .footer_menu {
   padding-bottom: 70px;
@@ -407,7 +407,8 @@ a {
   margin-top: 70px; }
 
 .article {
-  margin-bottom: 36px; }
+  margin-bottom: 36px;
+  position: relative; }
   .article img {
     float: left;
     width: 214px; }

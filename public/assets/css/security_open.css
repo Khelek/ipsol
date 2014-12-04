@@ -255,7 +255,7 @@ a {
   color: #505050; }
 
 .footer {
-  width: 1240px; }
+  min-width: 1240px; }
 
 .footer_menu {
   padding-bottom: 70px;
@@ -368,6 +368,7 @@ a {
 
 .main {
   float: left;
+  position: relative;
   width: 930px; }
 
 .content {

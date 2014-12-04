@@ -29,7 +29,7 @@
 	    </div>
       @foreach ($posts as $post)
 	    	<div class="article clear-fix">
-	    		<img src="{{ $post->preview->url('medium') }}" alt="" class="article_img">
+	    		<a href="{{ URL::route('blogs.show', $post->slug) }}"><img src="{{ $post->preview->url('medium') }}" alt="" class="article_img"></a>
 	    		<div class="article_container">
 		    		<h2><a class="article_header" href="{{ URL::route('blogs.show', $post->slug) }}">{{ $post->title }}</a></h2>
 		    		<p class="description"> {{ Str::limit($post->content, 100) }} </p>
