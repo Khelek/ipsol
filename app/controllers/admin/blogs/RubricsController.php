@@ -15,25 +15,28 @@ class RubricsController extends AdminController {
 	{
         $rubric = $this->rubric;
 
+        if (Input::get('slug') === "") Input::merge(['slug' => \Slug::make(Input::get('name'))]);
         $rubric->fill(Input::all());
 
         if ($rubric->save())
         {
             return Redirect::route('admin.blogs.index')->with('success', lang::get('admin/blogs/messages.create.success'));
         } else {
-            return Redirect::back()->withInput()->withErrors($rubric->errors());
+            return Redirect::back()->withInput(['only' => []])->withErrors($rubric->errors());
         }
 	}
 
 	public function update($id)
 	{
         $rubric = $this->rubric->find($id);
+        if (Input::get('slug') === "") Input::merge(['slug' => \Slug::make(Input::get('name'))]);
 
-        if ($rubric->update(Input::all()))
+        $rubric->fill(Input::all());
+        if ($rubric->updateUniques())
         {
             return Redirect::route('admin.blogs.index')->with('success', Lang::get('admin/blogs/messages.create.success'));
         } else {
-            return Redirect::back()->withInput()->withErrors($rubric->errors());
+            return Redirect::back()->withInput(['only' => []])->withErrors($rubric->errors());
         }
 	}
 

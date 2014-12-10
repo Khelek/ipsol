@@ -35,7 +35,8 @@
     "nicolaslopezj/searchable": "1.*",
     "patricktalmadge/bootstrapper": "~5",
 		"marc-mabe/php-enum": "~1.2",
-    "mews/purifier": "dev-master"
+    "mews/purifier": "dev-master",
+		"barryvdh/laravel-elfinder": "~0.2"
 	},
 	"autoload": {
 		"classmap": [

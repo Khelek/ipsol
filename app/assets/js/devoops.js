@@ -43,6 +43,14 @@ $(document).ready(function () {
 			e.preventDefault();
 		}
 	});
+
+  // for CKEDITOR image upload
+  $.each($('.ckeditor'), function(i, val) {
+	  CKEDITOR.replace(val.id, {
+		  "filebrowserImageUploadUrl": "/admin/upload?_token=" + $('meta[name="_token"]').attr('content'),
+      "filebrowserBrowseUrl": '/elfinder/ckeditor4'
+	  });
+  })
 });
 
 

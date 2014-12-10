@@ -29,7 +29,9 @@
 	<meta name="DC.creator" content="@yield('author')">
 
 	<!--  Mobile Viewport Fix -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width,
+	initial-scale=1.0, maximum-scale=1.0">
+  <meta name="_token" content="{{ csrf_token() }}" />
 
 	<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}">
 
@@ -141,7 +143,7 @@
               
           </div>
          <!-- end sidebar -->
-          <div id="content" class="col-xs-12 col-sm-10">
+          <div id="content-container" class="col-xs-12 col-sm-10">
               <div style="padding-left: 20px">
 		              @yield('content')
               </div>
