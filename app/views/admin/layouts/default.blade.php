@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="{{asset('bower/bootstrap-tokenfield/dist/css/bootstrap-tokenfield.min.css/')}}">
     <link rel="stylesheet" href="{{asset('bower/select2/select2.css')}}">
     <link rel="stylesheet" href="{{asset('bower/select2/select2-bootstrap.css')}}">
-	  <link rel="stylesheet" href="{{	asset('assets/css/style_v2.css') }}">
+	  <link rel="stylesheet" href="{{	asset('assets/css/style_v2.css?123') }}">
     <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css">
 
 	<style>
