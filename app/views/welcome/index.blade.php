@@ -78,12 +78,12 @@
 				<a href="" class="plus_more">Подробнее</a>
 			</div>
 	</div>
-	<div class="content clear-fix">
+	<div class="content">
 		<div class="title_container clear-fix">
 			<h1 class="title">IPSolutions – это</h1>
 			<div class="dot"></div><hr class="horizontal_line">
 		</div>
-		<div class="about_container">
+		<div class="about_container clear-fix">
 			<div class="about_block">
 				<h3 class="about_block_number">1</h3>
 				<p class="about_block_text">Монтаж за 1 день без шума
