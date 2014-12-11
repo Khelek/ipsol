@@ -35,7 +35,7 @@ class BlogsController extends BaseController {
       // FIXME В mysql RAND()!
       $rubric = $another_posts = $post->rubrics()->first();
       if (!is_null($rubric)) {
-          $another_posts = $rubric->posts()->orderBy(DB::raw("RANDOM()"))->take(4)->get();
+          $another_posts = $rubric->posts()->orderBy(DB::raw("RAND()"))->take(4)->get();
       } else {
           $another_posts = [];
       }

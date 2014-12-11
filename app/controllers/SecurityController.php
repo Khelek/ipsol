@@ -24,7 +24,7 @@ class SecurityController extends BaseController {
         //$title = Lang::get('admin/blogs/title.blog_show');
         $title = "Совет";
         $tip = $this->tip->where('slug', $slug)->firstOrFail();
-        $another_tips = \SecurityTip::orderBy(DB::raw("RANDOM()"))->take(2)->get();
+        $another_tips = \SecurityTip::orderBy(DB::raw("RAND()"))->take(2)->get();
 
         return View::make('security/show', compact('tip', 'another_tips'));
     }

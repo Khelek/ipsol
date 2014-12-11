@@ -136,6 +136,7 @@ return array(
         'Ivanlemeshev\LaravelCyrillicSlug\SlugServiceProvider',
         'Bootstrapper\BootstrapperServiceProvider',
         'Mews\Purifier\PurifierServiceProvider',
+        'Barryvdh\Elfinder\ElfinderServiceProvider',
 
 	),
 

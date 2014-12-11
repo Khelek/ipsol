@@ -98,17 +98,16 @@
 				</div>
 				<div class="footer_col5">
 					<h5><a href="/works">Наши работы</a></h5>
-					<!--a href="">Офисы</a-->
-					<!--a href="">Склады</a-->
-					<!--a href="">Магазины и рестораны</a-->
-					<!--a href="">Автостоянки (Автобазы)</a-->
+          @foreach (\Category::all() as $category)
+              <a href="{{ URL::route('works.index.category', $category->slug) }}">{{ $category->name }}</a>
+          @endforeach
 				</div>
 				<div class="footer_col5">
 					<h5><a href="/blogs">Блог</a></h5>
-					<!--a href="">Лучшее</a-->
-					<!--a href="">Популярное</a-->
-					<!--a href="">Как выбрать камеру</a-->
-					<!--a href="">Вы должны это прочитать</a-->
+          @foreach (\Rubric::all() as $rubric)
+    		    <a href="{{ URL::route('blogs.index.rubric',
+	$rubric->slug) }}" >{{ $rubric->name }}</a>
+          @endforeach
 				</div>
 			</div>
 		</div>
@@ -116,7 +115,7 @@
 			<div class="content clear-fix">
 				<div class="contact_text">
 					<a class="phone"href="tel:+74955653204">+7 495 565 32 04</a>
-					<a href="">Заказать звонок</a> 					
+					<a href="">Заказать звонок</a>
 					<script>
 						document.write('<a class="email "href=" m' + 'ailto:sa' + 'le@ip-so' + 'l.ru ">sale@' + 'ip-sol.' + 'ru</a>');
 					</script>

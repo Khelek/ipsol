@@ -7,7 +7,7 @@ body {
   overflow-y:hidden;
   margin-right: 15px;
 }
-.modal-open #content {z-index: inherit;}
+.modal-open #content-container {z-index: inherit;}
 .body-expanded .expanded-panel, .fancybox-margin .expanded-panel, .modal-open .expanded-panel {
   margin-right: 15px;
 }
@@ -77,7 +77,7 @@ a.show-sidebar:hover {
   -o-transition: 0.1s;
   transition: 0.1s;
 }
-#content {
+#content-container {
   position: relative;
   z-index: 10;
   background: #FBFBF0;
@@ -410,7 +410,7 @@ a.show-sidebar:hover {
   width: 16.666666666666664%;
   padding: 0 15px;
 }
-.sidebar-show #content.col-xs-12 {
+.sidebar-show #content-container.col-xs-12 {
   opacity: 1;
   width: 83.33333333333334%;
 }
@@ -2110,7 +2110,7 @@ border-radius: 50%;}
     width:0;
     padding:0;
   }
-  .sidebar-show #content.col-sm-10 {
+  .sidebar-show #content-container.col-sm-10 {
     opacity: 1;
     width:100%;
   }

@@ -15,13 +15,14 @@ class CategoriesController extends AdminController {
 	{
         $category = $this->category;
 
+        if (Input::get('slug') === "") Input::merge(['slug' => \Slug::make(Input::get('name'))]);
         $category->fill(Input::all());
 
         if ($category->save())
         {
             return Redirect::route('admin.works.index')->with('success', lang::get('admin/blogs/messages.create.success'));
         } else {
-            return Redirect::back()->withInput()->withErrors($category->errors());
+            return Redirect::back()->withInput(['only' => []])->withErrors($category->errors());
         }
 	}
 
@@ -29,11 +30,14 @@ class CategoriesController extends AdminController {
 	{
         $category = $this->category->find($id);
 
-        if ($category->updateUniques(Input::all()))
+        if (Input::get('slug') === "") Input::merge(['slug' => \Slug::make(Input::get('name'))]);
+
+        $category->fill(Input::all());
+        if ($category->updateUniques())
         {
             return Redirect::route('admin.works.index')->with('success', Lang::get('admin/blogs/messages.create.success'));
         } else {
-            return Redirect::back()->withInput()->withErrors($category->errors());
+            return Redirect::back()->withInput(['only' => []])->withErrors($category->errors());
         }
 	}
 

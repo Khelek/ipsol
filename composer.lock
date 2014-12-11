@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c2bff2d157099073dc7b8d050b202820",
+    "hash": "f154d7310fcffec2ac62a30fe9166cb4",
     "packages": [
         {
             "name": "anahkiasen/former",
@@ -105,6 +105,63 @@
             "time": "2014-01-27 22:41:20"
         },
         {
+            "name": "barryvdh/elfinder-builds",
+            "version": "v2.1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/elfinder-builds.git",
+                "reference": "bff62842a2d1230dcf404c4278175c2277dc2c50"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/elfinder-builds/zipball/bff62842a2d1230dcf404c4278175c2277dc2c50",
+                "reference": "bff62842a2d1230dcf404c4278175c2277dc2c50",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Levashov",
+                    "email": "dio@std42.ru",
+                    "homepage": "http://std42.ru"
+                },
+                {
+                    "name": "Troex Nevelin",
+                    "email": "troex@fury.scancode.ru",
+                    "homepage": "http://std42.ru"
+                },
+                {
+                    "name": "Naoki Sawada",
+                    "email": "hypweb@gmail.com",
+                    "homepage": "http://xoops.hypweb.net"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/Studio-42/elFinder/contributors"
+                }
+            ],
+            "description": "File manager for web",
+            "homepage": "http://elfinder.org",
+            "time": "2014-12-09 08:24:27"
+        },
+        {
             "name": "barryvdh/laravel-debugbar",
             "version": "v1.8.3",
             "source": {
@@ -157,6 +214,55 @@
                 "webprofiler"
             ],
             "time": "2014-11-23 12:21:42"
+        },
+        {
+            "name": "barryvdh/laravel-elfinder",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-elfinder.git",
+                "reference": "4c53acf5dfec47305699a9a4ff7bd9621684f2f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-elfinder/zipball/4c53acf5dfec47305699a9a4ff7bd9621684f2f3",
+                "reference": "4c53acf5dfec47305699a9a4ff7bd9621684f2f3",
+                "shasum": ""
+            },
+            "require": {
+                "barryvdh/elfinder-builds": "2.1.x",
+                "illuminate/support": "4.x|5.0.x",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\Elfinder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "A Laravel Package to integrate elFinder 2",
+            "keywords": [
+                "elfinder",
+                "filebrowser",
+                "laravel",
+                "tinymce"
+            ],
+            "time": "2014-12-03 09:52:44"
         },
         {
             "name": "bkwld/reporter",

@@ -29,6 +29,13 @@ Route::get('/support', function()
     return Redirect::route('support.sip');
 });
 
+// обзор загружженых файлов
+Route::group(array('before' => 'auth'), function()
+{
+    \Route::get('elfinder', 'Barryvdh\Elfinder\ElfinderController@showIndex');
+    \Route::get('elfinder/ckeditor4', 'Barryvdh\Elfinder\ElfinderController@showCKeditor4');
+    \Route::any('elfinder/connector', 'Barryvdh\Elfinder\ElfinderController@showConnector');
+});
 
 Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'), function()
 {
@@ -52,6 +59,7 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'aut
         Route::resource('asks', 'AsksController');
         Route::resource('instructions', 'InstructionsController');
     });
+    Route::post('upload', 'UploadsController@upload');
 });
 
 

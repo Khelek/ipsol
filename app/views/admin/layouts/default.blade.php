@@ -29,7 +29,9 @@
 	<meta name="DC.creator" content="@yield('author')">
 
 	<!--  Mobile Viewport Fix -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width,
+	initial-scale=1.0, maximum-scale=1.0">
+  <meta name="_token" content="{{ csrf_token() }}" />
 
 	<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}">
 
@@ -38,8 +40,8 @@
     <link rel="stylesheet" href="{{asset('bower/bootstrap-tokenfield/dist/css/bootstrap-tokenfield.min.css/')}}">
     <link rel="stylesheet" href="{{asset('bower/select2/select2.css')}}">
     <link rel="stylesheet" href="{{asset('bower/select2/select2-bootstrap.css')}}">
-	  <link rel="stylesheet" href="{{	asset('assets/css/style_v2.css') }}">
-    <!--link rel="stylesheet" href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css"-->
+	  <link rel="stylesheet" href="{{	asset('assets/css/style_v2.css?123') }}">
+    <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css">
 
 	<style>
 	body {
@@ -141,7 +143,7 @@
               
           </div>
          <!-- end sidebar -->
-          <div id="content" class="col-xs-12 col-sm-10">
+          <div id="content-container" class="col-xs-12 col-sm-10">
               <div style="padding-left: 20px">
 		              @yield('content')
               </div>
@@ -168,8 +170,8 @@
     <script src="{{asset('js/ckeditor/ckeditor.js')}}"></script>
     <script src="{{asset('assets/js/laravel.js')}}"></script>
     <script src="{{asset('assets/js/application.js')}}"></script>
-    <!--script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script-->
-    <!--script src="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script-->
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 
     @yield('scripts')
 
