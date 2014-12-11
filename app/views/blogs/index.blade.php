@@ -29,7 +29,7 @@
 	    </div>
       @foreach ($posts as $post)
 	    	<div class="article clear-fix">
-	    		<a href="{{ URL::route('blogs.show', $post->slug) }}"><img src="{{ $post->preview->url('medium') }}" alt="" class="article_img"></a>
+				<a href="{{ URL::route('blogs.show', $post->slug) }}"><img src="{{ $post->preview->url('medium') }}" alt="" class="article_img"></a>
 	    		<div class="article_container">
 		    		<h2><a class="article_header" href="{{ URL::route('blogs.show', $post->slug) }}">{{ $post->title }}</a></h2>
 		    		<p class="description"> {{ Str::limit($post->content, 100) }} </p>
@@ -64,7 +64,7 @@
 			<button class="button button_active">Подписаться</button>
 	    </div>
 	</div>
-
+	<script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>
 <?php $paginator = $posts; ?>
 @include('components.pagination')
 @stop

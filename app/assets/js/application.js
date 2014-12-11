@@ -8,7 +8,7 @@ $(function() {
 			$(this).hide();
 		}
 	});
-
+	
   if ($(".works_row_hidden").size() < 1) {
     $(".show_works_button").hide();
   }

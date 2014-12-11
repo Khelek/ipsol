@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'), // Минификация изображений
     uglify = require('gulp-uglify'), // Минификация JS
     concat = require('gulp-concat'); // Склейка файлов
-    var sass = require('gulp-sass');
+    sass = require('gulp-sass');
+
 
 gulp.task('js', function() {
     gulp.src(['app/assets/js/**/*.js'])
@@ -22,6 +23,12 @@ gulp.task('sass', function () {
         .pipe(sass())
         .pipe(gulp.dest('public/assets/css'));
 });
+gulp.task('css', function() {
+  gulp.src(['public/assets/css/welcomes.css','public/bower/owl.carousel/dist/assets/owl.carousel.css','public/bower/owl.carousel/dist/assets/owl.theme.default.css'])
+    .pipe(concat('welcome.css'))
+    .pipe(gulp.dest('public/assets/css'));
+});
 gulp.task('watch', function() {
-  gulp.watch('app/assets/scss/**', ['sass']);
+    gulp.watch('app/assets/scss/**', ['sass','css']);
+    gulp.watch('app/assets/js/**', ['js']);
 });

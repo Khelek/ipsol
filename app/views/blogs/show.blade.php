@@ -47,9 +47,9 @@
 		</div>
 		<div class="another_article clear-fix">
 			<div class="title_container clear-fix">
-			<h1 class="title">Другие статьи</h1>
-			<div class="dot"></div><hr class="horizontal_line">
-		</div>
+				<h1 class="title">Другие статьи</h1>
+				<div class="dot"></div><hr class="horizontal_line">
+			</div>
       @foreach ($another_posts as $a_post)
 			    <div class="col4">
 				      <img src="{{ $a_post->preview->url('medium') }}" alt="">
@@ -79,6 +79,7 @@
       <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 		</div>
 	</div>
+	<script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>
 @stop
 
 

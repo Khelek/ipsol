@@ -1,16 +1,16 @@
 html {
   font-family: 'Istok Web', sans-serif;
+  font-smooth: always;
   margin: 0;
   padding: 0;
   color: #3d3d3d;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-smooth: always;
   -moz-font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-html, body, p {
+html, body, p, h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0; }
 
@@ -23,9 +23,12 @@ h2 {
 
 h1, h2 {
   font-family: 'FranklinGothic', sans-serif;
-  font-weight: 400;
-  margin: 0;
-  padding: 0; }
+  font-weight: 400; }
+
+h3 {
+  font-family: 'FranklinGothicBook', sans-serif;
+  font-size: 36px;
+  font-weight: 400; }
 
 .date, .tag {
   text-decoration: none;
@@ -35,25 +38,25 @@ a {
   color: #1d7ac0; }
 
 .title {
-  margin: 60px 0 40px 0;
   display: block;
   float: left;
+  margin: 60px 0 40px 0;
   margin-right: 36px; }
 
 .dot {
-  border-radius: 50%;
-  margin-top: 100px;
   display: inline-block;
   width: 5px;
   height: 5px;
+  margin-top: 100px;
+  border-radius: 50%;
   background-color: #d2d2d2; }
 
 .horizontal_line {
   position: relative;
   top: -18px;
-  border: 0px;
-  border-top: 1px #d2d2d2;
-  border-style: solid; }
+  border-style: solid;
+  border-top: 1px;
+  border-color: #d2d2d2; }
 
 .line_padding {
   position: absolute;
@@ -125,19 +128,22 @@ a {
 /*<---- Баннер begin ----->*/
 .ban {
   width: 100%;
-  min-width: 1240px; }
+  min-width: 1240px;
+  height: 150px; }
   .ban .ban_form {
     float: right; }
+  .ban .input {
+    border: 0px; }
 
 .ban_gray, .ban_orange {
   float: left;
   width: 50%;
-  height: 150px; }
+  height: 100%; }
 
 .ban_orange {
   background-color: #ffcf3f; }
   .ban_orange .col2 {
-    float: leftl; }
+    float: left; }
 
 .ban_gray {
   background-color: #f4f4f4; }
@@ -289,8 +295,8 @@ a {
   margin-right: 10px; }
 
 .social .icons {
-  float: right;
   line-height: 1.5em;
+  float: right;
   margin-top: 28px; }
 
 .social_icon {
@@ -328,10 +334,10 @@ a {
   margin-top: 30px;
   color: #808080; }
   .pagination .button {
+    display: inline-block;
     width: 60px;
     margin: 0 4px;
-    padding: 0;
-    display: inline-block; }
+    padding: 0; }
   .pagination a {
     display: block;
     box-sizing: border-box;

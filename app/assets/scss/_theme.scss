@@ -1,7 +1,7 @@
 $dark-grey: #232323;
 $grey: #3d3d3d;
 $light-grey: #808080;
-$very-light-grey: #969696; 
+$very-light-grey: #969696;
 $ban-orange: #ffcf3f;
 $dark-orange-active-menu: #e7b41f;
 $border-menu: #b68039;
@@ -10,20 +10,21 @@ $violet-button-active: #5a38ab;
 $fucked-blue-link: #1d7ac0;
 html {
     font-family: 'Istok Web', sans-serif;
+    font-smooth: always;
 
     margin: 0;
     padding: 0;
 
     color: $grey;
-    font-smoothing: antialiased;
+
+            font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    font-smooth: always;
-    -moz-font-smoothing: antialiased;
+       -moz-font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-html, body, p {
-    margin: 0;  
+html, body, p, h1, h2, h3, h4, h5 {
+    margin: 0;
     padding: 0;
 }
 h1 {
@@ -37,9 +38,11 @@ h2 {
 h1, h2 {
     font-family: 'FranklinGothic', sans-serif;
     font-weight: 400;
-
-    margin: 0;
-    padding: 0;
+}
+h3 {
+    font-family: 'FranklinGothicBook', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
 }
 .date, .tag {
     text-decoration: none;
@@ -51,30 +54,34 @@ a {
     color: $fucked-blue-link;
 }
 .title {
-    margin: 60px 0 40px 0;
     display: block;
     float: left;
+
+    margin: 60px 0 40px 0;
     margin-right: 36px;
 }
 
 .dot {
-    border-radius: 50%;
-    margin-top: 100px;
     display: inline-block;
+
     width: 5px;
     height: 5px;
+    margin-top: 100px;
+
+    border-radius: 50%;
     background-color: #d2d2d2;
 }
 .horizontal_line {
     position: relative;
     top: -18px;
-    border: 0px;
-    border-top: 1px #d2d2d2;
     border-style: solid;
+    border-top: 1px;
+    border-color: #d2d2d2;
 }
 
 .line_padding {
     position: absolute;
+
     box-sizing: border-box;
     height: 100%;
     padding-top: 103px;
@@ -85,6 +92,7 @@ a {
     height: 100%;
     max-height: 100%;
     margin-left: 945px;
+
     background-color: #d2d2d2;
 }
 .content {
@@ -107,12 +115,12 @@ a {
         width: 215px;
     }
     p {
-    font-size: 13px;
-    line-height: 14px;
+        font-size: 13px;
+        line-height: 14px;
 
-    margin: 0 0 0 47px;
+        margin: 0 0 0 47px;
 
-    color: $light-grey;
+        color: $light-grey;
     }
 }
 .menu {
@@ -160,20 +168,24 @@ a {
 .ban {
     width: 100%;
     min-width: 1240px;
+    height: 150px;
     .ban_form {
         float: right;
+    }
+    .input {
+        border: 0px;
     }
 }
 .ban_gray, .ban_orange {
     float: left;
 
     width: 50%;
-    height: 150px;
+    height: 100%;
 }
 .ban_orange {
     background-color: $ban-orange;
     .col2 {
-        float: leftl
+        float: left;
     }
 }
 .ban_gray {
@@ -227,7 +239,9 @@ a {
 /*<---- Кнопки, поля ввода begin ----->*/
 .button {
     font-size: 20px;
+
     display: block;
+
     padding: 15px 38px;
 
     cursor: pointer;
@@ -327,11 +341,11 @@ a {
 
     background-color: #232323;
     a {
-    font-size: 12px;
+        font-size: 12px;
 
-    display: block;
+        display: block;
 
-    color: #e3e3e3;
+        color: #e3e3e3;
     }
 }
 .footer_menu h5 a {
@@ -354,6 +368,7 @@ a {
     }
     .contact_text a {
         margin-right: 20px;
+
         color: $grey;
     }
 }
@@ -361,11 +376,14 @@ a {
 /*<----Иконки социальный сетей begin---->*/
 .social p {
     float: right;
+
     margin-right: 10px;
 }
 .social .icons {
-    float: right;
     line-height: 1.5em;
+
+    float: right;
+
     margin-top: 28px;
 }
 .social_icon {
@@ -405,29 +423,31 @@ a {
     width: 520px;
     margin: 0 auto;
     margin-top: 30px;
+
     color: #808080;
     .button {
+        display: inline-block;
+
         width: 60px;
         margin: 0 4px;
         padding: 0;
-        display: inline-block;
     }
     a {
-    display: block;
+        display: block;
 
-    box-sizing: border-box;
-    width: 60px;
-    height: 60px;
-    padding: 15px 0;
+        box-sizing: border-box;
+        width: 60px;
+        height: 60px;
+        padding: 15px 0;
 
-    text-align: center;
+        text-align: center;
     }
     .ellipsis {
-    padding: 0 10px;
+        padding: 0 10px;
 
-    color: $very-light-grey;
+        color: $very-light-grey;
     }
-}  
+}
 /* <--- Пагинация END --->*/
 
 /* <--- "Форма Нужна помощь" BEGIN--->?*/
@@ -448,7 +468,7 @@ a {
     font-family: 'FranklinGothic';
 
     src: url('../fonts/FranklinGothicMediumCondRegular.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('../fonts/FranklinGothicMediumCondRegular.ttf') format('truetype') /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    url('../fonts/FranklinGothicMediumCondRegular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
 @font-face {
     font-family: 'FranklinGothicBook';

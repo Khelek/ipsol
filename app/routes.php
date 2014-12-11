@@ -16,10 +16,8 @@ Route::filter('basic.once', function()
     return Auth::onceBasic();
 });
 
-Route::get('/', function()
-{
-    return Redirect::route('blogs.index');
-});
+Route::get('/', 'WelcomeController@index');
+
 
 Route::get('/admin', function()
 {
@@ -57,7 +55,6 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'aut
 });
 
 
-Route::post('login', 'UserController@postLogin');
 Route::get('login', 'UserController@getLogin');
 Route::get('logout', 'UserController@postLogin');
 
