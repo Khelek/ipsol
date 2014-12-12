@@ -12,7 +12,7 @@
     <meta content='{{ $post->title }}' property='og:title'>
     <meta content='{{ Str::limit($post->content, 100) }}' property='og:description'>
     <meta content='IpSolutions' property='og:site_name'>
-    <meta content='{{ $post->preview->absolute_url('medium') }}' property='og:image'>
+    <meta content='{{ \Request::root().$post->preview->url('medium') }}' property='og:image'>
     <meta content='214' property='og:image:width'>
     <meta content='214' property='og:image:height'>
     <meta content='{{ URL::route('blogs.show', $post->slug) }}' property='og:url'>
