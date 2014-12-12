@@ -41,7 +41,7 @@
                 }, $post->tagNames())) }}
           @endif
 					<div class="yashare-auto-init" data-yashareL10n="ru"
-	data-yashareType="none" data-yashareLink="{{ URL::route('blogs.show', $post->slug }}" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
+	data-yashareType="none" data-yashareLink="{{ URL::route('blogs.show', $post->slug) }}" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
 	    		</div>
 	    	</div>
       @endforeach

@@ -38,13 +38,13 @@
 				Мы работаем с 9.00 до 22.00 <a class="phone" href="tel:+74955653204"><img src="{{ asset('assets/images/iphone.png') }}" alt="">+7 495 565 32 04</a>
 			</div>
 			<div>
-				<div class="logo">
+				<a href="/" class="logo" style="text-decoration: none;">
 					<img class="logo_img" src="{{	asset('assets/images/logo_2014.png') }}" alt="Логотип"/>
 					<p>Установка цифровых систем<br>
 					видеонаблюдения в Москве и МО</p>
-				</div>
+				</a>
 				<ul class="menu">
-					<li class="item"><a href="">Главная</a></li>
+					<li class="item"><a href="/">Главная</a></li>
 					<li class="item"><a href="">Компания</a></li>
 					<li class="item"><a href="">Системы по типам задач</a></li>
 					<li class="item"><a href="">По типам систем</a></li>

@@ -130,28 +130,22 @@
 	</div>
 	<div class="content clear-fix">
 		<div class="additional_information_block">
-			<img src=""/>
+			<img src="{{ $advice->preview->url('medium') }}"/>
 			<h3>А знаете ли вы?</h3>
-			<p>Видео камера для дома для просмотра
-видео по интернету обязательно должна
-быть присоединена к Wi-fi</p>
-			<a href="">Подробнее</a>
+			<p>{{ $advice->title }}</p>
+			<a href="{{	URL::route('security.show', $advice->slug) }}">Подробнее</a>
 		</div>
 		<div class="additional_information_block">
-			<img src=""/>
+			<img src="{{ $news->preview->url('medium') }}"/>
 			<h3>Новости компании</h3>
-			<p>Открыли филиал в Ижевске
-Теперь вы сможете получить оборудование
-в Поволжье ещё быстрее</p>
-			<a href="">Подробнее</a>
+			<p>{{ $news->title }}</p>
+			<a href="{{	URL::route('news.show', $news->slug) }}">Подробнее</a>
 		</div>
 		<div class="additional_information_block">
-			<img src=""/>
+			<img src="{{ $work->preview->url('medium') }}"/>
 			<h3>Последний объект</h3>
-			<p>Устанавливали видеонаблюдение 
-в Кремле Теперь следим за Путиным
-Он пока работает</p>
-			<a href="">Подробнее</a>
+			<p>{{ $work->title }}</p>
+			<a href="{{	URL::route('works.show', $work->slug) }}">Подробнее</a>
 		</div>
 	</div>
 	<div class="content clear-fix">
