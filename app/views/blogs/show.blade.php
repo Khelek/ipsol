@@ -15,7 +15,7 @@
     <meta content='{{ $post->preview->url('medium') }}' property='og:image'>
     <meta content='214' property='og:image:width'>
     <meta content='214' property='og:image:height'>
-    <meta content='{{ URL::route('blogs.show', $post->slug }}' property='og:url'>
+    <meta content='{{ URL::route('blogs.show', $post->slug) }}' property='og:url'>
 @stop
 
 
