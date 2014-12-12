@@ -23,6 +23,7 @@
 	<meta name="DC.subject" content="@yield('description')">
 	<meta name="DC.creator" content="@yield('author')">
   <!-- endhui -->
+  @yield('meta-tags')
 
 	<!-- CSS -->
 	<link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
