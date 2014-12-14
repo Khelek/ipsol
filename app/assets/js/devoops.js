@@ -1,4 +1,10 @@
 $(document).ready(function () {
+  $.extend($.fn.dataTable.defaults, {
+    "language": {
+      "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
+     }
+  });
+
 	$('.main-menu').on('click', 'a', function (e) {
 		var parents = $(this).parents('li');
 		var li = $(this).closest('li.dropdown');
