@@ -17,12 +17,12 @@ class NewsController extends BaseController {
         $news = $this->news;
 
         $news = $news->paginate(10);
-        $last_news = $this->news->first();
-        $another_news = $news->slice(1,9);
+        $big_news = \BigNews::first();
+        $big_news = is_null($big_news) ? $this->news->first() : $big_news->news;
 
         $banners = \Banner::where('view_in_news', true)->take(2)->get();
 
-        return View::make('news/index', compact('news', 'last_news', 'title', 'another_news', 'banners'));
+        return View::make('news/index', compact('news', 'big_news', 'title', 'banners'));
     }
 
     public function show($slug)

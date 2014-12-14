@@ -1,4 +1,4 @@
--@extends('layouts.default')
+@extends('layouts.default')
 
 @section('title')
     {{{ $title }}}
@@ -24,18 +24,18 @@
 	</div>
 	<div class="content clear-fix">
 	<div class="works_images clear-fix">
-		<img class="work_img_big" src="{{	$last_news->big_preview->url('medium') }}" alt="">
+		<img class="work_img_big" src="{{	$big_news->big_preview->url('medium') }}" alt="">
     @for($i = 0; $i < $banners->count() && $i < 2; $i++)
 		    <a href="{{ $banners->get($i)->url }}"><img class="work_img_small" src="{{	$banners->get($i)->img->url('medium') }}" alt=""></a>
     @endfor
 	</div>
 	<div class="article_container article_container_main">
-	    <h2><a class="article_header" href="{{	URL::route('news.show', $last_news->slug) }}">{{ $last_news->title }}</a></h2>
-	    <p class="description"> {{ Str::limit($last_news->content, 100) }} </p>
-			<p class="date">{{ $last_news->created_at() }}</p>
+	    <h2><a class="article_header" href="{{	URL::route('news.show', $big_news->slug) }}">{{ $big_news->title }}</a></h2>
+	    <p class="description"> {{ Str::limit($big_news->content, 100) }} </p>
+			<p class="date">{{ $big_news->created_at() }}</p>
 	</div>
 	 <div class="main">
-          @foreach ($another_news as $one_news)
+          @foreach ($news as $one_news)
 	    	      <div class="article clear-fix">
 	    		        <a href="{{	URL::route('news.show', $one_news->slug) }}"><img src="{{ $one_news->preview->url('medium') }}" alt=""></a>
 	    		        <div class="article_container">

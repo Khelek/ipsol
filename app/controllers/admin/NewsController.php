@@ -16,8 +16,9 @@ class NewsController extends AdminController {
         $title = Lang::get('admin/news/title.blog_management');
 
         $news = $this->news->all();
+        $big_news = \BigNews::first();
 
-        return View::make('admin/news/index', compact('news', 'title', 'rubrics'));
+        return View::make('admin/news/index', compact('news', 'title', 'rubrics', 'big_news'));
     }
 
 	public function create()

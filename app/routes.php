@@ -46,6 +46,10 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'aut
     });
     Route::resource('security', 'SecurityController');
     Route::resource('news', 'NewsController');
+    Route::group(array('prefix' => 'news', 'namespace' => 'News'), function()
+    {
+        Route::resource('big_news', 'BigNewsController', ['only' => ['store', 'update', 'destroy']]); // for news
+    });
 
     Route::resource('works', 'WorksController');
     Route::group(array('prefix' => 'works', 'namespace' => 'Works'), function()
