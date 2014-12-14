@@ -11,6 +11,15 @@ class RubricsController extends AdminController {
         $this->rubric = $rubric;
     }
 
+    public function index()
+    {
+        $title = Lang::get('admin/blogs/title.blog_management');
+
+        $rubrics = \Rubric::all();
+
+        return View::make('admin/blogs/rubrics/index', compact('title', 'rubrics'));
+    }
+
 	public function store()
 	{
         $rubric = $this->rubric;
@@ -20,7 +29,7 @@ class RubricsController extends AdminController {
 
         if ($rubric->save())
         {
-            return Redirect::route('admin.blogs.index')->with('success', lang::get('admin/blogs/messages.create.success'));
+            return Redirect::route('admin.blogs.rubrics.index')->with('success', lang::get('admin/blogs/messages.create.success'));
         } else {
             return Redirect::back()->withInput(['only' => []])->withErrors($rubric->errors());
         }
@@ -34,7 +43,7 @@ class RubricsController extends AdminController {
         $rubric->fill(Input::all());
         if ($rubric->updateUniques())
         {
-            return Redirect::route('admin.blogs.index')->with('success', Lang::get('admin/blogs/messages.create.success'));
+            return Redirect::route('admin.blogs.rubrics.index')->with('success', Lang::get('admin/blogs/messages.create.success'));
         } else {
             return Redirect::back()->withInput(['only' => []])->withErrors($rubric->errors());
         }
@@ -44,7 +53,7 @@ class RubricsController extends AdminController {
 	{
 		$this->rubric->find($id)->delete();
 
-		return Redirect::route('admin.blogs.index');
+		return Redirect::route('admin.blogs.rubrics.index');
 	}
 
 }

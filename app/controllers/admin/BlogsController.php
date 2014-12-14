@@ -16,9 +16,8 @@ class BlogsController extends AdminController {
         $title = Lang::get('admin/blogs/title.blog_management');
 
         $posts = $this->post->all();
-        $rubrics = \Rubric::all();
 
-        return View::make('admin/blogs/index', compact('posts', 'title', 'rubrics'));
+        return View::make('admin/blogs/index', compact('posts', 'title'));
     }
 
 	public function create()

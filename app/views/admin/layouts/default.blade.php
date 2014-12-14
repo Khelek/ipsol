@@ -69,24 +69,62 @@
           <div id="sidebar-left" class="col-xs-2 col-sm-2"
 	style="margin-top: 51px">
               <ul class="nav main-menu">
-                  <li>
-                      <a href="{{ URL::route('admin.blogs.index') }}">
+                  <li class="dropdown">
+                      <a class="dropdown-toggle {{ (Request::is('admin/blogs*') ? 'active active-parent' : '') }}" href="#">
                           <i class="fa fa-table"></i>
                           <span class="hidden-xs">
                               Блоги
                           </span>
                       </a>
+
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="{{ URL::route('admin.blogs.index') }}"
+                                 class="{{ (Request::is('admin/blogs*') && !(Request::is('admin/blogs/rubrics*')) ? 'active' : '') }}">
+                                  <span class="hidden-xs">
+                                      Посты
+                                  </span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="{{ URL::route('admin.blogs.rubrics.index') }}" class="{{ (Request::is('admin/blogs/rubrics*') ? 'active' : '') }}">
+                                  <span class="hidden-xs">
+                                      Рубрики
+                                  </span>
+                              </a>
+                          </li>
+                      </ul>
                   </li>
-                  <li>
-                      <a href="{{ URL::route('admin.works.index') }}">
+
+                  <li class="dropdown">
+                      <a class="dropdown-toggle {{ (Request::is('admin/works*') ? 'active active-parent' : '') }}" href="#">
                           <i class="fa fa-cloud-download"></i>
                           <span class="hidden-xs">
-                              Работы
+                              Наши работы
                           </span>
                       </a>
+
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="{{ URL::route('admin.works.index') }}"
+                                 class="{{ (Request::is('admin/works*') && !(Request::is('admin/works/categories*')) ? 'active' : '') }}">
+                                  <span class="hidden-xs">
+                                      Работы
+                                  </span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="{{ URL::route('admin.works.categories.index') }}" class="{{ (Request::is('admin/works/categories*') ? 'active' : '') }}">
+                                  <span class="hidden-xs">
+                                      Категории
+                                  </span>
+                              </a>
+                          </li>
+                      </ul>
                   </li>
+
                   <li>
-                      <a href="{{ URL::route('admin.news.index') }}">
+                      <a href="{{ URL::route('admin.news.index') }}" class="{{ (Request::is('admin/news*') ? 'active' : '') }}">
                           <i class="fa fa-ticket"></i>
                           <span class="hidden-xs">
                               Новости
@@ -94,7 +132,7 @@
                       </a>
                   </li>
                   <li>
-                      <a href="{{ URL::route('admin.banners.index') }}">
+                      <a href="{{ URL::route('admin.banners.index') }}" class="{{ (Request::is('admin/banners*') ? 'active' : '') }}">
                           <i class="fa fa-dollar"></i>
                           <span class="hidden-xs">
                               Баннеры
@@ -102,27 +140,27 @@
                       </a>
                   </li>
                   <li class="dropdown">
-                      <a class="dropdown-toggle" href="#">
+                      <a class="dropdown-toggle {{ (Request::is('admin/support*') ? 'active active-parent' : '') }}" href="#">
                           <i class="fa fa-at"></i>
                           Поддержка
                       </a>
                       <ul class="dropdown-menu">
                           <li>
-                              <a href="{{ URL::route('admin.support.asks.index') }}">
+                              <a href="{{ URL::route('admin.support.asks.index') }}" class="{{ (Request::is('admin/support/asks*') ? 'active' : '') }}">
                                   <span class="hidden-xs">
                                       Вопросы
                                   </span>
                               </a>
                           </li>
                           <li>
-                              <a href="{{ URL::route('admin.support.instructions.index') }}">
+                              <a href="{{ URL::route('admin.support.instructions.index') }}" class="{{ (Request::is('admin/support/instructions*') ? 'active' : '') }}">
                                   <span class="hidden-xs">
                                       Инструкции
                                   </span>
                               </a>
                           </li>
                           <li>
-                              <a href="{{ URL::route('admin.support.addresses.index') }}">
+                              <a href="{{ URL::route('admin.support.addresses.index') }}" class="{{ (Request::is('admin/support/addresses*') ? 'active' : '') }}">
                                   <span class="hidden-xs">
                                       Адреса
                                   </span>
@@ -131,8 +169,8 @@
                       </ul>
                   </li>
                   <li>
-                      
-                      <a href="{{ URL::route('admin.security.index') }}">
+
+                      <a href="{{ URL::route('admin.security.index') }}" class="{{ (Request::is('admin/security*') ? 'active' : '') }}">
                           <i class="fa fa-user"></i>
                           <span class="hidden-xs">
                               Советы по безопасности
@@ -140,7 +178,7 @@
                       </a>
                   </li>
               </ul>
-              
+
           </div>
          <!-- end sidebar -->
           <div id="content-container" class="col-xs-12 col-sm-10">

@@ -18,14 +18,6 @@
 		</h3>
 	</div>
 
-	<div class="page-header">
-		  <h3>
-			    Рубрики
-		  </h3>
-	</div>
-
-  @include('admin.blogs.rubrics')
-
   <div class="page-header">
 		<h3>
 		 Посты

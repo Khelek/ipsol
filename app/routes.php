@@ -39,11 +39,12 @@ Route::group(array('before' => 'auth'), function()
 
 Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'), function()
 {
-    Route::resource('blogs', 'BlogsController');
     Route::group(array('prefix' => 'blogs', 'namespace' => 'Blogs'), function()
     {
-        Route::resource('rubrics', 'RubricsController', ['only' => ['store', 'update', 'destroy']]); // for blogs
+        Route::resource('rubrics', 'RubricsController', ['only' => ['index', 'store', 'update', 'destroy']]); // for blogs
     });
+    Route::resource('blogs', 'BlogsController');
+
     Route::resource('security', 'SecurityController');
     Route::resource('news', 'NewsController');
     Route::group(array('prefix' => 'news', 'namespace' => 'News'), function()
@@ -51,11 +52,12 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'aut
         Route::resource('big_news', 'BigNewsController', ['only' => ['store', 'update', 'destroy']]); // for news
     });
 
-    Route::resource('works', 'WorksController');
     Route::group(array('prefix' => 'works', 'namespace' => 'Works'), function()
     {
-        Route::resource('categories', 'CategoriesController', ['only' => ['store', 'update', 'destroy']]); // for works
+        Route::resource('categories', 'CategoriesController', ['only' => ['index', 'store', 'update', 'destroy']]); // for works
     });
+    Route::resource('works', 'WorksController');
+
     Route::resource('banners', 'BannersController');
     Route::group(array('prefix' => 'support', 'namespace' => 'Support'), function()
     {

@@ -11,6 +11,15 @@ class CategoriesController extends AdminController {
         $this->category = $category;
     }
 
+    public function index()
+    {
+        $title = Lang::get('admin/works/title.blog_management');
+
+        $categories = \Category::all();
+
+        return View::make('admin/works/categories/index', compact('title', 'categories'));
+    }
+
 	public function store()
 	{
         $category = $this->category;
@@ -20,7 +29,7 @@ class CategoriesController extends AdminController {
 
         if ($category->save())
         {
-            return Redirect::route('admin.works.index')->with('success', lang::get('admin/blogs/messages.create.success'));
+            return Redirect::route('admin.works.categories.index')->with('success', lang::get('admin/blogs/messages.create.success'));
         } else {
             return Redirect::back()->withInput(['only' => []])->withErrors($category->errors());
         }
@@ -35,7 +44,7 @@ class CategoriesController extends AdminController {
         $category->fill(Input::all());
         if ($category->updateUniques())
         {
-            return Redirect::route('admin.works.index')->with('success', Lang::get('admin/blogs/messages.create.success'));
+            return Redirect::route('admin.works.categories.index')->with('success', Lang::get('admin/blogs/messages.create.success'));
         } else {
             return Redirect::back()->withInput(['only' => []])->withErrors($category->errors());
         }
@@ -45,7 +54,7 @@ class CategoriesController extends AdminController {
 	{
 		$this->category->find($id)->delete();
 
-		return Redirect::route('admin.works.index');
+		return Redirect::route('admin.works.categories.index');
 	}
 
 }

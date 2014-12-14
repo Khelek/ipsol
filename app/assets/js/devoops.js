@@ -5,6 +5,8 @@ $(document).ready(function () {
      }
   });
 
+  $('.main-menu .active-parent').parent('.dropdown').find('.dropdown-menu').show();
+
 	$('.main-menu').on('click', 'a', function (e) {
 		var parents = $(this).parents('li');
 		var li = $(this).closest('li.dropdown');

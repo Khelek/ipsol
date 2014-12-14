@@ -18,14 +18,6 @@
 		</h3>
 	</div>
 
-	<div class="page-header">
-		  <h3>
-			    Категории
-		  </h3>
-	</div>
-
-  @include('admin.works.categories')
-
   <div class="page-header">
 		<h3>
 		 Работы

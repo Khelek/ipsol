@@ -16,7 +16,6 @@ class WorksController extends AdminController {
         $title = Lang::get('admin/works/title.blog_management');
 
         $works = $this->work->all();
-        $categories = \Category::all();
 
         return View::make('admin/works/index', compact('works', 'title', 'categories'));
     }
