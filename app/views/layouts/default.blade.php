@@ -22,6 +22,7 @@
 	<meta name="DC.title" content="@yield('title')">
 	<meta name="DC.subject" content="@yield('description')">
 	<meta name="DC.creator" content="@yield('author')">
+
   <!-- endhui -->
   @yield('meta-tags')
 
