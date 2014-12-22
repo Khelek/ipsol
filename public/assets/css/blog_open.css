@@ -409,6 +409,35 @@ a {
 .b-share .b-share__link {
   padding: 5px 5px 5px 0 !important; }
 
+ul.tabs {
+  list-style: none;
+  border-bottom: 1px solid #E4E4E4;
+  height: 44px; }
+
+.tabs li {
+  font-size: 20px;
+  display: inline;
+  width: 100px;
+  padding: 15px 38px;
+  cursor: pointer;
+  color: #222;
+  border: 1px solid #e4e4e4;
+  background: white;
+  outline: 0;
+  cursor: pointer; }
+
+.tabs li.current {
+  border-bottom: none;
+  padding-bottom: 16px; }
+
+.box {
+  display: none;
+  width: 1000px;
+  margin-left: 50px; }
+
+.box.visible {
+  display: block; }
+
 .article {
   font-size: 16px;
   width: 1030px; }

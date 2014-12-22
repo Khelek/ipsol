@@ -1,9 +1,11 @@
 $(document).ready(function () {
-  $.extend($.fn.dataTable.defaults, {
-    "language": {
-      "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
-     }
-  });
+  if ($.fn.dataTable) {
+    $.extend($.fn.dataTable.defaults, {
+      "language": {
+        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
+      }
+    });
+  }
 
   $('.main-menu .active-parent').parent('.dropdown').find('.dropdown-menu').show();
 

@@ -20,6 +20,17 @@
 
 
 @section('content')
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&appId=164865747003422&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
 	<div class="ban clear-fix">
 		<div class="ban_gray">
 			<div class="col2">
@@ -74,20 +85,38 @@
 			<h1 class="title">Комментарии</h1>
 			<div class="dot"></div><hr class="horizontal_line">
 		</div>
-      <div id="disqus_thread"></div>
-      <script type="text/javascript">
-       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-       var disqus_shortname = 'myawesomelaravelsite'; // required: replace example with your forum shortname
-
-       /* * * DON'T EDIT BELOW THIS LINE * * */
-       (function() {
-           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-           dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-		</div>
+    <div class="section">
+        <ul class="tabs">
+            <li class="current">Основные</li>
+            <li>ВКонтакте</li>
+            <li>Facebook</li>
+        </ul>
+        <div class="box visible">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+             var disqus_shortname = 'myawesomelaravelsite'; // required: replace example with your forum shortname
+             
+             /* * * DON'T EDIT BELOW THIS LINE * * */
+             (function() {
+                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+        <div class="box">
+            <div id="vk_comments"></div>
+            <script type="text/javascript">
+             VK.Widgets.Comments("vk_comments", {limit: 10, width: "1000", attach: "*"});
+            </script>
+        </div>
+        <div class="box">
+            <div class="fb-comments" data-href="http://ipsol-test.tk" data-width="1000" data-numposts="10" data-colorscheme="light"></div>
+        </div>
+    </div>
+	</div>
 	</div>
 	<script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>
 @stop
@@ -95,4 +124,8 @@
 
 @section('styles')
 	  <link rel="stylesheet" href="{{	asset('assets/css/blog_open.css') }}">
+@stop
+
+@section('scripts')
+	<script src="{{	asset('assets/js/application.js') }}"></script>
 @stop
