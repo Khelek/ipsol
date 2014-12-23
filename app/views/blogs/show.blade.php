@@ -113,7 +113,7 @@
             </script>
         </div>
         <div class="box">
-            <div class="fb-comments" data-href="http://ipsol-test.tk" data-width="1000" data-numposts="10" data-colorscheme="light"></div>
+            <div class="fb-comments" data-href="http://ipsol-test.tk" data-width="900" data-numposts="10" data-colorscheme="light"></div>
         </div>
     </div>
 	</div>
