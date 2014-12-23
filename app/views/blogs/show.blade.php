@@ -114,6 +114,11 @@
         </div>
         <div class="box">
             <div class="fb-comments" data-href="http://ipsol-test.tk" data-width="900" data-numposts="10" data-colorscheme="light"></div>
+            <script>
+             $(function() {
+                 $('.fb-comments.fb_iframe_widget').find('span').css({width: "1000px"}).find('iframe').css({width: "1000px"});
+             });
+            </script>
         </div>
     </div>
 	</div>
