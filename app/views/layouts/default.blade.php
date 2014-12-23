@@ -37,7 +37,7 @@
 	@yield('styles')
 
 </head>
-<body>
+<body class="zoomed_body">
 	<div class="content clear-fix">
 		<div class="header">
 

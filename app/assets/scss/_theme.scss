@@ -29,7 +29,7 @@ html, body, p, h1, h2, h3, h4, h5 {
 }
 
 /* NOTE заказчику внезапно захотелось "чуть уменьшить макет" */
-body {
+body.zoomed_body {
       zoom: 0.96;
       -moz-transform: scale(0.96);
       -moz-transform-origin: 0 0
