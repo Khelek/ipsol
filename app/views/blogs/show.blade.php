@@ -128,9 +128,4 @@
 
 @section('scripts')
 	<script src="{{	asset('assets/js/application.js') }}"></script>
-  <script>
-   $(function() {
-       $('.fb-comments.fb_iframe_widget').find('span').css({width: "1000px"}).find('iframe').css({width: "1000px"});
-   });
-  </script>
 @stop

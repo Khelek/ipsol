@@ -24,4 +24,6 @@ $(function() {
     $(this).addClass('current').siblings().removeClass('current')
       .parents('div.section').find('div.box').hide().eq($(this).index()).fadeIn(150);
   });
+
+  $('.fb-comments.fb_iframe_widget').find('span').css({width: "1000px"}).find('iframe').css({width: "1000px"});
 });
