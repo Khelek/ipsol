@@ -428,13 +428,14 @@ ul.tabs {
   cursor: pointer;
   color: #222;
   border: 1px solid #e4e4e4;
+  border-bottom: none;
   background: white;
   outline: 0;
   cursor: pointer; }
 
 .tabs li.current {
   border-bottom: none;
-  padding-bottom: 16px; }
+  padding-bottom: 18px; }
 
 .box {
   display: none;
