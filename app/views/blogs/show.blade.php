@@ -112,7 +112,7 @@
              VK.Widgets.Comments("vk_comments", {limit: 10, width: "1000", attach: "*"});
             </script>
         </div>
-        <div class="box">
+        <div class="box box_facebook">
             <div class="fb-comments" data-href="http://ipsol-test.tk" data-width="900" data-numposts="10" data-colorscheme="light"></div>
         </div>
     </div>
