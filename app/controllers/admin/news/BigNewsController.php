@@ -22,7 +22,7 @@ class BigNewsController extends AdminController {
 
         if ($big_news->save())
         {
-            return Redirect::route('admin.news.index')->with('success', lang::get('admin/news/messages.create.success'));
+            return Redirect::route('admin.news.index')->with('success', Lang::get('admin/news/messages.create.success'));
         } else {
             return Redirect::back()->withInput()->withErrors($big_news->errors());
         }

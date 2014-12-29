@@ -80,7 +80,9 @@
                       <ul class="dropdown-menu">
                           <li>
                               <a href="{{ URL::route('admin.blogs.index') }}"
-                                 class="{{ (Request::is('admin/blogs*') && !(Request::is('admin/blogs/rubrics*')) ? 'active' : '') }}">
+                                 class="{{
+                          (Request::is('admin/blogs*') &&
+                          !(Request::is('admin/blogs/rubrics*') || Request::is('admin/blogs/subscriptions*')) ? 'active' : '') }}">
                                   <span class="hidden-xs">
                                       Посты
                                   </span>
@@ -90,6 +92,13 @@
                               <a href="{{ URL::route('admin.blogs.rubrics.index') }}" class="{{ (Request::is('admin/blogs/rubrics*') ? 'active' : '') }}">
                                   <span class="hidden-xs">
                                       Рубрики
+                                  </span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="{{ URL::route('admin.blogs.subscriptions.index') }}" class="{{ (Request::is('admin/blogs/subscriptions*') ? 'active' : '') }}">
+                                  <span class="hidden-xs">
+                                      Подписки
                                   </span>
                               </a>
                           </li>

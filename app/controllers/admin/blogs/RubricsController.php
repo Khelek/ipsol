@@ -29,7 +29,7 @@ class RubricsController extends AdminController {
 
         if ($rubric->save())
         {
-            return Redirect::route('admin.blogs.rubrics.index')->with('success', lang::get('admin/blogs/messages.create.success'));
+            return Redirect::route('admin.blogs.rubrics.index')->with('success', Lang::get('admin/blogs/messages.create.success'));
         } else {
             return Redirect::back()->withInput(['only' => []])->withErrors($rubric->errors());
         }

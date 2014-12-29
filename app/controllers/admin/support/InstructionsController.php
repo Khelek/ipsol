@@ -36,7 +36,7 @@ class InstructionsController extends AdminController {
 
         if ($instruction->save())
         {
-            return Redirect::route('admin.support.instructions.edit', $instruction->id)->with('success', lang::get('admin/security/messages.create.success'));
+            return Redirect::route('admin.support.instructions.edit', $instruction->id)->with('success', Lang::get('admin/security/messages.create.success'));
         } else {
             return Redirect::back()->withInput()->withErrors($instruction->errors());
         }

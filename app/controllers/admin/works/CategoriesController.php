@@ -29,7 +29,7 @@ class CategoriesController extends AdminController {
 
         if ($category->save())
         {
-            return Redirect::route('admin.works.categories.index')->with('success', lang::get('admin/blogs/messages.create.success'));
+            return Redirect::route('admin.works.categories.index')->with('success', Lang::get('admin/blogs/messages.create.success'));
         } else {
             return Redirect::back()->withInput(['only' => []])->withErrors($category->errors());
         }

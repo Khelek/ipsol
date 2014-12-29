@@ -39,7 +39,7 @@ class NewsController extends AdminController {
 
         if ($news->save())
         {
-            return Redirect::route('admin.news.edit', $news->id)->with('success', lang::get('admin/news/messages.create.success'));
+            return Redirect::route('admin.news.edit', $news->id)->with('success', Lang::get('admin/news/messages.create.success'));
         } else {
             return Redirect::back()->withInput()->withErrors($news->errors());
         }

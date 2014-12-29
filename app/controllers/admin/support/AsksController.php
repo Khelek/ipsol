@@ -37,7 +37,7 @@ class AsksController extends AdminController {
 
         if ($ask->save())
         {
-            return Redirect::route('admin.support.asks.edit', $ask->id)->with('success', lang::get('admin/security/messages.create.success'));
+            return Redirect::route('admin.support.asks.edit', $ask->id)->with('success', Lang::get('admin/security/messages.create.success'));
         } else {
             return Redirect::back()->withInput()->withErrors($ask->errors());
         }

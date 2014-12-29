@@ -61,8 +61,12 @@
     		<p>Подписаться на статьи.<br>
 			Я хочу быть в курсе<br>
 			последних статей</p>
-			<input class="input input_email" placeholder="Ваш e-mail">
-			<button class="button button_active">Подписаться</button>
+        {{ Former::open()->method('POST')->route('subscriptions.store') }}
+        {{ Form::token() }}
+        <input class="input input_email" type="email" name="email" placeholder="Ваш e-mail">
+			  <input class="button button_active" type="submit"
+	value="Подписаться" />
+        {{ Form::close() }}
 	    </div>
 	</div>
 	<script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>

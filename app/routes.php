@@ -42,6 +42,9 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'aut
     Route::group(array('prefix' => 'blogs', 'namespace' => 'Blogs'), function()
     {
         Route::resource('rubrics', 'RubricsController', ['only' => ['index', 'store', 'update', 'destroy']]); // for blogs
+        Route::get('subscriptions/unload', ['as' => 'subscriptions.unload',
+                                            'uses' => 'SubscriptionsController@unload']);
+        Route::resource('subscriptions', 'SubscriptionsController', ['only' => ['index']]);
     });
     Route::resource('blogs', 'BlogsController');
 
@@ -77,6 +80,9 @@ Route::get('blogs/{slug}', ['as' => 'blogs.show',
 Route::get('blogs/rubric/{slug}', ['as' => 'blogs.index.rubric',
                             'uses' => 'BlogsController@index'])->where('slug', '[A-Za-z0-9\-]+');
 Route::resource('blogs', 'BlogsController', ['except' => ['show']]);
+
+
+Route::resource('subscriptions', 'SubscriptionsController', ['only' => ['store']]);
 
 
 Route::get('security/{slug}', ['as' => 'security.show',

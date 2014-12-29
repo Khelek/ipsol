@@ -36,7 +36,7 @@ class BannersController extends AdminController {
 
         if ($banner->save())
         {
-            return Redirect::route('admin.banners.edit', $banner->id)->with('success', lang::get('admin/security/messages.create.success'));
+            return Redirect::route('admin.banners.edit', $banner->id)->with('success', Lang::get('admin/security/messages.create.success'));
         } else {
             return Redirect::back()->withInput()->withErrors($banner->errors());
         }

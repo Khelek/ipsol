@@ -41,7 +41,7 @@ class WorksController extends AdminController {
         {
             if (Input::get('categories')) $work->categories()->sync(Input::get('categories'));
 
-            return Redirect::route('admin.works.edit', $work->id)->with('success', lang::get('admin/works/messages.create.success'));
+            return Redirect::route('admin.works.edit', $work->id)->with('success', Lang::get('admin/works/messages.create.success'));
         } else {
             return Redirect::back()->withInput()->withErrors($work->errors());
         }

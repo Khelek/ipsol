@@ -13,7 +13,7 @@ class BlogsController extends AdminController {
 
     public function index()
     {
-        $title = Lang::get('admin/blogs/title.blog_management');
+        $title =Lang::get('admin/blogs/title.blog_management');
 
         $posts = $this->post->all();
 
@@ -22,7 +22,7 @@ class BlogsController extends AdminController {
 
 	public function create()
 	{
-        $title = Lang::get('admin/blogs/title.create_a_new_blog');
+        $title =Lang::get('admin/blogs/title.create_a_new_blog');
 
         $rubrics = \Rubric::all();
         $post = $this->post;
@@ -42,7 +42,7 @@ class BlogsController extends AdminController {
             if (Input::get('rubrics')) $post->rubrics()->sync(Input::get('rubrics'));
             if (Input::get('tags')) $post->retag(explode(",", Input::get('tags')));
 
-            return Redirect::route('admin.blogs.edit', $post->id)->with('success', lang::get('admin/blogs/messages.create.success'));
+            return Redirect::route('admin.blogs.edit', $post->id)->with('success',Lang::get('admin/blogs/messages.create.success'));
         } else {
             return Redirect::back()->withInput()->withErrors($post->errors());
         }
@@ -56,7 +56,7 @@ class BlogsController extends AdminController {
 
 	public function edit($id)
 	{
-        $title = Lang::get('admin/blogs/title.blog_update');
+        $title =Lang::get('admin/blogs/title.blog_update');
 		$post = $this->post->with('rubrics')->find($id);
         $rubrics = \Rubric::all();
 
@@ -80,7 +80,7 @@ class BlogsController extends AdminController {
             if (Input::get('rubrics')) $post->rubrics()->sync(Input::get('rubrics'));
             if (Input::get('tags')) $post->retag(explode(",", Input::get('tags')));
 
-            return Redirect::route('admin.blogs.edit', $post->id)->with('success', Lang::get('admin/blogs/messages.create.success'));
+            return Redirect::route('admin.blogs.edit', $post->id)->with('success',Lang::get('admin/blogs/messages.create.success'));
         } else {
             return Redirect::back()->withInput()->withErrors($post->errors());
         }
