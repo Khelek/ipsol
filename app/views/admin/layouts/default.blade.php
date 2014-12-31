@@ -186,6 +186,15 @@
                           </span>
                       </a>
                   </li>
+                  <li>
+
+                      <a href="{{ URL::route('admin.requests.index') }}" class="{{ (Request::is('admin/requests*') ? 'active' : '') }}">
+                          <i class="fa fa-user"></i>
+                          <span class="hidden-xs">
+                              Заявки
+                          </span>
+                      </a>
+                  </li>
               </ul>
 
           </div>

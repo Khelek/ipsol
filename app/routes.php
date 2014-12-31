@@ -49,6 +49,7 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'aut
     Route::resource('blogs', 'BlogsController');
 
     Route::resource('security', 'SecurityController');
+    Route::resource('requests', 'RequestsController');
     Route::resource('news', 'NewsController');
     Route::group(array('prefix' => 'news', 'namespace' => 'News'), function()
     {
@@ -83,6 +84,7 @@ Route::resource('blogs', 'BlogsController', ['except' => ['show']]);
 
 
 Route::resource('subscriptions', 'SubscriptionsController', ['only' => ['store']]);
+Route::resource('requests', 'RequestsController', ['only' => ['store']]);
 
 
 Route::get('security/{slug}', ['as' => 'security.show',

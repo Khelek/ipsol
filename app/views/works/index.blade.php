@@ -69,12 +69,16 @@
 	    <p>Просто заполните заявку и мы свяжемся с Вами в течении дня и мгновенно <br>
 проконсультируем!</p>
 		<div class="ask_form">
+      {{ Former::open()->method('POST')->route('requests.store') }}
+      {{ Form::token() }}
 			<div class="clear-fix">
-				<input type="text" placeholder="Ваше имя" class="input">
-				<input type="text" placeholder="Ваш телефон" class="input">
-				<input type="text" placeholder="Ваш e-mail" class="input">
+				<input type="text" name="name" placeholder="Ваше имя" class="input">
+				<input type="text" name="phone" placeholder="Ваш телефон" class="input">
+				<input type="email" name="email" placeholder="Ваш e-mail" class="input">
+				<input type="hidden" name="page" value="Наши работы" class="input">
 			</div>
-			<button class="button button_active">Оставить заявку</button>
+			<input type="submit" class="button button_active" value="Оставить заявку"/>
+      {{ Form::close() }}
 		</div>
 	</div>
 
