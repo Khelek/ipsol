@@ -113,12 +113,16 @@
 				<div class="ban_form">
 					<h1 class="clear-fix"><span class="ban_text">Нет времени разбираться?</span> <span class="ban_text">Подскажем!</span></h1>
 					<p>Просто заполните заявку и мы свяжемся с вами в течении 59 секунд<br> и мгновенно проконсультируем!</p>
+          {{ Former::open()->method('POST')->route('requests.store') }}
+          {{ Form::token() }}
 					<div class="clear-fix">
-						<input type="text" placeholder="Ваше имя" class="input">
-						<input type="text" placeholder="Ваш телефон" class="input">
-						<input type="text" placeholder="Ваш e-mail" class="input">
+				      <input type="text" name="name" placeholder="Ваше имя" class="input">
+				      <input type="text" name="phone" placeholder="Ваш телефон" class="input">
+				      <input type="email" name="email" placeholder="Ваш e-mail" class="input">
+				      <input type="hidden" name="page" value="Главная" class="input">
 					</div>
-					<button class="button button_active">Заказать</button>
+			    <input type="submit" class="button button_active" value="Оставить заявку"/>
+          {{ Form::close() }}
 				</div>
 			</div>
 		</div>
