@@ -65,11 +65,10 @@
 
 @section('styles')
 	  <link rel="stylesheet" href="{{	asset('assets/css/works_open.css') }}">
-	  <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	   <link rel="stylesheet" href="{{	asset('assets/css/jquery.fancybox.css') }}">
 @stop
 @section('scripts')
 	<script src="{{	asset('assets/js/application.js') }}"></script>
-	<script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 @stop
 
 @stop

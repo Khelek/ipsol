@@ -88,8 +88,11 @@
 				<input type="text" name="name" placeholder="Ваше имя" class="input">
 				<input type="text" name="phone" placeholder="Ваш телефон" class="input">
 				<input type="email" name="email" placeholder="Ваш e-mail" class="input">
-				<input type="hidden" name="page" value="Поддержка - Частно
-	    	задаваемые вопросы" class="input">
+				<select type="text" placeholder="Выбор отдела" class="input input_select"  onchange="">
+					<option value="отдел">отдел по маркетингу</option>
+				</select>
+				<!--<input type="hidden" name="page" value="Поддержка - Частно
+	    	задаваемые вопросы" class="input"> -->
 			</div>
 			<input type="submit" class="button button_active" value="Оставить заявку"/>
 		</div>

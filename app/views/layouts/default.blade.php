@@ -38,6 +38,31 @@
 
 </head>
 <body class="zoomed_body">
+
+<div id="modal_form"> 
+      <span id="modal_close">X</span>
+      	<div class="title_container clear-fix">
+	    	<h1 class="title">Закажите обратный звонок</h1>
+			<div class="dot"></div><hr class="horizontal_line">
+		</div>
+      	<p>Просто заполните заявку и мы свяжемся с Вами в течении дня и мгновенно <br>
+проконсультируем!</p>
+		<div class="ask_form">
+			<div class="clear-fix">
+				<input type="text" name="name" placeholder="Ваше имя" class="input">
+				<input type="text" name="phone" placeholder="Ваш телефон" class="input">
+				<input type="email" name="email" placeholder="Ваш e-mail" class="input">
+				<select type="text" placeholder="Выбор отдела" class="input input_select"  onchange="">
+					<option value="отдел">отдел по маркетингу</option>
+				</select>
+				<!--<input type="hidden" name="page" value="Поддержка - Частно
+	    	задаваемые вопросы" class="input"> -->
+			</div>
+			<input type="submit" class="button button_active" value="Оставить заявку"/>
+		</div>
+</div>
+<div id="overlay"></div>
+
 	<div class="content clear-fix">
 		<div class="header">
 
@@ -122,8 +147,8 @@
 		<div class="contact">
 			<div class="content clear-fix">
 				<div class="contact_text">
-					<a class="phone"href="tel:+74955653204">+7 495 565 32 04</a>
-					<a href="">Заказать звонок</a>
+					<a class="phone" href="tel:+74955653204">+7 495 565 32 04</a>
+					<a class="modal_window" href="">Заказать звонок</a>
 					<script>
 						document.write('<a class="email "href=" m' + 'ailto:sa' + 'le@ip-so' + 'l.ru ">sale@' + 'ip-sol.' + 'ru</a>');
 					</script>
