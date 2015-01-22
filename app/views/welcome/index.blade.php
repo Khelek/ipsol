@@ -96,12 +96,12 @@
 			</div>
 			<div class="about_block">
 				<h3 class="about_block_number">3</h3>
-				<p class="about_block_text">Гарантия 3 года на любой 
+				<p class="about_block_text">Гарантия 3 года на любой
 объект</p>
 			</div>
 			<div class="about_block">
 				<h3 class="about_block_number">365</h3>
-				<p class="about_block_text">Круглосуточная поддержка 
+				<p class="about_block_text">Круглосуточная поддержка
 365 дней в году</p>
 			</div>
 		</div>
@@ -134,22 +134,28 @@
 	</div>
 	<div class="content clear-fix">
 		<div class="additional_information_block">
-			<img src="{{ $advice->preview->url('medium') }}"/>
-			<h3>А знаете ли вы?</h3>
-			<p>{{ $advice->title }}</p>
-			<a href="{{	URL::route('security.show', $advice->slug) }}">Подробнее</a>
+      @if ($advice)
+			    <img src="{{ $advice->preview->url('medium') }}"/>
+			    <h3>А знаете ли вы?</h3>
+			    <p>{{ $advice->title }}</p>
+			    <a href="{{	URL::route('security.show', $advice->slug) }}">Подробнее</a>
+      @endif
 		</div>
 		<div class="additional_information_block">
-			<img src="{{ $news->preview->url('medium') }}"/>
-			<h3>Новости компании</h3>
-			<p>{{ $news->title }}</p>
-			<a href="{{	URL::route('news.show', $news->slug) }}">Подробнее</a>
+      @if ($news)
+			    <img src="{{ $news->preview->url('medium') }}"/>
+			    <h3>Новости компании</h3>
+			    <p>{{ $news->title }}</p>
+			    <a href="{{	URL::route('news.show', $news->slug) }}">Подробнее</a>
+      @endif
 		</div>
 		<div class="additional_information_block">
-			<img src="{{ $work->preview->url('medium') }}"/>
-			<h3>Последний объект</h3>
-			<p>{{ $work->title }}</p>
-			<a href="{{	URL::route('works.show', $work->slug) }}">Подробнее</a>
+      @if ($work)
+			    <img src="{{ $work->preview->url('medium') }}"/>
+			    <h3>Последний объект</h3>
+			    <p>{{ $work->title }}</p>
+			    <a href="{{	URL::route('works.show', $work->slug) }}">Подробнее</a>
+      @endif
 		</div>
 	</div>
 	<div class="content clear-fix">
