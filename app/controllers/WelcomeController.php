@@ -17,4 +17,9 @@ class WelcomeController extends BaseController {
         $work = \Work::orderBy(DB::raw("RAND()"))->first();
         return View::make('welcome/index', compact('title', 'news', 'work', 'advice'));
     }
+
+
+    public function contacts() {
+        return View::make('welcome/contacts', compact());
+    }
 }
