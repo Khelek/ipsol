@@ -29,9 +29,15 @@
 				<div class="dot"></div><hr class="horizontal_line">
 	</div>
 	<div class="works_images clear-fix">
-		<img class="work_img_big" src="{{	$work->main_photo->url('medium') }}" alt="">
-		<img class="work_img_small" src="{{ $work->second_photo->url('medium') }}" alt="">
-		<img class="work_img_small" src="{{	$work->third_photo->url('medium') }}" alt="">
+		<a class="fancybox" rel="group" href="{{	$work->main_photo->url('medium') }}">
+			<img class="work_img_big" src="{{	$work->main_photo->url('medium') }}" alt="">
+		</a>
+		<a class="fancybox" rel="group" href="{{ $work->second_photo->url('medium') }}">
+			<img class="work_img_small" src="{{ $work->second_photo->url('medium') }}" alt="">
+		</a>
+		<a class="fancybox" rel="group" href="{{	$work->third_photo->url('medium') }}">
+			<img class="work_img_small" src="{{	$work->third_photo->url('medium') }}" alt="">
+		</a>
 	</div>
 	<h2>Описание задачи</h2>
 	<p>{{ $work->quest_description }}</p>
@@ -59,4 +65,11 @@
 
 @section('styles')
 	  <link rel="stylesheet" href="{{	asset('assets/css/works_open.css') }}">
+	  <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+@stop
+@section('scripts')
+	<script src="{{	asset('assets/js/application.js') }}"></script>
+	<script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+@stop
+
 @stop

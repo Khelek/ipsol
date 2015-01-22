@@ -28,9 +28,9 @@
 и используем новые технологии, которые значительно отличают нашу компанию
 	   </p>
 	   <ul class="works_menu clear-fix">
-	   	<li class="works_menu_item {{ Request::is('works') ? 'works_menu_item_active' : '' }}"><a href="{{ URL::route('works.index') }}">Всё</a></li>
+	   	<li class="{{ Request::is('works') ? 'works_menu_item_active' : 'works_menu_item_inactive' }} works_menu_item "><a href="{{ URL::route('works.index') }}">Всё</a></li>
       @foreach ($categories as $category)
-	   	    <li class="works_menu_item {{ Request::is('works/categories/'. $category->slug) ?	'works_menu_item_active' : 	'' }}">
+	   	    <li class="{{ Request::is('works/categories/'. $category->slug) ?	'works_menu_item_active' : 	'works_menu_item_inactive' }} works_menu_item ">
               <a href="{{ URL::route('works.index.category', $category->slug) }}">{{ $category->name }}</a>
           </li>
       @endforeach
@@ -87,7 +87,7 @@
 
 @section('styles')
 	  <link rel="stylesheet" href="{{	asset('assets/css/works.css') }}">
-@stop
+	  
 
 @section('scripts')
 	<script src="{{	asset('assets/js/application.js') }}"></script>

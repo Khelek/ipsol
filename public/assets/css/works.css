@@ -138,7 +138,7 @@ a {
   height: 150px; }
   .ban .ban_form {
     float: right; }
-  .ban .input {
+  .ban .input, .ban .input_search_block {
     border: 0px; }
 
 .ban_gray, .ban_orange {
@@ -405,16 +405,19 @@ a {
     padding: 8px 9px 9px 10px;
     color: #232323;
     text-decoration: none;
-    border-right: 1px #fff solid; }
+    border-left: 1px #fff solid; }
 
-.works_menu_item:last-child a {
-  border-right: 0px; }
+.works_menu_item:first-child a {
+  border-left: 0px; }
+
+.works_menu_item_active + .works_menu_item_inactive a {
+  border-left: 0px; }
 
 .works_menu_item_active {
   background-color: #e7b41f;
   border-bottom: 3px #b68039 solid; }
   .works_menu_item_active a {
-    border-right: 0px; }
+    border-left: 0px; }
 
 .works {
   padding-top: 60px;

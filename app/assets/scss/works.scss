@@ -23,17 +23,20 @@
     	padding: 8px 9px 9px 10px;
         color: $dark-grey;
         text-decoration: none;
-        border-right: 1px #fff solid;
+        border-left: 1px #fff solid;
     }
 }
-.works_menu_item:last-child a {
-	border-right: 0px;
+.works_menu_item:first-child a {
+	border-left: 0px;
+}
+.works_menu_item_active + .works_menu_item_inactive a {
+	border-left: 0px;
 }
 .works_menu_item_active {
 	background-color: $dark-orange-active-menu;
 	border-bottom: 3px $border-menu solid;
 	a {
-		border-right: 0px;
+		border-left: 0px;
 	}
 }
 .works {
