@@ -75,7 +75,9 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'aut
 
 
 Route::get('login', 'UserController@getLogin');
-Route::get('logout', 'UserController@postLogin');
+Route::post('login', 'UserController@postLogin');
+Route::get('logout', 'UserController@getLogout');
+Route::post('logout', 'UserController@postLogout');
 
 Route::get('blogs/{slug}', ['as' => 'blogs.show',
                             'uses' => 'BlogsController@show'])->where('slug', '[A-Za-z0-9\-_]+');
