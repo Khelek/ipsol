@@ -33,6 +33,56 @@ App::after(function($request, $response)
 |
 */
 
+Route::filter('content_manager', function()
+{
+
+    if(!(Auth::user()->admin || Auth::user()->content_manager))
+	{
+		if (Request::ajax())
+		{
+			return Response::make('Unauthorized', 401);
+		}
+		else
+		{
+			return Redirect::guest('login');
+		}
+	}
+});
+
+Route::filter('manager', function()
+{
+
+    if(!(Auth::user()->admin || Auth::user()->manager))
+	{
+		if (Request::ajax())
+		{
+			return Response::make('Unauthorized', 401);
+		}
+		else
+		{
+			return Redirect::guest('login');
+		}
+	}
+});
+
+Route::filter('admin', function()
+{
+    if(!(Auth::user()->admin))
+	{
+		if (Request::ajax())
+		{
+			return Response::make('Unauthorized', 401);
+		}
+		else
+		{
+			return Redirect::guest('login');
+		}
+	}
+});
+
+
+
+
 Route::filter('auth', function()
 {
 	if (Auth::guest())

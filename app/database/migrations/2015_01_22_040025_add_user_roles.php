@@ -13,9 +13,9 @@ class AddUserRoles extends Migration {
 	public function up()
 	{
         Schema::table('users', function ($table) {
-            $table->boolean('admin')->default(false);
-            $table->boolean('content_manager')->default(false);
-            $table->boolean('manager')->default(false);
+            $table->boolean('admin')->nullable();
+            $table->boolean('content_manager')->nullable();
+            $table->boolean('manager')->nullable();
         });
 	}
 

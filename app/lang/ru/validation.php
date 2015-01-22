@@ -4,6 +4,10 @@ return array(
 
     'attributes' => array(
         'title' => 'Заголовок',
+        'password' => 'Пароль',
+        'admin' => 'Администратор',
+        'content_manager' => 'Контентный менеджер',
+        'manager' => 'Менеджер',
         'content' => 'Содержание',
         'slug' => 'ЧПУ',
         'preview' => 'Превью',
