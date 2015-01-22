@@ -1,0 +1,38 @@
+@import 'theme';
+.ban {
+    .input {
+        display: block;
+        margin-bottom: 20px;
+        background-color: #fff;
+    }
+    .ban_form {
+        margin-top: 54px;
+    }
+}
+.map {
+	margin: 50px 0;
+	img {
+		width: 100%;
+	}
+}
+.col2 {
+	float: left;
+	#office {
+		width: 100%;
+		margin-top: 60px;
+	}
+}
+.persons{
+	padding-left: 60px;
+	box-sizing: border-box;
+	.person {
+		margin-bottom:30px;
+		.avatar{
+			float: left;
+			margin-right: 20px;
+		}
+	}
+}
+.input_select {
+	background-position: 197px 16px;
+}

@@ -373,95 +373,32 @@ a {
   font-family: 'FranklinGothicBook';
   src: url('../fonts/FranklinGothicBookCondOSC.otf') format('opentype'); }
 
-.b-share-icon_vkontakte {
-  background-position: 0 0 !important; }
+.ban .input {
+  display: block;
+  margin-bottom: 20px;
+  background-color: #fff; }
+.ban .ban_form {
+  margin-top: 54px; }
 
-.b-share-icon_facebook {
-  background-position: -35px 0 !important; }
+.map {
+  margin: 50px 0; }
+  .map img {
+    width: 100%; }
 
-.b-share-icon_twitter {
-  background-position: -70px 0 !important; }
+.col2 {
+  float: left; }
+  .col2 #office {
+    width: 100%;
+    margin-top: 60px; }
 
-.b-share-icon_odnoklassniki {
-  background-position: -177px 0 !important; }
+.persons {
+  padding-left: 60px;
+  box-sizing: border-box; }
+  .persons .person {
+    margin-bottom: 30px; }
+    .persons .person .avatar {
+      float: left;
+      margin-right: 20px; }
 
-.b-share-icon_gplus {
-  background-position: -106px 0 !important; }
-
-.b-share-icon_moimir {
-  background-position: -141px 0 !important; }
-
-.b-share-icon {
-  width: 29px !important;
-  height: 29px !important;
-  margin-top: 10px;
-  background-color: #fff !important;
-  background-image: url('../images/social.png') !important;
-  background-repeat: no-repeat !important; }
-
-.yashare-auto-init .b-share {
-  margin: 0 !important;
-  padding: 0 !important;
-  height: 50px; }
-
-.b-share .b-share__link {
-  padding: 5px 5px 5px 0 !important; }
-
-.main {
-  position: relative;
-  float: left;
-  width: 930px;
-  margin-top: 70px; }
-
-.article {
-  margin-bottom: 36px;
-  position: relative; }
-  .article img {
-    float: left;
-    width: 214px; }
-
-.article_container {
-  float: left;
-  width: 630px;
-  margin-left: 52px;
-  color: #969696; }
-
-.description {
-  line-height: 16px;
-  margin: 15px 0 5px 0;
-  color: #505050; }
-
-.article_header {
-  font-family: 'FranklinGothicBook', sans-serif;
-  font-size: 37px;
-  text-decoration: none;
-  color: #1d7ac0;
-  border-bottom: 1px #1d7ac0 solid; }
-
-.article .article_header {
-  position: relative;
-  top: -7px; }
-
-.line_padding {
-  padding: 30px 0px 36px 0px; }
-
-.sidebar {
-  float: right;
-  width: 255px;
-  height: 100%;
-  margin-top: 100px; }
-  .sidebar p {
-    margin: 45px 0 10px 0; }
-  .sidebar a {
-    display: block;
-    margin-top: 10px;
-    color: #1d7ac0; }
-  .sidebar .input_search_block, .sidebar .input_email {
-    width: 250px; }
-  .sidebar .input_search {
-    width: 205px; }
-  .sidebar .button {
-    margin-top: 20px; }
-  .sidebar .blog_rubric_active {
-    font-weight: bold;
-    color: #5a38ab; }
+.input_select {
+  background-position: 197px 16px; }
