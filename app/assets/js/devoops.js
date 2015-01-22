@@ -1,4 +1,14 @@
 $(document).ready(function () {
+  if ($.fn.dataTable) {
+    $.extend($.fn.dataTable.defaults, {
+      "language": {
+        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
+      }
+    });
+  }
+
+  $('.main-menu .active-parent').parent('.dropdown').find('.dropdown-menu').show();
+
 	$('.main-menu').on('click', 'a', function (e) {
 		var parents = $(this).parents('li');
 		var li = $(this).closest('li.dropdown');

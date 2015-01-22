@@ -279,7 +279,10 @@ a {
 
 .footer_col5 {
   float: left;
+  margin-top: 70px;
   width: 248px; }
+  .footer_col5 h5 {
+    margin-bottom: 10px; }
 
 .contact {
   line-height: 100px;

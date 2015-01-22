@@ -18,4 +18,15 @@ $(function() {
 			$(this).hide();
 		}
 	});
+
+
+  $('ul.tabs').delegate('li:not(.current)', 'click', function() {
+    $(this).addClass('current').siblings().removeClass('current')
+      .parents('div.section').find('div.box').hide().eq($(this).index()).fadeIn(150);
+  });
+
+  $('.tab_facebook').on('click', function() {
+    $('.fb-comments.fb_iframe_widget').find('span').css({width: "1000px"}).find('iframe').css({width: "1000px"});
+  });
+
 });

@@ -40,7 +40,8 @@
                     return '<a href="/blogs?tag='.$name.'" class="tag">'.$name.'</a>';
                 }, $post->tagNames())) }}
           @endif
-					<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
+					<div class="yashare-auto-init" data-yashareL10n="ru"
+	data-yashareType="none" data-yashareLink="{{ URL::route('blogs.show', $post->slug) }}" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
 	    		</div>
 	    	</div>
       @endforeach
@@ -60,8 +61,12 @@
     		<p>Подписаться на статьи.<br>
 			Я хочу быть в курсе<br>
 			последних статей</p>
-			<input class="input input_email" placeholder="Ваш e-mail">
-			<button class="button button_active">Подписаться</button>
+        {{ Former::open()->method('POST')->route('subscriptions.store') }}
+        {{ Form::token() }}
+        <input class="input input_email" type="email" name="email" placeholder="Ваш e-mail">
+			  <input class="button button_active" type="submit"
+	value="Подписаться" />
+        {{ Form::close() }}
 	    </div>
 	</div>
 	<script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>

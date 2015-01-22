@@ -1,3 +1,29 @@
+@extends('admin.layouts.default')
+
+{{-- Web site Title --}}
+@section('title')
+{{{ $title }}} :: @parent
+@stop
+
+@section('keywords')Posts administration @stop
+@section('author')Laravel 4 Bootstrap Starter SIte @stop
+@section('description')Posts administration index @stop
+
+{{-- Content --}}
+@section('content')
+
+	<div class="page-header">
+		<h3>
+			{{{ $title }}}
+		</h3>
+	</div>
+
+	<div class="page-header">
+		  <h3>
+			    Категории
+		  </h3>
+	</div>
+
 <table class="table table-striped table-hover">
 		<thead>
 			  <tr>
@@ -29,9 +55,12 @@
                 <td> </td>
                 <td> {{ BootstrapForm::text('name', "", ['class' => 'input-small', 'placeholder' => 'Название']) }} </td>
                 <td> {{ BootstrapForm::text('slug', "", ['class' => 'input-small', 'placeholder' => 'ЧПУ']) }} </td>
-                <td> {{ BootstrapForm::submit('Новая категория') }} </td>
+                <td> {{ BootstrapForm::submit('Создать категорию',
+		['class' => 'btn-primary']) }} </td>
                 <td> </td>
                 {{ BootstrapForm::close() }}
             </tr>
 		</tbody>
 </table>
+
+@stop

@@ -80,7 +80,7 @@
 	</div>
 	<div class="content">
 		<div class="title_container clear-fix">
-			<h1 class="title">IPSolutions – это</h1>
+			<h1 class="title">IP решения – это</h1>
 			<div class="dot"></div><hr class="horizontal_line">
 		</div>
 		<div class="about_container clear-fix">
@@ -113,12 +113,16 @@
 				<div class="ban_form">
 					<h1 class="clear-fix"><span class="ban_text">Нет времени разбираться?</span> <span class="ban_text">Подскажем!</span></h1>
 					<p>Просто заполните заявку и мы свяжемся с вами в течении 59 секунд<br> и мгновенно проконсультируем!</p>
+          {{ Former::open()->method('POST')->route('requests.store') }}
+          {{ Form::token() }}
 					<div class="clear-fix">
-						<input type="text" placeholder="Ваше имя" class="input">
-						<input type="text" placeholder="Ваш телефон" class="input">
-						<input type="text" placeholder="Ваш e-mail" class="input">
+				      <input type="text" name="name" placeholder="Ваше имя" class="input">
+				      <input type="text" name="phone" placeholder="Ваш телефон" class="input">
+				      <input type="email" name="email" placeholder="Ваш e-mail" class="input">
+				      <input type="hidden" name="page" value="Главная" class="input">
 					</div>
-					<button class="button button_active">Заказать</button>
+			    <input type="submit" class="button button_active" value="Оставить заявку"/>
+          {{ Form::close() }}
 				</div>
 			</div>
 		</div>
@@ -130,28 +134,22 @@
 	</div>
 	<div class="content clear-fix">
 		<div class="additional_information_block">
-			<img src=""/>
+			<img src="{{ $advice->preview->url('medium') }}"/>
 			<h3>А знаете ли вы?</h3>
-			<p>Видео камера для дома для просмотра
-видео по интернету обязательно должна
-быть присоединена к Wi-fi</p>
-			<a href="">Подробнее</a>
+			<p>{{ $advice->title }}</p>
+			<a href="{{	URL::route('security.show', $advice->slug) }}">Подробнее</a>
 		</div>
 		<div class="additional_information_block">
-			<img src=""/>
+			<img src="{{ $news->preview->url('medium') }}"/>
 			<h3>Новости компании</h3>
-			<p>Открыли филиал в Ижевске
-Теперь вы сможете получить оборудование
-в Поволжье ещё быстрее</p>
-			<a href="">Подробнее</a>
+			<p>{{ $news->title }}</p>
+			<a href="{{	URL::route('news.show', $news->slug) }}">Подробнее</a>
 		</div>
 		<div class="additional_information_block">
-			<img src=""/>
+			<img src="{{ $work->preview->url('medium') }}"/>
 			<h3>Последний объект</h3>
-			<p>Устанавливали видеонаблюдение 
-в Кремле Теперь следим за Путиным
-Он пока работает</p>
-			<a href="">Подробнее</a>
+			<p>{{ $work->title }}</p>
+			<a href="{{	URL::route('works.show', $work->slug) }}">Подробнее</a>
 		</div>
 	</div>
 	<div class="content clear-fix">

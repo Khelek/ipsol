@@ -16,8 +16,9 @@ class NewsController extends AdminController {
         $title = Lang::get('admin/news/title.blog_management');
 
         $news = $this->news->all();
+        $big_news = \BigNews::first();
 
-        return View::make('admin/news/index', compact('news', 'title', 'rubrics'));
+        return View::make('admin/news/index', compact('news', 'title', 'rubrics', 'big_news'));
     }
 
 	public function create()
@@ -38,7 +39,7 @@ class NewsController extends AdminController {
 
         if ($news->save())
         {
-            return Redirect::route('admin.news.edit', $news->id)->with('success', lang::get('admin/news/messages.create.success'));
+            return Redirect::route('admin.news.edit', $news->id)->with('success', Lang::get('admin/news/messages.create.success'));
         } else {
             return Redirect::back()->withInput()->withErrors($news->errors());
         }

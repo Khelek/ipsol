@@ -28,7 +28,7 @@
 		</div>
 	</div>
 	<div class="support_container content clear-fix">
-	    
+
 	    <div class="title_container clear-fix">
 			<h1 class="title">Адреса сервисных центров</h1>
 			<div class="dot"></div><hr class="horizontal_line">
@@ -59,15 +59,20 @@
 	    <p>Просто заполните заявку и мы свяжемся с Вами в течении дня и мгновенно <br>
 проконсультируем!</p>
 		<div class="ask_form">
+      {{ Former::open()->method('POST')->route('requests.store') }}
+      {{ Form::token() }}
 			<div class="clear-fix">
-				<input type="text" placeholder="Ваше имя" class="input">
-				<input type="text" placeholder="Ваш телефон" class="input">
-				<input type="text" placeholder="Ваш e-mail" class="input">
+				<input type="text" name="name" placeholder="Ваше имя" class="input">
+				<input type="text" name="phone" placeholder="Ваш телефон" class="input">
+				<input type="email" name="email" placeholder="Ваш e-mail" class="input">
+				<input type="hidden" name="page" value="Поддержка - Адреса
+			сервисных центров" class="input">
 			</div>
-			<button class="button button_active">Оставить заявку</button>
+			<input type="submit" class="button button_active" value="Оставить заявку"/>
+      {{ Form::close() }}
 		</div>
 	</div>
-	
+
 @stop
 
 @section('scripts')

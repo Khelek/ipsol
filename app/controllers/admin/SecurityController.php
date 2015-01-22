@@ -13,7 +13,7 @@ class SecurityController extends AdminController {
 
     public function index()
     {
-        $title = Lang::get('admin/security/title.blog_management');
+        $title =Lang::get('admin/security/title.blog_management');
 
         $tips = $this->tip->all();
 
@@ -38,7 +38,7 @@ class SecurityController extends AdminController {
 
         if ($tip->save())
         {
-            return Redirect::route('admin.security.edit', $tip->id)->with('success', lang::get('admin/security/messages.create.success'));
+            return Redirect::route('admin.security.edit', $tip->id)->with('success',Lang::get('admin/security/messages.create.success'));
         } else {
             return Redirect::back()->withInput()->withErrors($tip->errors());
         }
@@ -72,7 +72,7 @@ class SecurityController extends AdminController {
         $tip->fill(Input::all());
         if ($tip->updateUniques())
         {
-            return Redirect::route('admin.security.edit', $tip->id)->with('success', Lang::get('admin/security/messages.create.success'));
+            return Redirect::route('admin.security.edit', $tip->id)->with('success',Lang::get('admin/security/messages.create.success'));
         } else {
             return Redirect::back()->withInput()->withErrors($tip->errors());
         }

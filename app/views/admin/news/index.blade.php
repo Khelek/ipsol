@@ -18,6 +18,12 @@
 		</h3>
 	</div>
 
+  @include('admin.news.big_news')
+
+  <br>
+  <br>
+  <hr>
+
   <div class="page-header">
 		<h3>
 		 Новости
@@ -29,6 +35,8 @@
 			</div>
 		</h3>
 	</div>
+
+
 
 
 	<table id="news" class="table table-striped table-hover">

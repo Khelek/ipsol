@@ -18,9 +18,30 @@ $(function() {
 			$(this).hide();
 		}
 	});
+
+
+  $('ul.tabs').delegate('li:not(.current)', 'click', function() {
+    $(this).addClass('current').siblings().removeClass('current')
+      .parents('div.section').find('div.box').hide().eq($(this).index()).fadeIn(150);
+  });
+
+  $('.tab_facebook').on('click', function() {
+    $('.fb-comments.fb_iframe_widget').find('span').css({width: "1000px"}).find('iframe').css({width: "1000px"});
+  });
+
 });
 
 $(document).ready(function () {
+  if ($.fn.dataTable) {
+    $.extend($.fn.dataTable.defaults, {
+      "language": {
+        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
+      }
+    });
+  }
+
+  $('.main-menu .active-parent').parent('.dropdown').find('.dropdown-menu').show();
+
 	$('.main-menu').on('click', 'a', function (e) {
 		var parents = $(this).parents('li');
 		var li = $(this).closest('li.dropdown');

@@ -14,6 +14,12 @@ html, body, p, h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0; }
 
+/* NOTE заказчику внезапно захотелось "чуть уменьшить макет" */
+body.zoomed_body {
+  zoom: 0.96;
+  -moz-transform: scale(0.96);
+  -moz-transform-origin: 0 0; }
+
 h1 {
   font-size: 64px;
   color: #232323; }
@@ -279,7 +285,10 @@ a {
 
 .footer_col5 {
   float: left;
+  margin-top: 70px;
   width: 248px; }
+  .footer_col5 h5 {
+    margin-bottom: 10px; }
 
 .contact {
   line-height: 100px;
@@ -406,6 +415,36 @@ a {
 
 .b-share .b-share__link {
   padding: 5px 5px 5px 0 !important; }
+
+ul.tabs {
+  list-style: none;
+  border-bottom: 1px solid #E4E4E4;
+  height: 44px; }
+
+.tabs li {
+  font-size: 20px;
+  display: inline;
+  width: 100px;
+  padding: 15px 38px;
+  cursor: pointer;
+  color: #222;
+  border: 1px solid #e4e4e4;
+  border-bottom: none;
+  background: white;
+  outline: 0;
+  cursor: pointer; }
+
+.tabs li.current {
+  border-bottom: none;
+  padding-bottom: 18px; }
+
+.box {
+  display: none;
+  width: 1000px;
+  margin-left: 50px; }
+
+.box.visible {
+  display: block; }
 
 .article {
   font-size: 16px;
