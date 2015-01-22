@@ -37,7 +37,8 @@
 		"marc-mabe/php-enum": "~1.2",
     "mews/purifier": "dev-master",
 		"barryvdh/laravel-elfinder": "~0.2",
-    "guzzlehttp/guzzle": "~4.0"
+    "guzzlehttp/guzzle": "~4.0",
+    "doctrine/dbal": "~2.3"
 	},
 	"autoload": {
 		"classmap": [
