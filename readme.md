@@ -9,3 +9,6 @@ composer update
 
 php artisan migrate
 php artisan migrate --package=rtconner/laravel-tagging
+php artisan migrate --package="terbium/db-config"
+
+какой то chmod на app/storage, 755 чтоли

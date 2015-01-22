@@ -137,6 +137,7 @@ return array(
         'Bootstrapper\BootstrapperServiceProvider',
         'Mews\Purifier\PurifierServiceProvider',
         'Barryvdh\Elfinder\ElfinderServiceProvider',
+        'Terbium\DbConfig\DbConfigServiceProvider',
 
 	),
 
@@ -214,8 +215,8 @@ return array(
         'Slug'              => 'Ivanlemeshev\LaravelCyrillicSlug\Facades\Slug',
         'Carbon'            => 'Carbon\Carbon',
         'BootstrapForm'     => 'Bootstrapper\Facades\Form',
-        'Purifier'      => 'Mews\Purifier\Facades\Purifier'
-
+        'Purifier'          => 'Mews\Purifier\Facades\Purifier',
+        'DbConfig'          => 'Terbium\DbConfig\Facades\DbConfig'
 	),
 
 );

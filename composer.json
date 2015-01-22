@@ -38,7 +38,8 @@
     "mews/purifier": "dev-master",
 		"barryvdh/laravel-elfinder": "~0.2",
     "guzzlehttp/guzzle": "~4.0",
-    "doctrine/dbal": "~2.3"
+    "doctrine/dbal": "~2.3",
+    "terbium/db-config": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

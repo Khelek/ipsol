@@ -18,6 +18,13 @@
 		</h3>
 	</div>
 
+  {{ BootstrapForm::inline(['route' => ['admin.requests.email_store'], 'method' => 'POST']) }}
+  <td> {{ BootstrapForm::text('email', $email, ['class' => 'input-small',
+  'style' => 'min-width: 300px', 'placeholder' => 'Почта для
+  уведомлений о заявках']) }} </td>
+  <td> {{ BootstrapForm::submit('Сохранить', ['class' => 'btn btn-xs']) }} </td>
+  {{ BootstrapForm::close() }}
+
   <table id="requests" class="table table-striped table-hover">
 		  <thead>
 			    <tr>

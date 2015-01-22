@@ -57,7 +57,9 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'aut
             Route::resource('subscriptions', 'SubscriptionsController', ['only' => ['index']]);
         });
 
-        Route::resource('requests', 'RequestsController');
+        Route::post('requests/email_store', ['as' => 'admin.requests.email_store',
+                                             'uses' => 'RequestsController@email_store']);
+        Route::resource('requests', 'RequestsController', ['only' => ['index']]);
         Route::post('upload', 'UploadsController@upload');
     });
     Route::group(array('before' => 'content_manager'), function()
