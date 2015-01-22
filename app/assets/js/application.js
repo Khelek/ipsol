@@ -29,4 +29,8 @@ $(function() {
     $('.fb-comments.fb_iframe_widget').find('span').css({width: "1000px"}).find('iframe').css({width: "1000px"});
   });
 
+  $('#ask_online').on('click', function() {
+    $('#ask_online_form').slideDown();
+  });
+
 });

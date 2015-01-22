@@ -74,7 +74,7 @@
 			<div class="content">
 				<div class="footer_col5">
 					<h5><a href="">Компания</a></h5>
-					<a href="">О компании</a>
+					<a href="/contacts">О компании</a>
 					<a href="/news">Новости</a>
 					<a href="/support">Поддержка</a>
 					<a href="/security">Советы по безопасности</a>
