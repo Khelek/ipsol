@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="../../../public/assets/css/contact.css">
-	<link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700&subset=cyrillic,latin' rel='stylesheet' type='text/css'
-</head>
-<body>
+@extends('layouts.default')
+
+@section('title')
+    {{{ $title }}}
+@stop
+
+@section('keywords')Posts administration @stop
+@section('author')Laravel 4 Bootstrap Starter SIte @stop
+@section('description')Posts administration index @stop
+
+
+@section('content')
 	<div class="ban clear-fix">
 		<div class="ban_gray">
 			<div class="col2">
@@ -26,32 +29,35 @@
 		</div>
 	</div>
 	<div class="content clear-fix">
-		<div class="map"><img src="../../../public/assets/images/map.jpg" alt=""></div>
+		
 		<div class="col2">
-			<p>
+			<img class="map" src="{{ asset('assets/images/map.jpg') }}"  alt="">
+			<img id="office" src="{{ asset('assets/images/house.jpg') }}"  alt="">
+		</div>
+		<div class="col2 persons">
+			<p class="contact_info">
 				Центральный офис: <br>
 				125047, г. Москва, ул. Чаянова, 12 <br>
-				Мы работаем: Пн-Пт с 9:00 до 22:00 <br>
+				
 				<br>
 				<strong><a href="">+7 (495) 565-32-04</a> <br>
 				e-mail: sales@ip-sol.ru <br>
 				skype: salesip <br>
 				<br>
-				<a href="">Задать вопрос онлайн </a> 
+				<a href="">Задать вопрос онлайн </a>  <br> <br>
 				</strong>
+				Мы работаем: Пн-Пт с 9:00 до 22:00
+				
 			</p>
-			<img id="office" src="../../../public/assets/images/house.jpg" alt="">
-		</div>
-		<div class="col2 persons">
 			<div class="person clear-fix">
-				<img class="avatar" src="../../../public/assets/images/avatar-1.jpg" alt="">
+				<img class="avatar" src="{{ asset('assets/images/avatar-1.jpg') }}" alt="">
 				<p>Максим Голубев <br>
 					Генеральный директор <br>
 					<strong>+7 (901) 001 01 01</strong>
 				</p>
 			</div>
 			<div class="person clear-fix">
-				<img class="avatar" src="../../../public/assets/images/avatar-2.jpg" alt="">
+				<img class="avatar" src="{{ asset('assets/images/avatar-2.jpg') }}" alt="">
 				<p>Телефоны сотрудников  <br>
 					Гаврилова Анна <br>
 					Руководитель отдела продаж <br>
@@ -59,13 +65,13 @@
 				</p>
 			</div>
 			<div class="person clear-fix">
-				<img class="avatar" src="../../../public/assets/images/avatar-3.jpg" alt="">
+				<img class="avatar" src="{{ asset('assets/images/avatar-3.jpg') }}" alt="">
 				<p>Максим Голубев <br>
 				Генеральный директор <br>
 				<strong>+7 (901) 001 01 01</strong></p>
 			</div>
 			<p>HR отдел: <a href="">hr@ip-sol.ru</a> <br> <br>
-			<a href="">Пройти пешком, Проехать <br>
+			<a href="">Пройти пешком, Проехать <br> <br>
 			Как нам проехать?</a></p>
 		</div>
 	</div>
@@ -79,16 +85,23 @@
 проконсультируем!</p>
 		<div class="ask_form">
 			<div class="clear-fix">
-				<input type="text" placeholder="Ваше имя" class="input">
-				<input type="text" placeholder="Ваш телефон" class="input">
-				<input type="text" placeholder="Ваш e-mail" class="input">
-				<select type="text" placeholder="Выбор отдела" class="input input_select"  onchange="">
-				<option value="">отдел 1</option>
+				<input type="text" name="name" placeholder="Ваше имя" class="input">
+				<input type="text" name="phone" placeholder="Ваш телефон" class="input">
+				<input type="email" name="email" placeholder="Ваш e-mail" class="input">
+				<input type="hidden" name="page" value="Поддержка - Частно
+	    	задаваемые вопросы" class="input">
 			</div>
-			<button class="button button_active">Оставить заявку</button>
+			<input type="submit" class="button button_active" value="Оставить заявку"/>
 		</div>
 	</div>
+@stop
 
 
-</body>
-</html>
+@section('styles')
+	<link rel="stylesheet" href="{{	asset('assets/css/contact.css') }}">
+
+@stop
+
+@section('scripts')
+	<script src="{{	asset('assets/js/application.js') }}"></script>
+@stop

@@ -17,6 +17,7 @@ Route::filter('basic.once', function()
 });
 
 Route::get('/', 'WelcomeController@index');
+Route::get('/contacts', 'WelcomeController@contacts');
 
 
 Route::get('/admin', function()

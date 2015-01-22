@@ -14,6 +14,12 @@ html, body, p, h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0; }
 
+/* NOTE заказчику внезапно захотелось "чуть уменьшить макет" */
+body.zoomed_body {
+  zoom: 0.96;
+  -moz-transform: scale(0.96);
+  -moz-transform-origin: 0 0; }
+
 h1 {
   font-size: 64px;
   color: #232323; }
@@ -279,7 +285,10 @@ a {
 
 .footer_col5 {
   float: left;
+  margin-top: 70px;
   width: 248px; }
+  .footer_col5 h5 {
+    margin-bottom: 10px; }
 
 .contact {
   line-height: 100px;
@@ -373,23 +382,27 @@ a {
   font-family: 'FranklinGothicBook';
   src: url('../fonts/FranklinGothicBookCondOSC.otf') format('opentype'); }
 
-.ban .input {
-  display: block;
-  margin-bottom: 20px;
-  background-color: #fff; }
-.ban .ban_form {
-  margin-top: 54px; }
+.ban {
+  margin-bottom: 70px; }
+  .ban .input {
+    display: block;
+    margin-bottom: 20px;
+    background-color: #fff; }
+  .ban .ban_form {
+    margin-top: 54px; }
 
 .map {
-  margin: 50px 0; }
-  .map img {
-    width: 100%; }
+  margin-top: 5px;
+  width: 100%; }
 
 .col2 {
   float: left; }
   .col2 #office {
     width: 100%;
     margin-top: 60px; }
+
+.contact_info {
+  margin-bottom: 80px; }
 
 .persons {
   padding-left: 60px;

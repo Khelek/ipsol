@@ -1,5 +1,6 @@
 @import 'theme';
 .ban {
+	margin-bottom: 70px;
     .input {
         display: block;
         margin-bottom: 20px;
@@ -10,10 +11,8 @@
     }
 }
 .map {
-	margin: 50px 0;
-	img {
-		width: 100%;
-	}
+	margin-top: 5px;
+	width: 100%;
 }
 .col2 {
 	float: left;
@@ -21,6 +20,9 @@
 		width: 100%;
 		margin-top: 60px;
 	}
+}
+.contact_info {
+	margin-bottom: 80px;
 }
 .persons{
 	padding-left: 60px;
