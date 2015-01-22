@@ -21,8 +21,10 @@
 				<div class="triangle"></div>
 				<div class="ban_form">
 					<div class="input_search_block">
+              <!-- какой ещё поиск???
 						<input type="text" name="search" placeholder="Поиск" class="input input_search">
 				        <button class="input_search_button" type="submit"></button>
+                -->
 					</div>
 				</div>
 			</div>
@@ -92,8 +94,6 @@
 				<strong>+7 (901) 001 01 01</strong></p>
 			</div>
 			<p>HR отдел: <a href="">hr@ip-sol.ru</a> <br> <br>
-			<a href="">Пройти пешком, Проехать <br> <br>
-			Как нам проехать?</a></p>
 		</div>
 	</div>
 	<div class="content clear-fix">
