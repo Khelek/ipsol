@@ -7,3 +7,5 @@ install composer
 composer global require "laravel/installer=~1.1"
 composer update
 
+php artisan migrate
+php artisan migrate --package=rtconner/laravel-tagging
