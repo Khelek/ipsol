@@ -20,6 +20,7 @@ class WelcomeController extends BaseController {
 
 
     public function contacts() {
-        return View::make('welcome/contacts', compact());
+        $title = Lang::get('admin/works/title.blog_management');
+        return View::make('welcome/contacts', compact('title'));
     }
 }
