@@ -22,7 +22,9 @@ Route::get('/contacts', 'WelcomeController@contacts');
 
 Route::get('/admin', function()
 {
-    if (Auth::user()->admin) {
+    if (!Auth::user()) {
+        return Redirect::route('admin.users.index');
+    } else if (Auth::user()->admin) {
         return Redirect::route('admin.users.index');
     } else if (Auth::user()->manager) {
         return Redirect::route('admin.requests.index');
