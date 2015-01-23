@@ -22,7 +22,8 @@ class Work extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
                            'quest_description', 'client_name',
                            'client_post', 'client_description',
                            'main_photo', 'second_photo', 'third_photo',
-                           'need_big_preview', 'client_photo'];
+                           'need_big_preview', 'client_photo',
+                           'preview_for_main_page'];
 
     public static $rules = array(
         'solution_content' => 'required',
@@ -34,6 +35,7 @@ class Work extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
         'big_preview' => 'file',
         'title'   => 'required',
         'slug'    => 'required|unique:works',
+        'preview_for_main_page' => 'required',
     );
 
     use AttachImageTrait;

@@ -137,7 +137,7 @@
       @if ($advice)
 			    <img src="{{ $advice->preview->url('medium') }}"/>
 			    <h3>А знаете ли вы?</h3>
-			    <p>{{ $advice->title }}</p>
+			    <p>{{ $advice->preview_for_main_page }}</p>
 			    <a href="{{	URL::route('security.show', $advice->slug) }}">Подробнее</a>
       @endif
 		</div>
@@ -145,7 +145,7 @@
       @if ($news)
 			    <img src="{{ $news->preview->url('medium') }}"/>
 			    <h3>Новости компании</h3>
-			    <p>{{ $news->title }}</p>
+			    <p>{{ $news->preview_for_main_page }}</p>
 			    <a href="{{	URL::route('news.show', $news->slug) }}">Подробнее</a>
       @endif
 		</div>
@@ -153,7 +153,7 @@
       @if ($work)
 			    <img src="{{ $work->preview->url('medium') }}"/>
 			    <h3>Последний объект</h3>
-			    <p>{{ $work->title }}</p>
+			    <p>{{ $work->preview_for_main_page }}</p>
 			    <a href="{{	URL::route('works.show', $work->slug) }}">Подробнее</a>
       @endif
 		</div>

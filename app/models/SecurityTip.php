@@ -13,13 +13,15 @@ class SecurityTip extends \LaravelBook\Ardent\Ardent implements StaplerableInter
     public $autoPurgeRedundantAttributes = true;
 
     protected $fillable = ['preview', 'content', 'title', 'slug', 'meta_title',
-                           'meta_description', 'meta_keywords'];
+                           'meta_description', 'meta_keywords',
+                           'preview_for_main_page'];
 
     public static $rules = array(
         'content' => 'required',
         'preview' => 'file',
         'title'   => 'required',
-        'slug'    => 'required|unique:security_tips'
+        'slug'    => 'required|unique:security_tips',
+        'preview_for_main_page' => 'required',
     );
 
     public function __construct(array $attributes = array()) {

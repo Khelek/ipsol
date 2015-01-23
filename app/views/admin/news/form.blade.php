@@ -1,5 +1,10 @@
 {{ Former::string('title')->required() }}
 {{ Former::string('slug') }}
+
+{{ Former::textarea('preview_for_main_page')->required() }}
+@include('components.small_text', ["text" =>
+"Этот текст будет отображаться на главной странице в разделе \"Новости компании\""])
+
 @include('components.image_upload_input', ["object" => $news, "image" => 'preview'])
 @include('components.small_text', ["text" =>
 "Загрузите квадратную картинку разрешением не менее 214х214px"])
