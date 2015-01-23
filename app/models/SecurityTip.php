@@ -13,23 +13,30 @@ class SecurityTip extends \LaravelBook\Ardent\Ardent implements StaplerableInter
     public $autoPurgeRedundantAttributes = true;
 
     protected $fillable = ['preview', 'content', 'title', 'slug', 'meta_title',
-                           'meta_description', 'meta_keywords'];
+                           'meta_description', 'meta_keywords',
+                           'preview_for_main_page', 'photo_preview_for_main'];
 
     public static $rules = array(
         'content' => 'required',
         'preview' => 'file',
         'title'   => 'required',
-        'slug'    => 'required|unique:security_tips'
+        'slug'    => 'required|unique:security_tips',
+        'preview_for_main_page' => 'required',
+        'photo_preview_for_main' => 'file',
     );
 
+    use AttachImageTrait;
+
     public function __construct(array $attributes = array()) {
+        $url = '/system/:attachment/security_tips/:id_partition/:style/:filename';
         $this->hasAttachedFile('preview', [
             'styles' => [
                 'medium' => ['dimensions' => '214x214#', 'auto-orient' => true, 'convert_options' => ['quality' => 100]],
                 'small' => ['dimensions' => '100x100#', 'auto-orient' => true, 'convert_options' => ['quality' => 100]]
             ],
-            'url' => '/system/:attachment/:id_partition/:style/:filename'
+            'url' => $url
         ]);
+        $this->attachImage('photo_preview_for_main', '400x250#', $url);
 
         parent::__construct($attributes);
     }

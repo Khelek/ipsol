@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "49aa47a7f50b515e572bc2c558f39e35",
+    "hash": "a29f0936e6f5699d9002d2696e8f683e",
     "packages": [
         {
             "name": "anahkiasen/former",
@@ -3651,6 +3651,58 @@
             "time": "2015-01-01 13:28:01"
         },
         {
+            "name": "terbium/db-config",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TerbiumLibs/dbConfig.git",
+                "reference": "ac84727e2ef48a301fa0e9cd9d7dec1a072144e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TerbiumLibs/dbConfig/zipball/ac84727e2ef48a301fa0e9cd9d7dec1a072144e0",
+                "reference": "ac84727e2ef48a301fa0e9cd9d7dec1a072144e0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.1.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-0": {
+                    "Terbium\\DbConfig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "YAAP",
+                    "email": "yaapis@gmail.com"
+                },
+                {
+                    "name": "Volodymyr Terion Kornilov",
+                    "email": "mail@terion.name"
+                }
+            ],
+            "description": "Laravel Config with DB-storage support",
+            "keywords": [
+                "configuration",
+                "laravel"
+            ],
+            "time": "2014-06-07 12:52:47"
+        },
+        {
             "name": "twbs/bootstrap",
             "version": "v3.3.2",
             "source": {
@@ -4855,9 +4907,11 @@
         "lavary/laravel-menu": 20,
         "ivanlemeshev/laravel-cyrillic-slug": 20,
         "mews/purifier": 20,
+        "terbium/db-config": 20,
         "dollar/generators": 20
     },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.4.0",
         "ext-gd": "*"

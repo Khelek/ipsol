@@ -7,6 +7,8 @@ return array(
         'password' => 'Пароль',
         'admin' => 'Администратор',
         'content_manager' => 'Контентный менеджер',
+        'preview_for_main_page' => 'Текстовое превью к главной странице',
+        'photo_preview_for_main' => 'Фотография к превью на главной странице',
         'manager' => 'Менеджер',
         'content' => 'Содержание',
         'slug' => 'ЧПУ',

@@ -11,13 +11,16 @@ class News extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
     public $autoPurgeRedundantAttributes = true;
 
     protected $fillable = ['preview', 'content', 'title', 'slug', 'meta_title',
-                           'meta_description', 'meta_keywords', 'big_preview'];
+                           'meta_description', 'meta_keywords', 'big_preview',
+                           'preview_for_main_page', 'photo_preview_for_main'];
 
     public static $rules = array(
         'content' => 'required',
         'preview' => 'file',
         'title'   => 'required',
-        'slug'    => 'required|unique:news'
+        'slug'    => 'required|unique:news',
+        'preview_for_main_page' => 'required',
+        'photo_preview_for_main' => 'file',
     );
 
     use AttachImageTrait;
@@ -32,6 +35,7 @@ class News extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
             'url' => $url
         ]);
         $this->attachImage('big_preview', '810x457#', $url);
+        $this->attachImage('photo_preview_for_main', '400x250#', $url);
 
         parent::__construct($attributes);
     }

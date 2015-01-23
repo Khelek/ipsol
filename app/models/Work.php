@@ -22,7 +22,8 @@ class Work extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
                            'quest_description', 'client_name',
                            'client_post', 'client_description',
                            'main_photo', 'second_photo', 'third_photo',
-                           'need_big_preview', 'client_photo'];
+                           'need_big_preview', 'client_photo',
+                           'preview_for_main_page', 'photo_preview_for_main'];
 
     public static $rules = array(
         'solution_content' => 'required',
@@ -34,6 +35,8 @@ class Work extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
         'big_preview' => 'file',
         'title'   => 'required',
         'slug'    => 'required|unique:works',
+        'preview_for_main_page' => 'required',
+        'photo_preview_for_main' => 'file',
     );
 
     use AttachImageTrait;
@@ -50,6 +53,7 @@ class Work extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
         ]);
 
         // мб добавить аргумент ['medium' => '416x214#', 'small' => '100x100#'] и вынести в trait
+        $this->attachImage('photo_preview_for_main', '400x250#', $url);
         $this->attachImage('big_preview', '416x214#', $url);
         $this->attachImage('main_photo', '810x457#', $url);
         $this->attachImage('second_photo', '400x214#', $url);
