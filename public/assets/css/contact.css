@@ -219,6 +219,9 @@ a {
   background-image: url('../images/arrow.png');
   background-repeat: no-repeat;
   background-position: 335px 16px; }
+  .input_select .option_select {
+    padding: 20px;
+    color: red; }
 
 .input_search_block, .input {
   height: 36px;
@@ -389,7 +392,7 @@ a {
   background: #fff;
   position: fixed;
   top: 45%;
-  left: 25%;
+  left: 20%;
   margin-top: -150px;
   margin-left: -150px;
   display: none;
@@ -397,8 +400,10 @@ a {
   z-index: 5;
   padding: 40px;
   box-sizing: border-box; }
-  #modal_form .title {
-    margin-top: 20px; }
+  #modal_form .input_select {
+    background-position: 197px 16px; }
+  #modal_form .title_container {
+    margin-top: -40px; }
 
 #modal_form #modal_close {
   width: 21px;

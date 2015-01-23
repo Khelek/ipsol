@@ -20,7 +20,7 @@
 				    <li class="ban_list_item">Выработка решений для проектных организаций</li>
 				</ul>
 				<div clear-fix>
-					<button class="modal_window" class="button button_active">Заказать</button>
+					<button class="modal_window button button_active">Заказать</button>
 					<button class="button button_light">Узнать больше</button>
 				</div>
 			</div>
@@ -34,7 +34,7 @@
 				    <li class="ban_list_item">Выработка решений для проектных организаций</li>
 				</ul>
 				<div clear-fix>
-					<button class="button button_active">Заказать</button>
+					<button class="modal_window button button_active">Заказать</button>
 					<button class="button button_light">Узнать больше</button>
 				</div>
 			</div>
@@ -48,7 +48,7 @@
 				    <li class="ban_list_item">Выработка решений для проектных организаций</li>
 				</ul>
 				<div clear-fix>
-					<button class="button button_active">Заказать</button>
+					<button class="modal_window button button_active">Заказать</button>
 					<button class="button button_light">Узнать больше</button>
 				</div>
 			</div>

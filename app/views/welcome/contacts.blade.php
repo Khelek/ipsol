@@ -20,8 +20,9 @@
 			<div class="col2 clear-fix">
 				<div class="triangle"></div>
 				<div class="ban_form">
+					<!-- какой ещё поиск??? 
 					<div class="input_search_block">
-              <!-- какой ещё поиск???
+              
 						<input type="text" name="search" placeholder="Поиск" class="input input_search">
 				        <button class="input_search_button" type="submit"></button>
                 -->
@@ -113,7 +114,7 @@
 				    <input type="email" name="email" placeholder="Ваш e-mail" class="input">
 				    <input type="hidden" name="page" value="О компании(Контакты)" class="input">
 				<select type="text" placeholder="Выбор отдела" class="input input_select"  onchange="">
-					<option value="отдел">отдел по маркетингу</option>
+					<option class="option_select" value="отдел">отдел по маркетингу</option>
 				</select>
 			  </div>
 			  <input type="submit" class="button button_active" value="Оставить заявку"/>
