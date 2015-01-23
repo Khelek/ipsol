@@ -21,7 +21,7 @@
 				</ul>
 				<div clear-fix>
 					<button class="modal_window button button_active">Заказать</button>
-					<button class="button button_light">Узнать больше</button>
+					<button class="button button_active">Узнать больше</button>
 				</div>
 			</div>
 		</div>
@@ -35,7 +35,7 @@
 				</ul>
 				<div clear-fix>
 					<button class="modal_window button button_active">Заказать</button>
-					<button class="button button_light">Узнать больше</button>
+					<button class="button button_active">Узнать больше</button>
 				</div>
 			</div>
 		</div>
@@ -49,7 +49,7 @@
 				</ul>
 				<div clear-fix>
 					<button class="modal_window button button_active">Заказать</button>
-					<button class="button button_light">Узнать больше</button>
+					<button class="button button_active">Узнать больше</button>
 				</div>
 			</div>
 		</div>
