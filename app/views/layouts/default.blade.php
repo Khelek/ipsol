@@ -48,17 +48,21 @@
       	<p>Просто заполните заявку и мы свяжемся с Вами в течении дня и мгновенно <br>
 проконсультируем!</p>
 		<div class="ask_form">
-			<div class="clear-fix">
-				<input type="text" name="name" placeholder="Ваше имя" class="input">
-				<input type="text" name="phone" placeholder="Ваш телефон" class="input">
-				<input type="email" name="email" placeholder="Ваш e-mail" class="input">
-				<select type="text" placeholder="Выбор отдела" class="input input_select"  onchange="">
-					<option value="отдел">отдел по маркетингу</option>
-				</select>
-				<!--<input type="hidden" name="page" value="Поддержка - Частно
-	    	задаваемые вопросы" class="input"> -->
-			</div>
-			<input type="submit" class="button button_active" value="Оставить заявку"/>
+        {{ Former::open()->method('POST')->route('requests.store') }}
+        {{ Form::token() }}
+			  <div class="clear-fix">
+				  <input type="text" name="name" placeholder="Ваше имя" class="input">
+				  <input type="text" name="phone" placeholder="Ваш телефон" class="input">
+				  <input type="email" name="email" placeholder="Ваш e-mail" class="input">
+				  <input type="hidden" name="page" value="{{ Request::url() }}" class="input">
+				  <select type="text" name="departament" placeholder="Выбор отдела" class="input input_select"  onchange="">
+					    <option value="HR-отдел">HR-отдел</option>
+					    <option value="Отдел продаж">Отдел продаж</option>
+					    <option value="Технический отдел">Технический отдел</option>
+				  </select>
+			  </div>
+			  <input type="submit" class="button button_active" value="Оставить заявку"/>
+        {{ Form::close() }}
 		</div>
 </div>
 <div id="overlay"></div>
@@ -82,7 +86,7 @@
 					<li class="item"><a href="">По типам систем</a></li>
 					<li class="item"><a href="/works">Наши работы</a></li>
 					<li class="item"><a href="{{ URL::route('blogs.index') }}">Блог</a></li>
-					<li class="item"><a href="">Контакты</a></li>
+					<li class="item"><a href="/contacts">Контакты</a></li>
 				</ul>
 
 			</div>

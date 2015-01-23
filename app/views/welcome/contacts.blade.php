@@ -113,9 +113,11 @@
 				    <input type="text" name="phone" placeholder="Ваш телефон" class="input">
 				    <input type="email" name="email" placeholder="Ваш e-mail" class="input">
 				    <input type="hidden" name="page" value="О компании(Контакты)" class="input">
-				<select type="text" placeholder="Выбор отдела" class="input input_select"  onchange="">
-					<option class="option_select" value="отдел">отдел по маркетингу</option>
-				</select>
+				    <select type="text" name="departament" placeholder="Выбор отдела" class="input input_select"  onchange="">
+					    <option value="HR-отдел">HR-отдел</option>
+					    <option value="Отдел продаж">Отдел продаж</option>
+					    <option value="Технический отдел">Технический отдел</option>
+				    </select>
 			  </div>
 			  <input type="submit" class="button button_active" value="Оставить заявку"/>
         {{ Form::close() }}
