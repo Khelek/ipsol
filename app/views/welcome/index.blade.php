@@ -135,7 +135,7 @@
 	<div class="content clear-fix">
 		<div class="additional_information_block">
       @if ($advice)
-			    <img src="{{ $advice->preview->url('medium') }}"/>
+			    <img src="{{ $advice->photo_preview_for_main->url('medium') }}"/>
 			    <h3>А знаете ли вы?</h3>
 			    <p>{{ $advice->preview_for_main_page }}</p>
 			    <a href="{{	URL::route('security.show', $advice->slug) }}">Подробнее</a>
@@ -143,7 +143,7 @@
 		</div>
 		<div class="additional_information_block">
       @if ($news)
-			    <img src="{{ $news->preview->url('medium') }}"/>
+			    <img src="{{ $news->photo_preview_for_main->url('medium') }}"/>
 			    <h3>Новости компании</h3>
 			    <p>{{ $news->preview_for_main_page }}</p>
 			    <a href="{{	URL::route('news.show', $news->slug) }}">Подробнее</a>
@@ -151,7 +151,7 @@
 		</div>
 		<div class="additional_information_block">
       @if ($work)
-			    <img src="{{ $work->preview->url('medium') }}"/>
+			    <img src="{{ $work->photo_preview_for_main->url('medium') }}"/>
 			    <h3>Последний объект</h3>
 			    <p>{{ $work->preview_for_main_page }}</p>
 			    <a href="{{	URL::route('works.show', $work->slug) }}">Подробнее</a>

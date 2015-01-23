@@ -2,8 +2,11 @@
 {{ Former::string('slug') }}
 
 {{ Former::textarea('preview_for_main_page')->required() }}
+@include('components.image_upload_input', ["object" => $news, "image" => 'photo_preview_for_main'])
 @include('components.small_text', ["text" =>
-"Этот текст будет отображаться на главной странице в разделе \"Новости компании\""])
+"Этот текст и изображение(разрешение не менее 400x250px) будет
+отображаться на главной странице в разделе
+\"Новости компании\""])
 
 @include('components.image_upload_input', ["object" => $news, "image" => 'preview'])
 @include('components.small_text', ["text" =>

@@ -2,9 +2,11 @@
 {{ Former::string('slug') }}
 
 {{ Former::textarea('preview_for_main_page')->required() }}
+@include('components.image_upload_input', ["object" => $tip, "image" => 'photo_preview_for_main'])
 @include('components.small_text', ["text" =>
-"Этот текст будет отображаться на главной странице в разделе \"А
-знаете ли вы?\""])
+"Этот текст и изображение(разрешение не менее 400x250px) будет
+отображаться на главной странице в разделе
+\"А знаете ли вы?\""])
 
 @include('components.image_upload_input', ["object" => $tip, "image" => 'preview'])
 @include('components.small_text', ["text" =>
