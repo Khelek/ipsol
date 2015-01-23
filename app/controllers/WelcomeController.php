@@ -11,11 +11,10 @@ class WelcomeController extends BaseController {
 
     public function index()
     {
-        $title = Lang::get('admin/works/title.blog_management');
         $advice = \SecurityTip::orderBy(DB::raw("RAND()"))->first();
         $news = \News::orderBy(DB::raw("RAND()"))->first();
         $work = \Work::orderBy(DB::raw("RAND()"))->first();
-        return View::make('welcome/index', compact('title', 'news', 'work', 'advice'));
+        return View::make('welcome/index', compact('news', 'work', 'advice'));
     }
 
 
