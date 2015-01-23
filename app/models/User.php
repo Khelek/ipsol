@@ -9,7 +9,9 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 
 	use UserTrait, RemindableTrait;
 
-    protected $fillable = ['name', 'addresses'];
+    protected $fillable = ['username', 'email', 'confirmed',
+                           'confirmation_code', 'admin',
+                           'content_manager', 'manager'];
 
     public static $rules = array(
         'email' => 'required',

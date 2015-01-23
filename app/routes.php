@@ -22,7 +22,15 @@ Route::get('/contacts', 'WelcomeController@contacts');
 
 Route::get('/admin', function()
 {
-    return Redirect::route('admin.blogs.index');
+    if (!Auth::user()) {
+        return Redirect::route('admin.users.index');
+    } else if (Auth::user()->admin) {
+        return Redirect::route('admin.users.index');
+    } else if (Auth::user()->manager) {
+        return Redirect::route('admin.requests.index');
+    } else {
+        return Redirect::route('admin.blogs.index');
+    }
 });
 
 Route::get('/support', function()
@@ -40,37 +48,54 @@ Route::group(array('before' => 'auth'), function()
 
 Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'), function()
 {
-    Route::group(array('prefix' => 'blogs', 'namespace' => 'Blogs'), function()
+    Route::group(array('before' => 'manager'), function()
     {
-        Route::resource('rubrics', 'RubricsController', ['only' => ['index', 'store', 'update', 'destroy']]); // for blogs
-        Route::get('subscriptions/unload', ['as' => 'subscriptions.unload',
-                                            'uses' => 'SubscriptionsController@unload']);
-        Route::resource('subscriptions', 'SubscriptionsController', ['only' => ['index']]);
-    });
-    Route::resource('blogs', 'BlogsController');
+        Route::group(array('prefix' => 'blogs', 'namespace' => 'Blogs'), function()
+        {
+            Route::get('subscriptions/unload', ['as' => 'subscriptions.unload',
+                                                'uses' => 'SubscriptionsController@unload']);
+            Route::resource('subscriptions', 'SubscriptionsController', ['only' => ['index']]);
+        });
 
-    Route::resource('security', 'SecurityController');
-    Route::resource('requests', 'RequestsController');
-    Route::resource('news', 'NewsController');
-    Route::group(array('prefix' => 'news', 'namespace' => 'News'), function()
+        Route::resource('requests', 'RequestsController');
+        Route::post('upload', 'UploadsController@upload');
+    });
+    Route::group(array('before' => 'content_manager'), function()
     {
-        Route::resource('big_news', 'BigNewsController', ['only' => ['store', 'update', 'destroy']]); // for news
+        Route::group(array('prefix' => 'blogs', 'namespace' => 'Blogs'), function()
+        {
+            Route::resource('rubrics', 'RubricsController', ['only' => ['index', 'store', 'update', 'destroy']]); // for blogs
+        });
+
+        Route::resource('blogs', 'BlogsController');
+        Route::resource('security', 'SecurityController');
+        Route::group(array('prefix' => 'news', 'namespace' => 'News'), function()
+        {
+            Route::resource('big_news', 'BigNewsController', ['only' => ['store', 'update', 'destroy']]); // for news
+        });
+
+        Route::group(array('prefix' => 'works', 'namespace' => 'Works'), function()
+        {
+            Route::resource('categories', 'CategoriesController', ['only' => ['index', 'store', 'update', 'destroy']]); // for works
+        });
+        Route::resource('works', 'WorksController');
+
+        Route::resource('banners', 'BannersController');
+        Route::resource('news', 'NewsController');
+        Route::group(array('prefix' => 'support', 'namespace' => 'Support'), function()
+        {
+            Route::resource('addresses', 'AddressesController');
+            Route::resource('asks', 'AsksController');
+            Route::resource('instructions', 'InstructionsController');
+        });
+
     });
 
-    Route::group(array('prefix' => 'works', 'namespace' => 'Works'), function()
+    Route::group(array('before' => 'admin'), function()
     {
-        Route::resource('categories', 'CategoriesController', ['only' => ['index', 'store', 'update', 'destroy']]); // for works
+        Route::resource('users', 'UsersController');
     });
-    Route::resource('works', 'WorksController');
 
-    Route::resource('banners', 'BannersController');
-    Route::group(array('prefix' => 'support', 'namespace' => 'Support'), function()
-    {
-        Route::resource('addresses', 'AddressesController');
-        Route::resource('asks', 'AsksController');
-        Route::resource('instructions', 'InstructionsController');
-    });
-    Route::post('upload', 'UploadsController@upload');
 });
 
 

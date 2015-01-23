@@ -26,6 +26,8 @@
 				      <th> Имя </th>
 				      <th> Телефон </th>
 				      <th> Страница </th>
+				      <th> Отдел </th>
+				      <th> Вопрос </th>
 				      <th> Дата создания</th>
 			    </tr>
 		  </thead>
@@ -37,6 +39,8 @@
                   <td> {{ $request->name }} </td>
                   <td> {{ $request->phone }} </td>
                   <td> {{ $request->page }} </td>
+                  <td> {{ $request->departament }} </td>
+                  <td> {{ $request->question }} </td>
                   <td> {{ $request->created_at }} </td>
               </tr>
           @endforeach

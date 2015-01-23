@@ -33,6 +33,11 @@ class UsersController extends AdminController {
         $user = $this->user;
 
         $user->fill(Input::all());
+        $user->password = \Hash::make(Input::get('password'));
+        $user->username = Input::get('email');
+        $user->confirmed = 1;
+        $user->confirmation_code = md5(microtime().\Config::get('app.key'));
+
 
         if ($user->save())
         {
@@ -67,6 +72,15 @@ class UsersController extends AdminController {
         $user = $this->user->find($id);
 
         $user->fill(Input::all());
+
+        if (Input::get('password')) {
+            $user->password = \Hash::make(Input::get('password'));
+        }
+        $user->admin = Input::get('admin');
+        $user->manager = Input::get('manager');
+        $user->content_manager = Input::get('content_manager');
+        $user->username = Input::get('email');
+
         if ($user->updateUniques())
         {
             return Redirect::route('admin.users.edit', $user->id)->with('success',Lang::get('admin/users/messages.create.success'));

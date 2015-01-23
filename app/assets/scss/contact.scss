@@ -22,7 +22,7 @@
 	}
 }
 .contact_info {
-	margin-bottom: 80px;
+	margin-bottom: 30px;
 }
 .persons{
 	padding-left: 60px;
@@ -37,4 +37,13 @@
 }
 .input_select {
 	background-position: 197px 16px;
+}
+
+#ask_online_form {
+  display: none;
+}
+#ask_online_form .input {
+  font-weight: 100;
+  width: 375px;
+  margin-bottom: 20px;
 }
