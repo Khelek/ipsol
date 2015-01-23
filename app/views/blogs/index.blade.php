@@ -32,7 +32,7 @@
 				<a href="{{ URL::route('blogs.show', $post->slug) }}"><img src="{{ $post->preview->url('medium') }}" alt="" class="article_img"></a>
 	    		<div class="article_container">
 		    		<h2><a class="article_header" href="{{ URL::route('blogs.show', $post->slug) }}">{{ $post->title }}</a></h2>
-		    		<p class="description"> {{ Str::limit($post->content, 100) }} </p>
+		    		<p class="description"> {{ Str::limit(strip_tags($post->content), 110) }} </p>
 					<p class="date">{{ $post->created_at() }}</p>
           @if ($post->tagNames() != [])
 					    Тэги:
@@ -63,7 +63,7 @@
 			последних статей</p>
         {{ Former::open()->method('POST')->route('subscriptions.store') }}
         {{ Form::token() }}
-        <input class="input input_email" type="email" name="email" placeholder="Ваш e-mail">
+        <input class="input input_email" type="email" name="email" placeholder="Ваш e-mail" required="true">
 			  <input class="button button_active" type="submit"
 	value="Подписаться" />
         {{ Form::close() }}

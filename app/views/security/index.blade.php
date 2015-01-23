@@ -28,7 +28,7 @@
 	    		        <img src="{{ $tip->preview->url('medium') }}" alt="">
 	    		        <div class="article_container">
 		    		          <h2><a class="article_header" href="{{	URL::route('security.show', $tip->slug) }}">{{ $tip->title }}</a></h2>
-		    		          <p class="description"> {{ Str::limit($tip->content, 100) }} </p>
+		    		          <p class="description"> {{ Str::limit(strip_tags($tip->content), 110) }} </p>
 					            <p class="date">{{ $tip->created_at() }}</p>
 	    		        </div>
 	    	      </div>

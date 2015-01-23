@@ -47,7 +47,7 @@
         @foreach ($another_tips as $a_tip)
     		    <div class="sidebar_article"><img src="{{ $a_tip->preview->url('medium') }}" alt="">
 				        <a href="{{	URL::route('security.show', $a_tip->slug) }}">{{ $a_tip->title }}</a>
-				        <p>{{ Str::limit($a_tip->content, 100) }}</p>
+		    		    <p> {{ Str::limit(strip_tags($a_tip->content), 110) }} </p>
 				        <p class="date">{{ $a_tip->created_at() }}</p>
 			      </div>
         @endforeach

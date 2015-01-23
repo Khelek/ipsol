@@ -53,13 +53,13 @@
             {{ Former::open()->method('POST')->route('requests.store') }}
             {{ Form::token() }}
 			      <div class="clear-fix">
-				        <input type="text" name="name" placeholder="Ваше имя" class="input">
+				        <input type="text" name="name" placeholder="Ваше имя" class="input" required="true">
                 <br>
-				        <input type="text" name="phone" placeholder="Ваш телефон" class="input">
+				        <input type="text" name="phone" placeholder="Ваш телефон" class="input" required="true">
                 <br>
-				        <input type="email" name="email" placeholder="Ваш e-mail" class="input">
+				        <input type="email" name="email" placeholder="Ваш e-mail" class="input" required="true">
                 <br>
-				        <input type="question" name="question" placeholder="Ваш вопрос" class="input">
+				        <input type="question" name="question" placeholder="Ваш вопрос" class="input" required="true">
                 <br>
 				        <input type="hidden" name="page" value="О компании(Контакты)" class="input">
 			      </div>
@@ -109,9 +109,9 @@
         {{ Former::open()->method('POST')->route('requests.store') }}
         {{ Form::token() }}
 			  <div class="clear-fix">
-				    <input type="text" name="name" placeholder="Ваше имя" class="input">
-				    <input type="text" name="phone" placeholder="Ваш телефон" class="input">
-				    <input type="email" name="email" placeholder="Ваш e-mail" class="input">
+				    <input type="text" name="name" placeholder="Ваше имя" class="input" required="true">
+				    <input type="text" name="phone" placeholder="Ваш телефон" class="input" required="true">
+				    <input type="email" name="email" placeholder="Ваш e-mail" class="input" required="true">
 				    <input type="hidden" name="page" value="О компании(Контакты)" class="input">
 				    <select type="text" name="departament" placeholder="Выбор отдела" class="input input_select"  onchange="">
 					    <option value="HR-отдел">HR-отдел</option>

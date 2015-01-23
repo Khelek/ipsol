@@ -10,7 +10,7 @@
 
 @section('meta-tags')
     <meta content='{{ $post->title }}' property='og:title'>
-    <meta content='{{ Str::limit($post->content, 100) }}' property='og:description'>
+    <meta content='{{ Str::limit(strip_tags($post->content, 100)) }}' property='og:description'>
     <meta content='IpSolutions' property='og:site_name'>
     <meta content='{{ \Request::root().$post->preview->url('medium') }}' property='og:image'>
     <meta content='214' property='og:image:width'>
@@ -75,7 +75,7 @@
 			    <div class="col4">
 				      <img src="{{ $a_post->preview->url('medium') }}" alt="">
 				      <a href="{{ URL::route('blogs.show', $a_post->slug) }}">{{ $a_post->title }}</a>
-				      <p>{{ Str::limit($a_post->content, 100) }}</p>
+		    		  <p> {{ Str::limit(strip_tags($a_post->content), 100) }} </p>
 				      <p class="date">{{ $a_post->created_at() }}</p>
 			    </div>
       @endforeach

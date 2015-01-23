@@ -19,9 +19,11 @@ class BlogsController extends BaseController {
 
         if(Input::get('search')) $posts = $posts->search(Input::get('search'));
         if(Input::get('tag')) $posts = $posts->withAnyTag(Input::get('tag'));
-        if($rubricSlug) $posts = $posts->whereHas('rubrics', function($q) use ($rubricSlug) {
-            $q->where('name', $rubricSlug);
-        });
+        if($rubricSlug) {
+            $posts = $posts->whereHas('rubrics', function($q) use ($rubricSlug) {
+                    $q->where('slug', $rubricSlug);
+                });
+        }
 
         $posts = $posts->paginate(10);
         return View::make('blogs/index', compact('posts', 'title', 'rubrics', 'paginator'));

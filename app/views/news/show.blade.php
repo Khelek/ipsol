@@ -32,7 +32,7 @@
 			<div class="horizontal_decoration"><div class="dot"></div><hr class="horizontal_line"></div>
 		</div>
 	    <div class="main">
-			
+
 			<div class="article">
 				<p>
             {{ $news->content }}
@@ -40,7 +40,7 @@
 				<p class="date">{{ $news->created_at() }}</p>
 
 
-	    	</div>
+	    </div>
 	    	<a href="{{	URL::route('news.index') }}">Назад к списку новостей</a>
 		</div>
     	<div class="sidebar">
@@ -48,11 +48,11 @@
         @foreach ($another_news as $a_news)
     		    <div class="sidebar_article"><img src="{{ $a_news->preview->url('medium') }}" alt="">
 				        <a href="{{	URL::route('news.show', $a_news->slug) }}">{{ $a_news->title }}</a>
-				        <p>{{ Str::limit($a_news->content, 100) }}</p>
+		    		    <p> {{ Str::limit(strip_tags($a_news->content), 100) }} </p>
 				        <p class="date">{{ $a_news->created_at() }}</p>
 			      </div>
         @endforeach
-		</div>
+		  </div>
 	</div>
 
 @stop

@@ -44,7 +44,7 @@
         @foreach ($another_asks as $a_ask)
     		    <div class="sidebar_article">
 				        <a href="{{	URL::route('support.ask.show', $a_ask->slug) }}">{{ $a_ask->title }}</a>
-				        <p>{{ Str::limit($a_ask->content, 100) }}</p>
+		    		    <p> {{ Str::limit(strip_tags($a_ask->content), 100) }} </p>
 				        <p class="date">{{ $a_ask->created_at() }}</p>
 			      </div>
         @endforeach
@@ -55,6 +55,5 @@
 
 
 @section('styles')
-	  <link rel="stylesheet" href="{{	asset('assets/css/theme.css') }}">
 	  <link rel="stylesheet" href="{{	asset('assets/css/security_open.css') }}">
 @stop

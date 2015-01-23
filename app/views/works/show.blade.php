@@ -29,13 +29,13 @@
 				<div class="dot"></div><hr class="horizontal_line">
 	</div>
 	<div class="works_images clear-fix">
-		<a class="fancybox" rel="group" href="{{	$work->main_photo->url('medium') }}">
+		<a class="fancybox" rel="group" href="{{	$work->main_photo->url() }}">
 			<img class="work_img_big" src="{{	$work->main_photo->url('medium') }}" alt="">
 		</a>
-		<a class="fancybox" rel="group" href="{{ $work->second_photo->url('medium') }}">
+		<a class="fancybox" rel="group" href="{{ $work->second_photo->url() }}">
 			<img class="work_img_small" src="{{ $work->second_photo->url('medium') }}" alt="">
 		</a>
-		<a class="fancybox" rel="group" href="{{	$work->third_photo->url('medium') }}">
+		<a class="fancybox" rel="group" href="{{	$work->third_photo->url() }}">
 			<img class="work_img_small" src="{{	$work->third_photo->url('medium') }}" alt="">
 		</a>
 	</div>
