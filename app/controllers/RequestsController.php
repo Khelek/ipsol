@@ -29,11 +29,11 @@ class RequestsController extends BaseController {
                     'question' => $request->question
                 ),
                 function( $message ) {
-                    $message->from( 'info@ipsol-test.tk', 'Server Message' );
+                    $message->from( 'info@ipsol.worknext.ru', 'Server Message' );
                     $message->to(
                         DbConfig::get("app.admin.email_to_send_requests"),
                         "Администратор"
-                    )->subject( 'Пришла заявка на сайт АйПиРешения' );
+                    )->subject( 'Пришла заявка на сайт АйПи Решения' );
                 }
             );
 
