@@ -1,6 +1,7 @@
 /vendor
-composer.phar
 node_modules
+composer.phar
+/node_modules
 /public/system
 *~
 \#*\#
