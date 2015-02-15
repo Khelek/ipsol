@@ -40,7 +40,7 @@
       <?php /*строки рассчитываются по весам: у маленького превью вес
 	            1, у большого - 2. всего в строке может быть не больше 4*/ ?>
       <?php function sum_weight($carry, $item) { $carry += $item->weight(); return $carry; } ?>
-      @for ($i = 0, $row_count = 1; $i < count($works); $i++, $row_count++)
+      @for ($i = 0, $row_count = 1; $i < count($works); $row_count++)
           <?php $arr = $works->slice($i, 4) ?>
           @if ($arr->reduce('sum_weight') <= 4)
               @include('works.works_row', ["arr" => $arr, "row_count" => $row_count])
@@ -49,6 +49,7 @@
           @endif
 
           <?php $arr->pop() ?>
+
           @if ($arr->reduce('sum_weight') <= 4)
               @include('works.works_row', ["arr" => $arr, "row_count" => $row_count])
               <?php $i = $i + count($arr) ?>

@@ -23,7 +23,8 @@ class Work extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
                            'client_post', 'client_description',
                            'main_photo', 'second_photo', 'third_photo',
                            'need_big_preview', 'client_photo',
-                           'preview_for_main_page', 'photo_preview_for_main'];
+                           'preview_for_main_page', 'photo_preview_for_main',
+                           'result'];
 
     public static $rules = array(
         'solution_content' => 'required',
@@ -34,6 +35,7 @@ class Work extends \LaravelBook\Ardent\Ardent implements StaplerableInterface {
         'preview' => 'file',
         'big_preview' => 'file',
         'title'   => 'required',
+        'result'   => 'required',
         'slug'    => 'required|unique:works',
         'preview_for_main_page' => 'required',
         'photo_preview_for_main' => 'file',

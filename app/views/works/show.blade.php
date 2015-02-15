@@ -40,7 +40,7 @@
 		</a>
 	</div>
 	<h2>Описание задачи</h2>
-	<p>{{ $work->quest_description }}</p>
+	<div class="work_text_content">{{ $work->quest_description }}</div>
 	<div class="title_container clear-fix">
 				<h1 class="title">Клиент</h1>
 				<div class="dot"></div><hr class="horizontal_line">
@@ -50,14 +50,20 @@
 		<div class="about_client_text">
 			<h2 class="client_name">{{ $work->client_name }}</h2>
 			<p class="post_work">{{ $work->client_post }}</p>
-			<p class="client_comment">{{ $work->client_description }}</p>
+			<p class="client_comment work_text_content">{{ $work->client_description }}</p>
 		</div>
 	</div>
 	<div class="title_container clear-fix">
 				<h1 class="title">Реализация</h1>
 				<div class="dot"></div><hr class="horizontal_line">
 	</div>
-	<p>{{ $work->solution_content }}</p>
+	<div class="work_text_content">{{ $work->solution_content }}</div>
+
+  <div class="title_container clear-fix">
+				<h1 class="title">Результат</h1>
+				<div class="dot"></div><hr class="horizontal_line">
+	</div>
+	<div class="work_text_content">{{ $work->result }}</div>
 </div>
 
 @stop

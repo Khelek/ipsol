@@ -67,6 +67,7 @@ class BannersController extends AdminController {
         $banner = $this->banner->find($id);
 
         $banner->fill(Input::all());
+        $banner->view_in_news = Input::get('view_in_news');
 
         if ($banner->update())
         {

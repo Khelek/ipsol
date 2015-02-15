@@ -41,6 +41,7 @@
 "Загрузите квадратную картинку разрешением не менее 214х214px"])
 {{ Former::string('client_description')->required() }}
 {{ Former::textarea('solution_content')->addClass('ckeditor')->required() }}
+{{ Former::textarea('result')->addClass('ckeditor')->required() }}
 
 {{ Former::select('categories[]')->fromQuery($categories, 'name', 'id')
                               ->select($work->categories()->getRelatedIds())

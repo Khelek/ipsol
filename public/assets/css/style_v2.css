@@ -24,7 +24,7 @@ body {
 
 #logo a {
   color: #D8D8D8;
-  font-family: "Righteous", cursive;
+  font-family: "Righteous",cursive;
   display: block;
   font-size: 20px;
   line-height: 50px;
@@ -565,7 +565,7 @@ ul.DTTT_dropdown.dropdown-menu > li:hover > a {
   height: 26px;
   padding: 2px 12px;
   font-size: 14px;
-  line-height: 1.42857;
+  line-height: 1.428571429;
   color: #555;
   background-color: #fff;
   background-image: none;
@@ -726,7 +726,7 @@ ul.DTTT_dropdown.dropdown-menu > li:hover > a {
   border-bottom: 3px solid transparent;
   text-decoration: none;
   cursor: pointer;
-  font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", "Segoe UI", Verdana, sans-serif;
+  font-family: "Lucida Grande","Lucida Sans","Lucida Sans Unicode","Segoe UI",Verdana,sans-serif;
   display: inline-block;
   vertical-align: top;
   position: relative;
@@ -1145,7 +1145,7 @@ ul.DTTT_dropdown.dropdown-menu > li:hover > a {
 
 .box-pricing .row-fluid > div {
   padding: 18px 15px 8px;
-  line-height: 1.42857;
+  line-height: 1.428571429;
   vertical-align: top; }
 
 .box-pricing .row-fluid.centered > div {
@@ -2079,7 +2079,7 @@ ul.DTTT_dropdown.dropdown-menu > li:hover > a {
   float: left;
   padding: 4px 10px;
   margin-left: -1px;
-  line-height: 1.42857;
+  line-height: 1.428571429;
   color: #969696;
   text-decoration: none;
   background-color: #F5F5F5;

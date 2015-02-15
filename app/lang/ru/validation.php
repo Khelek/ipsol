@@ -1,7 +1,7 @@
 <?php
 
 return array(
-
+	"required"         => "Поле :attribute является обязательным",
     'attributes' => array(
         'title' => 'Заголовок',
         'password' => 'Пароль',
@@ -10,6 +10,7 @@ return array(
         'preview_for_main_page' => 'Текстовое превью к главной странице',
         'photo_preview_for_main' => 'Фотография к превью на главной странице',
         'manager' => 'Менеджер',
+        'result' => 'Результат',
         'content' => 'Содержание',
         'slug' => 'ЧПУ',
         'preview' => 'Превью',

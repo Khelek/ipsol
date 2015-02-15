@@ -75,6 +75,7 @@ class WorksController extends AdminController {
         if (Input::get('slug') === "") Input::merge(['slug' => \Slug::make(Input::get('title'))]);
 
         $work->fill(Input::all());
+        $work->need_big_preview = Input::get('need_big_preview');
 
         if ($work->updateUniques())
         {

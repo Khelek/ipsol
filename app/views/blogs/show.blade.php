@@ -56,73 +56,81 @@
 			</div>
 		</div>
 	</div>
-	<div class="content">
-		<div class="title_container clear-fix">
-			<h1 class="title">{{ $post->title }}</h1>
-			<div class="dot"></div><hr class="horizontal_line">
-		</div>
-		<div class="article">
-			{{ $post->content }}
-			<p class="date">{{ $post->created_at() }}</p>
-			<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
-		</div>
-		<div class="another_article clear-fix">
-			<div class="title_container clear-fix">
-				<h1 class="title">Другие статьи</h1>
-				<div class="dot"></div><hr class="horizontal_line">
-			</div>
-      @foreach ($another_posts as $a_post)
-			    <div class="col4">
-				      <img src="{{ $a_post->preview->url('medium') }}" alt="">
-				      <a href="{{ URL::route('blogs.show', $a_post->slug) }}">{{ $a_post->title }}</a>
-		    		  <p> {{ Str::limit(strip_tags($a_post->content), 100) }} </p>
-				      <p class="date">{{ $a_post->created_at() }}</p>
-			    </div>
-      @endforeach
-		</div>
-		<div class="comments">
-		<div class="title_container clear-fix">
-			<h1 class="title">Комментарии</h1>
-			<div class="dot"></div><hr class="horizontal_line">
-		</div>
-    <div class="section">
-        <ul class="tabs">
-            <li class="current">Основные</li>
-            <li>ВКонтакте</li>
-            <li class="tab_facebook">Facebook</li>
-        </ul>
-        <div class="box visible">
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-             var disqus_shortname = 'myawesomelaravelsite'; // required: replace example with your forum shortname
-             
-             /* * * DON'T EDIT BELOW THIS LINE * * */
-             (function() {
-                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-             })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </div>
-        <div class="box">
-            <div id="vk_comments"></div>
-            <script type="text/javascript">
-             VK.Widgets.Comments("vk_comments", {limit: 10, width: "1000", attach: "*"});
-            </script>
-        </div>
-        <div class="box">
-            <div class="fb-comments" data-href="http://ipsol-test.tk" data-width="900" data-numposts="10" data-colorscheme="light"></div>
-        </div>
-    </div>
+	<div class="content clear-fix">
+		  <div class="line_padding">
+				  <div class="line"></div>
+		  </div>
+		  <div class="title_container clear-fix">
+				  <h1 class="title">{{ $post->title }}</h1>
+			    <div class="horizontal_decoration"><div class="dot"></div><hr class="horizontal_line"></div>
+		  </div>
+	    <div class="main">
+
+			    <div class="article">
+				      <p>
+                  {{ $post->content }}
+				      </p>
+				      <p class="date">{{ $post->created_at() }}</p>
+	            <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>
+
+
+	        </div>
+		  </div>
+    	<div class="sidebar">
+    		  <h2>Ещё статьи</h2>
+          @foreach ($another_posts as $a_post)
+    		      <div class="sidebar_article"><img src="{{ $a_post->preview->url('medium') }}" alt="">
+				          <a href="{{	URL::route('blogs.show', $a_post->slug) }}">{{ $a_post->title }}</a>
+		    		      <p> {{ Str::limit(strip_tags($a_post->content), 100) }} </p>
+				          <p class="date">{{ $a_post->created_at() }}</p>
+			        </div>
+          @endforeach
+		  </div>
 	</div>
-	</div>
-	<script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>
+  <div class="content">
+		  <div class="comments">
+		      <div class="title_container clear-fix">
+			        <h1 class="title">Комментарии</h1>
+			        <div class="dot"></div><hr class="horizontal_line">
+		      </div>
+          <div class="section">
+              <ul class="tabs">
+                  <li class="current">Основные</li>
+                  <li>ВКонтакте</li>
+                  <li class="tab_facebook">Facebook</li>
+              </ul>
+              <div class="box visible">
+                  <div id="disqus_thread"></div>
+                  <script type="text/javascript">
+                   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                   var disqus_shortname = 'myawesomelaravelsite'; // required: replace example with your forum shortname
+                   
+                   /* * * DON'T EDIT BELOW THIS LINE * * */
+                   (function() {
+                       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                   })();
+                  </script>
+                  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              </div>
+              <div class="box">
+                  <div id="vk_comments"></div>
+                  <script type="text/javascript">
+                   VK.Widgets.Comments("vk_comments", {limit: 10, width: "1000", attach: "*"});
+                  </script>
+              </div>
+              <div class="box">
+                  <div class="fb-comments" data-href="http://ipsol-test.tk" data-width="900" data-numposts="10" data-colorscheme="light"></div>
+              </div>
+          </div>
+	    </div>
+  </div>
 @stop
 
 
 @section('styles')
+	  <link rel="stylesheet" href="{{	asset('assets/css/security_open.css') }}">
 	  <link rel="stylesheet" href="{{	asset('assets/css/blog_open.css') }}">
 @stop
 
