@@ -2195,8 +2195,9 @@ if (window.ymaps) {
         iconImageHref: '/assets/images/placeholder.png',
         iconImageSize: [30, 42],
         iconImageOffset: [-3, -42]
-      }); 
+      });
       myMap.geoObjects.add(myPlacemark);
     })
+    myMap.behaviors.disable("scrollZoom");
   }
 }

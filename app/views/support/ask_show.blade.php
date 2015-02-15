@@ -24,12 +24,15 @@
 		</div>
 	</div>
 	<div class="content clear-fix">
-	    <div class="main">
 			<div class="line_padding">
 				<div class="line"></div>
 			</div>
+		      <div class="title_container clear-fix">
+				      <h1 class="title">{{ $ask->title }}</h1>
+			        <div class="horizontal_decoration"><div class="dot"></div><hr class="horizontal_line"></div>
+		      </div>
+	    <div class="main">
 			<div class="article">
-				<h1 class="title">{{ $ask->title }}</h1>
 				<p>
             {{ $ask->content }}
 				</p>
@@ -40,11 +43,11 @@
 	    	<a href="{{	URL::route('support.ask') }}">Назад к списку вопросов</a>
 		</div>
     	<div class="sidebar">
-    		<h2 class="title">Также спрашивают</h2>
+    		<h2>Также спрашивают</h2>
         @foreach ($another_asks as $a_ask)
     		    <div class="sidebar_article">
 				        <a href="{{	URL::route('support.ask.show', $a_ask->slug) }}">{{ $a_ask->title }}</a>
-				        <p>{{ Str::limit($a_ask->content, 100) }}</p>
+		    		    <p> {{ Str::limit(strip_tags($a_ask->content), 100) }} </p>
 				        <p class="date">{{ $a_ask->created_at() }}</p>
 			      </div>
         @endforeach
@@ -55,6 +58,5 @@
 
 
 @section('styles')
-	  <link rel="stylesheet" href="{{	asset('assets/css/theme.css') }}">
 	  <link rel="stylesheet" href="{{	asset('assets/css/security_open.css') }}">
 @stop

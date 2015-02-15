@@ -28,7 +28,7 @@
 		</div>
 	</div>
 	<div class="content clear-fix">
-		
+
 		<div class="title_container clear-fix">
 			<h1 class="title">Часто задаваемые вопросы</h1>
 			<div class="dot"></div><hr class="horizontal_line">
@@ -37,7 +37,7 @@
         @foreach ($asks as $ask)
 	    	    <div class="article clear-fix">
 		    		    <h2><a class="article_header" href="{{ URL::route('support.ask.show', $ask->slug) }}">{{{ $ask->title }}}</a></h2>
-		    		    <p class="description"> {{ Str::limit($ask->content, 100) }}</p>
+		    		    <p class="description"> {{ Str::limit(strip_tags($ask->content), 110) }} </p>
 					      <p class="date">{{ $ask->created_at() }}</p>
 		        </div>
         @endforeach
@@ -57,9 +57,9 @@
       {{ Former::open()->method('POST')->route('requests.store') }}
       {{ Form::token() }}
 			<div class="clear-fix">
-				<input type="text" name="name" placeholder="Ваше имя" class="input">
-				<input type="text" name="phone" placeholder="Ваш телефон" class="input">
-				<input type="email" name="email" placeholder="Ваш e-mail" class="input">
+				<input type="text" name="name" placeholder="Ваше имя" class="input" required="true">
+				<input type="text" name="phone" placeholder="Ваш телефон" class="input" required="true">
+				<input type="email" name="email" placeholder="Ваш e-mail" class="input" required="true">
 				<input type="hidden" name="page" value="Поддержка - Частно
 	    	задаваемые вопросы" class="input">
 			</div>

@@ -37,7 +37,7 @@
         @foreach ($asks as $ask)
             <tr>
                 <td> {{{ $ask->id }}} </td>
-                <td> {{{ $ask->name }}} </td>
+                <td> {{{ $ask->title }}} </td>
                 <td> {{{ $ask->created_at }}} </td>
                 <td>
                     <a href="{{{ route('admin.support.asks.edit', $ask->id) }}}"
