@@ -1,6 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
+    {{{ $tip->title }}}
 @stop
 
 @section('keywords') {{{ $tip->meta_keywords }}} @stop

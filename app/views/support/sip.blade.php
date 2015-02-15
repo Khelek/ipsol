@@ -1,6 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
+    Поддержка АйПи Решения
 @stop
 
 @section('keywords')Posts administration @stop

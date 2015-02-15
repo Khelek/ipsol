@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-    {{{ $title }}}
+    Блог АйПи Решения
 @stop
 
 @section('keywords')Posts administration @stop
