@@ -2,6 +2,8 @@
 composer.phar
 node_modules/
 node_modules
+composer.phar
+/node_modules
 /public/system
 *~
 \#*\#

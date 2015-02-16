@@ -11,36 +11,131 @@
     }
 }
 .map {
-	margin-top: 5px;
-	width: 100%;
+	float: left;
+	width: 50%;
+	height: 436px;
+}
+#office {
+	width: 50%;
+	float: right;
+}
+h4 {
+	margin: 55px 0px 25px 0px;
+	font-size: 1.5em;
+	font-family: 'Istok Web', sans-serif;
+	font-weight: normal;
+	color: #505050;
 }
 .col2 {
 	float: left;
-	#office {
-		width: 100%;
-		margin-top: 60px;
+	color: #505050;
+}
+
+.contact-item {
+	margin-top: 25px;
+	padding-left: 25px;
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		margin-left: -30px;
+		height: 25px;
+		width: 25px;
+		background: url('../images/sprite.png');
+		background-repeat: no-repeat;
 	}
 }
 .contact_info {
 	margin-bottom: 30px;
+	.contact-geo:before {
+		margin-top: 5px;
+		background-position: 0px 0px;
+	}
+	.contact-phone:before {
+		background-position: 0px -67px;
+		height: 24px;
+	}
+	.contact-email:before {
+		background-position: 0px -28px;
+		height: 18px;
+	}
+	.contact-skype:before {
+		background-position: 0px -45px;
+		height: 20px;
+	}
+	.contact-bus:before {
+		background-position: 0 -90px;
+	}
+	.contact-car:before {
+		background-position: 0 -120px;
+	}
+	.contact-road {
+		a {
+			color: inherit;
+			text-decoration: underline;
+		}
+	}
+	.plus {
+		position: relative;
+		top: 10px;
+		left: 10px;	
+		display: inline-block;
+		width: 17px;
+		height: 17px;
+		background-image: url('../images/sprite.png');
+		background-position: 0px -130px
+	}
+	.social_icon {
+		background-image: url('../images/social_color.png');
+	}
 }
 .persons{
+	color: #808080;
 	padding-left: 60px;
 	box-sizing: border-box;
 	.person {
 		margin-bottom:30px;
+		.contact-item {
+			margin: 5px;
+			&:before {
+				height: 18px;
+				background-size: 80%;
+			}
+		}
+		.contact-phone {
+			margin-top: 10px;
+			&:before {
+				background-position: 0px -53px
+			}
+		}
+		.contact-email:before {
+			background-position: 0px -21px;
+			height: 14px;
+			margin-top: 4px;
+		}
 		.avatar{
 			float: left;
 			margin-right: 20px;
+		}
+		.avatar + div {
+			float: left;
+		}
+		h5 {
+			font-size: 1.2em;
+			color: #505050;
+			margin: 0px;
 		}
 	}
 }
 .input_select {
 	background-position: 197px 16px;
 }
-
+#ask_online {
+	font-weight: bold;
+}
 #ask_online_form {
   display: none;
+  margin-top: 20px;
 }
 #ask_online_form .input {
   font-weight: 100;
