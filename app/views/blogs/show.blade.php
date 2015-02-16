@@ -130,7 +130,6 @@
 
 
 @section('styles')
-	  <link rel="stylesheet" href="{{	asset('assets/css/security_open.css') }}">
 	  <link rel="stylesheet" href="{{	asset('assets/css/blog_open.css') }}">
 @stop
 

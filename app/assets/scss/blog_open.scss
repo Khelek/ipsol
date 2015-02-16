@@ -14,3 +14,39 @@
         margin-top: 26px;
     }
 }
+
+/*<---- скопипащено с security_open ----->*/
+
+.main {
+    float: left;
+
+    position: relative;
+    width: 930px;
+}
+.content {
+    position: relative;
+}
+.article {
+    margin-bottom: 36px;
+}
+.date {
+    margin: 28px 0 55px 0;
+}
+.sidebar {
+    float: right;
+
+    width: 214px;
+    height: 100%;
+}
+.sidebar a, .main a {
+    font-size: 16px;
+
+    display: block;
+
+    margin: 10px 0;
+
+    color: #1d7ac0;
+}
+.sidebar .date {
+    margin: 0 0 55px 0;
+}
