@@ -60,7 +60,9 @@
 	<script type="text/javascript">
 		var oTable;
 		$(document).ready(function() {
-			oTable = $('#requests').DataTable();
+			  oTable = $('#requests').DataTable( {
+          "order": [[ 0, "desc" ]]
+      } );
 		});
 	</script>
 @stop

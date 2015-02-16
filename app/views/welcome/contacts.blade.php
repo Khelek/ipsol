@@ -128,7 +128,7 @@
 				</div>
 			</div>
 			<div class="person clear-fix">
-				<img class="avatar" src="{{ asset('assets/images/avatar-1.jpg') }}" alt="">
+				<img class="avatar" style="width: 103px; height: 103px" src="http://s1.iconbird.com/ico/1012/BeautyConsultantIcons/w256h2561350247638beautyconsultantshowing256x256x32.png" alt="">
 				<div>
 					<h5>Алена Павлова</h5>
 					HR менеджер<br>
